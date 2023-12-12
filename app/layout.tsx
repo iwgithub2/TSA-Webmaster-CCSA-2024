@@ -14,9 +14,9 @@ export default function RootLayout({
     return (
         <html lang="en">
         <body className={inter.className}>
-        <div className="flex w-full flex-row md:overflow-hidden">
+        <header className="fixed z-50">
             <NavBar/>
-        </div>
+        </header>
         {children}
         </body>
         </html>
