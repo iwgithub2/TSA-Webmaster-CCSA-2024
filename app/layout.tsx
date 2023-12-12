@@ -1,4 +1,3 @@
-import type {Metadata} from 'next'
 import {Inter} from 'next/font/google'
 import './ui/globals.css'
 import NavBar from "@/app/ui/navbar";

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import {newsreader} from "@/app/ui/fonts";
+
 export default function Page() {
     return (
 
@@ -21,9 +22,18 @@ export default function Page() {
                         Learn what we can do for you.
                     </span>
                 </Link>
-                <div>
-                    <p className="text-center w-1/5 mx-auto my-20 text-2xl">
-                        We believe everyone should have access to clean energy. At Recycle Pro 2.0 we have resources for everyone from everywhere (on U.S. tho)
+                <p className="text-center w-1/5 mx-auto my-20 text-2xl">
+                    We believe everyone should have access to clean energy. At Recycle Pro 2.0 we have solutions for
+                    everyone from everywhere (on U.S. tho)
+                </p>
+                <div className="bg-white shadow-lg flex flex-col w-1/6 p-10 rounded">
+                    <div>
+                        <p className="text-red-500 text-left font-bold">
+                            50 States
+                        </p>
+                    </div>
+                    <p>
+                        Maya please think of something to say here, these cards took a lot of time and look seriously cool
                     </p>
                 </div>
             </div>
