@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import {newsreader} from "@/app/ui/fonts";
 import ImageFrame from "@/app/ui/imageframe";
+import BigImageAndText from "@/app/ui/bigimageandtext";
 
 export default function Page() {
     return (
@@ -25,7 +26,7 @@ export default function Page() {
                 </Link>
                 <p className="text-center w-1/4 mx-auto my-20 text-2xl">
                     We believe everyone should have access to clean energy. At Recycle Pro 2.0 we have solutions for
-                    everyone from everywhere (on U.S. tho)
+                    everyone from everywhere
                 </p>
                 <div className="w-1/2 mx-auto flex-col">
                     <div className="bg-white my-40 mr-5 shadow-lg flex flex-col w-1/2 ml-auto p-10 rounded">
@@ -52,8 +53,25 @@ export default function Page() {
                             cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                         </p>
                     </div>
-                    <ImageFrame imgSrc="search.svg" altText="hey" width={800} height={800}/>
                 </div>
+                <BigImageAndText swapOrder={false}
+                                 imgSrc='/TempPortrait.jpg'
+                                 headerTxt="01 I'm the best lmao"
+                                 bigTxt="Maya make sick graphics"
+                                 smallTxt="Learn about cool environment shit. TAX REBATES!!!!!"
+                                 color='darkgreen'/>
+                <BigImageAndText swapOrder={true}
+                                 imgSrc='/TempPortrait.jpg'
+                                 headerTxt="02 Maya please we need to talk abt this website"
+                                 bigTxt="YOU NEED TO RESEARCH"
+                                 smallTxt="Cuz no way im learning about the environment. even tho im doing scientific research on biochar :/"
+                                 color='red-500'/>
+                <BigImageAndText swapOrder={false}
+                                 imgSrc='/TempPortrait.jpg'
+                                 headerTxt="03 Maya your also gonna have to take pics"
+                                 bigTxt="Cuz i dont know how to use a camera"
+                                 smallTxt="Good luck"
+                                 color='blue-600'/>
             </div>
 
 

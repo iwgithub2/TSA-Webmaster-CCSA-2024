@@ -25,7 +25,7 @@ export default function NavBar () {
 
     return (
         <div
-            className={`flex w-screen flex-row px-3 md:px-2  transition-all duration-300 ${isScrolled ? 'border-b' : ''}  border-gray-150 bg-${isScrolled ? 'white' : 'transparent'}
+            className={`flex w-screen flex-row pl-3 md:pl-2 pr-5 md:pd-4  transition-all duration-300 ${isScrolled ? 'border-b' : ''}  border-gray-150 bg-${isScrolled ? 'white' : 'transparent'}
              ${isScrolled ? 'py-4' : 'pb-4 pt-8'}`}>
             <Link
                 className="flex items-end justify-start p-4 "
