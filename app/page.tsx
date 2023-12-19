@@ -59,19 +59,22 @@ export default function Page() {
                                  headerTxt="01 I'm the best lmao"
                                  bigTxt="Maya make sick graphics"
                                  smallTxt="Learn about cool environment shit. TAX REBATES!!!!!"
-                                 color='darkgreen'/>
+                                 colorTxt='text-darkgreen'
+                                 colorBorder='border-darkgreen'/>
                 <BigImageAndText swapOrder={true}
                                  imgSrc='/TempPortrait.jpg'
                                  headerTxt="02 Maya please we need to talk abt this website"
                                  bigTxt="YOU NEED TO RESEARCH"
                                  smallTxt="Cuz no way im learning about the environment. even tho im doing scientific research on biochar :/"
-                                 color='red-500'/>
+                                 colorTxt='text-red-500'
+                                 colorBorder='border-red-500'/>
                 <BigImageAndText swapOrder={false}
                                  imgSrc='/TempPortrait.jpg'
                                  headerTxt="03 Maya your also gonna have to take pics"
                                  bigTxt="Cuz i dont know how to use a camera"
                                  smallTxt="Good luck"
-                                 color='blue-600'/>
+                                 colorTxt='text-blue-500'
+                                 colorBorder='border-blue-500'/>
             </div>
 
 

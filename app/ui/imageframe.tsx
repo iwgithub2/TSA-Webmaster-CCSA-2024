@@ -18,7 +18,7 @@ export default function ImageFrame({imgSrc, altText, width, height, color}: Imag
                        height={height}/>
                 {/* Very Inelegant solution someone please fix */}
                 <div className="absolute w-full top-0 left-0 h-full p-4">
-                    <div className={`top-0 left-0 w-full h-full border-4 border-${color}`}/>
+                    <div className={`top-0 left-0 w-full h-full border-4 ${color}`}/>
                 </div>
             </div>
 
