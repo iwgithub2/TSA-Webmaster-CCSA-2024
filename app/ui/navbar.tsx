@@ -34,12 +34,9 @@ export default function NavBar () {
                 <span className={`${newsreader.className} text-green-900 text-xl`}>RECYCLE PRO 2.0</span>
             </Link>
             <div
-                className="flex grow flex-row justify-end items-center space-x-2 md:flex-row md:space-x-0 ">
+                className="flex grow flex-row pr-10 justify-end items-center space-x-4 md:flex-row md:space-x-0 ">
                 <NavLinks/>
             </div>
-            <Link className="flex  items-center rounded-md bg-darkgreen hover:bg-green-600 px-4 m-3 " href="/login">
-                <span className="text-white">Login</span>
-            </Link>
         </div>
     );
 }

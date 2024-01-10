@@ -7,8 +7,8 @@ import clsx from 'clsx';
 
 const links = [
     {name: 'Learn', href: '/learn'},
-    {name: 'State Information', href: '/state_info'},
-    {name: 'About Us', href: '/about'}
+    {name: 'Practices', href: '/practices'},
+    {name: 'Cost Calculator', href: '/calculator'}
 ];
 
 export default function NavLinks() {
@@ -24,10 +24,10 @@ export default function NavLinks() {
                             " text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start" +
                             " md:p-2 md:px-3",
                             {
-                                'bg-sky-100 text-blue-600': pathname === link.href,
+                                'text-blue-600': pathname === link.href,
                             },
                         )}>
-                            <p className="hidden md:block">{link.name}</p>
+                            <p className="hidden md:block ">{link.name}</p>
                         </Link>
                     );
                 })
