@@ -21,11 +21,12 @@ export default function NavLinks() {
                     return (
                         <Link key={link.name} href={link.href} className={clsx(
                             "flex grow items-center justify-center gap-2 rounded-md" +
-                            " text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start" +
+                            " text-sm font-medium hover:bg-sky-100 hover:text-green-600 md:flex-none md:justify-start" +
                             " md:p-2 md:px-3",
                             {
-                                'text-blue-600': pathname === link.href,
+                                'text-green-600': pathname === link.href,
                             },
+
                         )}>
                             <p className="hidden md:block ">{link.name}</p>
                         </Link>
