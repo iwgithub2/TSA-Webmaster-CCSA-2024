@@ -1,29 +1,56 @@
 'use client'
-import Link from "next/link";
+
 import {newsreader} from "@/app/ui/fonts";
 import Search from "@/app/ui/search";
-import State from "@/app/ui/learn/state";
-import Map from "@/app/ui/learn/map";
 import {ComposableMap, Geographies, Geography} from "react-simple-maps";
+import { useRouter} from "next/navigation";
 
 export default function Page() {
-    // @ts-ignore
+    const router = useRouter();
     return (
-        <main className="flex min-h-screen flex-col p-6">
-            <div className={"flex flex-col justify-center mt-40"}>
-                <p className={`${newsreader.className} text-6xl md-text-xl text-center py-10 tracking-tighter`}>
+        <main className="relative min-h-screen  p-6">
+            <div className="absolute top-0 h-full flex flex-row justify-evenly w-1/2 left-1/4 z-0">
+                <div className="w-0.5 h-full bg-gray-100"></div>
+                <div className="w-0.5 h-full bg-gray-100"></div>
+                <div className="w-0.5 h-full bg-gray-100"></div>
+                <div className="w-0.5 h-full bg-gray-100"></div>
+                <div className="w-0.5 h-full bg-gray-100"></div>
+            </div>
+            <div className={"flex flex-col justify-center mt-40 z-40"}>
+                <p className={`${newsreader.className} text-6xl md-text-xl text-center py-10 tracking-tighter z-40`}>
                     Tell us where you are so we can<br/> find the information for you.
                 </p>
                 <Search placeholder={'State...'}/>
-                <ComposableMap width={10000} height={10000} projection={"geoAlbers"}>
-                    <Geographies geography="/states.json">
-                        {({geographies}) =>
-                            geographies.map((geo) => (
-                                <Geography key={geo.rsmKey} geography={geo}/>
-                            ))
-                        }
-                    </Geographies>
-                </ComposableMap>
+                <div className="mx-40 z-40">
+                    <ComposableMap width={1200} height={700} projection={"geoAlbersUsa"}>
+                        <Geographies geography="/states.json">
+                            {({geographies}) =>
+                                geographies.map((geo) => (
+                                    <Geography key={geo.rsmKey}
+                                               geography={geo}
+                                               style={{
+                                                   default: {
+                                                       fill: "#000",
+                                                       stroke: "#FFF",
+                                                       strokeWidth: 1.5,
+                                                       outline: "none",
+                                                   },
+                                                   hover: {
+                                                       fill: "#56784D",
+                                                       stroke: "#FFF",
+                                                       strokeWidth: 1.5,
+                                                       outline: "none",
+                                                   },
+                                                   pressed: {
+                                                       outline: "none",
+                                                   }
+                                               }}
+                                               onClick={() => router.push(`/learn/${geo.properties.NAME.toLowerCase()}`)}/>
+                                ))
+                            }
+                        </Geographies>
+                    </ComposableMap>
+                </div>
             </div>
         </main>
     );
