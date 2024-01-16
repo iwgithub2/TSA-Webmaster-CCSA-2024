@@ -4,8 +4,8 @@ import Image from "next/image";
 
 export default function Page() {
     return (
-        <main className="relative min-h-screen">
-            <div className="absolute top-0 h-full flex flex-row justify-evenly w-1/2 left-1/4 z-0">
+        <main className="relative min-h-screen flex justify-center">
+            <div className="absolute top-0 h-full flex flex-row justify-evenly w-full max-w-7xl z-0">
                 <div className="w-0.5 h-full bg-gray-100"></div>
                 <div className="w-0.5 h-full bg-gray-100"></div>
                 <div className="w-0.5 h-full bg-gray-100"></div>
@@ -17,18 +17,24 @@ export default function Page() {
                     <p className="text-green-500 text-center font-bold text-6xl mx-40 ">
                         Common Environmental Practices
                     </p>
-                    <div className="bg-white my-40 ml-5 shadow-lg flex flex-col w-1/2 p-10 rounded">
-                        <div>
-                            <p className="text-green-500 text-left font-bold">
-                                1. Reducing Energy Usage
+                    <p className="text-center py-4 text-2xl">
+                        Here are some ways you can be clean + green at home!
+                    </p>
+                    <div className="bg-white my-40 ml-5 shadow-lg flex flex-col max-w-xl p-5 rounded">
+                        <p className="text-green-500 text-left font-bold mb-1">
+                            1. Reducing Energy Usage
+                        </p>
+                        <div className="text-wrap">
+                            <Image src={'/nature.webp'} alt={"Nature"} height={500} width={100}
+                                   className="float-right"/>
+                            <p>
+                                When your out of the room turn off the lights. Using energy efficient bulbs, heating
+                                systems, or even air conditioning can all reduce your impact on the
+                                environment. I realized that I needed to type words. Spaces is the key iykyk.
                             </p>
                         </div>
-                        <p>
-                            When your out of the room turn off the lights. Using energy efficient bulbs, heating
-                            systems, or even air conditioning can all reduce your impact on the environment.
-                        </p>
                     </div>
-                    <div className="bg-white my-40 mr-5 shadow-lg flex flex-col w-1/2 ml-auto p-10 rounded">
+                    <div className="bg-white my-40 mr-5 shadow-lg flex flex-col max-w-xl ml-auto p-10 rounded">
                         <div>
                             <p className="text-green-500 text-left font-bold">
                                 2. Carpooling

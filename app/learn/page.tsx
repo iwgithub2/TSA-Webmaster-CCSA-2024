@@ -10,15 +10,15 @@ export default function Page() {
 
 
     return (
-        <main className="relative min-h-screen  p-6">
-            <div className="absolute top-0 h-full flex flex-row justify-evenly w-1/2 left-1/4 z-0">
+        <main className="relative min-h-screen flex justify-center">
+            <div className="absolute top-0 h-full flex flex-row justify-evenly w-full max-w-7xl z-0">
                 <div className="w-0.5 h-full bg-gray-100"></div>
                 <div className="w-0.5 h-full bg-gray-100"></div>
                 <div className="w-0.5 h-full bg-gray-100"></div>
                 <div className="w-0.5 h-full bg-gray-100"></div>
                 <div className="w-0.5 h-full bg-gray-100"></div>
             </div>
-            <div className={"flex flex-col justify-center mt-40 z-40"}>
+            <div className={"flex flex-col justify-center w-full mt-40 z-40"}>
                 <p className={`${newsreader.className} text-6xl md-text-xl text-center py-10 tracking-tighter z-40`}>
                     Tell us where you are so we can<br/> find the information for you.
                 </p>
