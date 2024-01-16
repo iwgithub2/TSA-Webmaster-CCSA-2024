@@ -7,6 +7,8 @@ import { useRouter} from "next/navigation";
 
 export default function Page() {
     const router = useRouter();
+
+
     return (
         <main className="relative min-h-screen  p-6">
             <div className="absolute top-0 h-full flex flex-row justify-evenly w-1/2 left-1/4 z-0">
@@ -55,3 +57,5 @@ export default function Page() {
         </main>
     );
 }
+//router.push({pathname: '/learn/[state]', query: { state: geo.properties.NAME.toLowerCase()})
+//router.push(`/learn/${geo.properties.NAME.toLowerCase()}`)

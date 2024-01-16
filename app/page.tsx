@@ -15,7 +15,7 @@ export default function Page() {
                 <div className="w-0.5 h-full bg-gray-100"></div>
             </div>
             <div className="flex relative flex-col justify-center px-6 py-3 mt-40 z-40">
-                <p className={`${newsreader.className} text-8xl md-text-xl text-center py-10 tracking-tighter`}>
+                <p className={`${newsreader.className} text-6xl md-text-xl text-center py-10 tracking-tighter`}>
                     Where clean energy becomes <em>cheap</em> <br/>and <em>accessible</em>.
                 </p>
                 <Link href="/learn"
@@ -36,9 +36,7 @@ export default function Page() {
                             </p>
                         </div>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.
+                            We've pulled information across 50 states, making this site the hub for all renewable energy.
                         </p>
                     </div>
                     <div className="bg-white my-40 ml-5 shadow-lg flex flex-col w-1/2 p-10 rounded">
