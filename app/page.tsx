@@ -36,7 +36,7 @@ export default function Page() {
                             </p>
                         </div>
                         <p>
-                            We've pulled information across 50 states, making this site the hub for all renewable energy.
+                            We have pulled information across 50 states, making this site the hub for all renewable energy.
                         </p>
                     </div>
                     <div className="bg-white my-40 ml-5 shadow-lg flex flex-col w-1/2 p-10 rounded">
