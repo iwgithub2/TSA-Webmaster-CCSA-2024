@@ -6,7 +6,6 @@ import {useDebouncedCallback} from 'use-debounce';
 import Image from "next/image";
 import {useState} from "react";
 import SearchResults from "@/app/ui/searchResults";
-import stateInfo from "@/app/ui/learn/stateInfo";
 import FuzzySearch from "@/app/ui/fuzzySearch";
 
 
@@ -19,7 +18,7 @@ const allStates = [
     'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming',
 ];
 
-interface rank {
+interface Rank {
     distance: number;
     name: string;
 }
@@ -42,13 +41,18 @@ export default function Search({placeholder}: { placeholder: string }) {
         replace(`${pathName}?${params.toString()}`);
     };
 
-    const handleType = useDebouncedCallback((value: string, threshold: number) => {
-        setSearchValue(value);
-        /*const results : rank[] = allStates.map((state : string) => {
-            return {FuzzySearch(state.toLowerCase(), value.toLowerCase()), state};
-        })
-        //setSearchResults();
-        console.log(results);*/
+    const handleType = useDebouncedCallback((value: string) => {
+        if (value === '') {
+            setSearchResults(['a']);
+        } else {
+            const results: Rank[] = allStates.map((state: string) => ({
+                distance: FuzzySearch(state.toLowerCase().substring(0, value.length), value.toLowerCase()),
+                name: state
+            }));
+            setSearchResults(results.sort((a, b) => a.distance - b.distance).slice(0,5).map((a : Rank) =>(a.name)));
+        }
+        console.log(value === '')
+        console.log(searchResults);
     }, 300);
 
 
@@ -61,7 +65,7 @@ export default function Search({placeholder}: { placeholder: string }) {
                 className="peer w-1/2 rounded-full border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"
                 placeholder={placeholder}
                 onChange={(e) => {
-                    handleType(e.target.value, 2);
+                    handleType(e.target.value);
                 }}
                 defaultValue={searchParams.get('query')?.toString()}
                 onKeyDown={(e) => {
@@ -70,7 +74,6 @@ export default function Search({placeholder}: { placeholder: string }) {
                     }
                 }}
             />
-
             <Image src={'/search.svg'}
                    alt={'hello'}
                    width={18}

@@ -8,6 +8,13 @@ import { useRouter} from "next/navigation";
 export default function Page() {
     const router = useRouter();
 
+    const redirect = (name : string) => {
+        if (name.includes(' ')) {
+            name = name.replace(' ', '_');
+        }
+        console.log(name);
+        router.push(`/learn/${name}`);
+    };
 
     return (
         <main className="relative min-h-screen flex justify-center">
@@ -47,7 +54,7 @@ export default function Page() {
                                                        outline: "none",
                                                    }
                                                }}
-                                               onClick={() => router.push(`/learn/${geo.properties.NAME.toLowerCase()}`)}/>
+                                               onClick={() => redirect(geo.properties.NAME.toLowerCase())}/>
                                 ))
                             }
                         </Geographies>
