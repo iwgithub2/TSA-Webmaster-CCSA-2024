@@ -19,17 +19,17 @@ export default function Page() {
                     Where clean energy becomes <em>cheap</em> <br/>and <em>accessible</em>.
                 </p>
                 <Link href="/learn"
-                      className="flex items-center gap-5 self-start rounded-lg bg-darkgreen px-3 my-40 py-3 text-xs font-medium text-white transition-colors hover:bg-green-400  mx-auto">
+                      className="flex items-center gap-5 self-start rounded-lg bg-darkgreen px-3 my-20 py-3 text-xs font-medium text-white transition-colors hover:bg-green-400  mx-auto">
                     <span className="tracking-tighter">
                         Learn what we can do for you.
                     </span>
                 </Link>
-                <p className="text-center w-1/4 mx-auto my-20 text-2xl">
-                    We believe everyone should have access to clean energy. At Recycle Pro 2.0 we have solutions for
+                <p className="text-center max-w-xl mx-auto my-20 text-2xl">
+                     At Recycle Pro 2.0 We believe everyone should have access to clean energy. We have solutions for
                     everyone from everywhere
                 </p>
-                <div className="w-1/2 mx-auto flex-col">
-                    <div className="bg-white my-40 mr-5 shadow-lg flex flex-col w-1/2 ml-auto p-10 rounded">
+                <div className=" w-full px-10 flex-col">
+                    <div className="bg-white my-40 mr-5 shadow-2xl flex flex-col max-w-xl ml-auto p-10 rounded">
                         <div>
                             <p className="text-red-500 text-left font-bold">
                                 50 States
@@ -39,7 +39,7 @@ export default function Page() {
                             We have pulled information across 50 states, making this site the hub for all renewable energy.
                         </p>
                     </div>
-                    <div className="bg-white my-40 ml-5 shadow-lg flex flex-col w-1/2 p-10 rounded">
+                    <div className="bg-white my-40 ml-5 shadow-2xl flex flex-col max-w-xl p-10 rounded">
                         <div>
                             <p className="text-red-500 text-left font-bold">
                                 More Cool Stuff
@@ -52,27 +52,7 @@ export default function Page() {
                         </p>
                     </div>
                 </div>
-                <BigImageAndText swapOrder={false}
-                                 imgSrc='/TempPortrait.jpg'
-                                 headerTxt="01 I'm the best lmao"
-                                 bigTxt="Maya make sick graphics"
-                                 smallTxt="Learn about cool environment shit. TAX REBATES!!!!!"
-                                 colorTxt='text-darkgreen'
-                                 colorBorder='border-darkgreen'/>
-                <BigImageAndText swapOrder={true}
-                                 imgSrc='/TempPortrait.jpg'
-                                 headerTxt="02 Maya please we need to talk abt this website"
-                                 bigTxt="YOU NEED TO RESEARCH"
-                                 smallTxt="Cuz no way im learning about the environment. even tho im doing scientific research on biochar :/"
-                                 colorTxt='text-red-500'
-                                 colorBorder='border-red-500'/>
-                <BigImageAndText swapOrder={false}
-                                 imgSrc='/TempPortrait.jpg'
-                                 headerTxt="03 Maya your also gonna have to take pics"
-                                 bigTxt="Cuz i dont know how to use a camera"
-                                 smallTxt="Good luck"
-                                 colorTxt='text-blue-500'
-                                 colorBorder='border-blue-500'/>
+
             </div>
 
 
@@ -80,3 +60,24 @@ export default function Page() {
     );
 }
 //can do tracking-[custom value em]
+//<BigImageAndText swapOrder={false}
+//                                  imgSrc='/TempPortrait.jpg'
+//                                  headerTxt="01 I'm the best lmao"
+//                                  bigTxt="Maya make sick graphics"
+//                                  smallTxt="Learn about cool environment shit. TAX REBATES!!!!!"
+//                                  colorTxt='text-darkgreen'
+//                                  colorBorder='border-darkgreen'/>
+//                 <BigImageAndText swapOrder={true}
+//                                  imgSrc='/TempPortrait.jpg'
+//                                  headerTxt="02 Maya please we need to talk abt this website"
+//                                  bigTxt="YOU NEED TO RESEARCH"
+//                                  smallTxt="Cuz no way im learning about the environment. even tho im doing scientific research on biochar :/"
+//                                  colorTxt='text-red-500'
+//                                  colorBorder='border-red-500'/>
+//                 <BigImageAndText swapOrder={false}
+//                                  imgSrc='/TempPortrait.jpg'
+//                                  headerTxt="03 Maya your also gonna have to take pics"
+//                                  bigTxt="Cuz i dont know how to use a camera"
+//                                  smallTxt="Good luck"
+//                                  colorTxt='text-blue-500'
+//                                  colorBorder='border-blue-500'/>

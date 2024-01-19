@@ -42,8 +42,9 @@ export default function Search({placeholder}: { placeholder: string }) {
     };
 
     const handleType = useDebouncedCallback((value: string) => {
+        setSearchResults(['a', 'b']);
+        console.log(searchResults);
         if (value === '') {
-            setSearchResults(['a']);
         } else {
             const results: Rank[] = allStates.map((state: string) => ({
                 distance: FuzzySearch(state.toLowerCase().substring(0, value.length), value.toLowerCase()),
@@ -51,8 +52,6 @@ export default function Search({placeholder}: { placeholder: string }) {
             }));
             setSearchResults(results.sort((a, b) => a.distance - b.distance).slice(0,5).map((a : Rank) =>(a.name)));
         }
-        console.log(value === '')
-        console.log(searchResults);
     }, 300);
 
 

@@ -1,20 +1,20 @@
+import Image from "next/image";
 export default function Page() {
     return(
-        <main className="relative min-h-screen flex justify-center">
-            <div className="absolute top-0 h-full flex flex-row justify-evenly w-full max-w-7xl z-0">
-                <div className="w-0.5 h-full bg-gray-100"></div>
-                <div className="w-0.5 h-full bg-gray-100"></div>
-                <div className="w-0.5 h-full bg-gray-100"></div>
-                <div className="w-0.5 h-full bg-gray-100"></div>
-                <div className="w-0.5 h-full bg-gray-100"></div>
-            </div>
-            <div className="relative z-40">
-                <div className="flex flex-col mt-40">
-                    <p>
-                        Hi
+        <main className="flex-col min-h-screen flex justify-center bg-gradient-radial from-purple-500 to-black">
+                <div className="flex p-10 flex-col w-full ">
+                    <p className=" text-white font-bold mt-40 text-5xl text-center mx-auto">
+                        About Us
+                    </p>
+                    <p className="mt-40 text-white">
+                        We are Cab Calloway School of the Arts Technology Student Association Teeam Yada Yada Yada
                     </p>
                 </div>
-            </div>
+                <div>
+                    <p className="mt-40 text-white">
+                        Lmfao? A chinese spy? His sister! Lmao? His brother
+                    </p>
+                </div>
         </main>
     );
 }
