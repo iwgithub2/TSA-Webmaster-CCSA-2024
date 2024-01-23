@@ -4,6 +4,7 @@ import {newsreader} from "@/app/ui/fonts";
 import Search from "@/app/ui/search";
 import {ComposableMap, Geographies, Geography} from "react-simple-maps";
 import { useRouter} from "next/navigation";
+import Link from "next/link";
 
 export default function Page() {
     const router = useRouter();
@@ -28,6 +29,9 @@ export default function Page() {
             <div className={"flex flex-col justify-center w-full mt-40 z-40"}>
                 <p className={`${newsreader.className} text-6xl md-text-xl text-center py-10 tracking-tighter z-40`}>
                     Tell us where you are so we can<br/> find the information for you.
+                </p>
+                <p className="font-boldd text-center mb-5">
+                    Or Just Scroll Below to find Federal Information
                 </p>
                 <Search placeholder={'State...'}/>
                 <div className="mx-40 z-40">
@@ -59,6 +63,32 @@ export default function Page() {
                             }
                         </Geographies>
                     </ComposableMap>
+                    <div className="my-10 mb-10 max-w-2xl mx-auto flex-row flex space-x-2 ">
+                        <div className="p-10 rounded-3xl bg-gradient-to-r from-blue-500 to-green-300">
+                            <p className="font-bold text-2xl text-white">
+                                $2,500 for Fully Electric Vehicles
+                            </p>
+                            <Link href={'/car'} className="relative inline-block after:duration-1000 ease-out after:block after:h-0.5 after:w-full
+                                 after:origin-bottom-right after:scale-x-0 after:bg-white after:transition-transform
+                                 after:hover:origin-bottom-left after:hover:scale-x-100">
+                                    <span className="mt-5 text-white">
+                                        Check out the List
+                                    </span>
+                            </Link>
+                        </div>
+                        <div className="p-10 rounded-3xl bg-gradient-to-r from-red-950 to-orange-800">
+                            <p className="font-bold text-white text-2xl">
+                                $1,500 for Hybrid Vehicles
+                            </p>
+                            <Link href={'/car'} className="relative inline-block after:duration-1000 ease-out after:block after:h-0.5 after:w-full
+                                 after:origin-bottom-right after:scale-x-0 after:bg-white after:transition-transform
+                                 after:hover:origin-bottom-left after:hover:scale-x-100 mr-auto">
+                                    <span className="mt-5 text-white">
+                                        Check out the List
+                                    </span>
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>

@@ -1,6 +1,7 @@
 import {newsreader} from "@/app/ui/fonts";
 import Search from "@/app/ui/search";
 import Image from "next/image";
+import Card from "@/app/ui/practices/Card";
 
 export default function Page() {
     return (
@@ -14,47 +15,17 @@ export default function Page() {
             </div>
             <div className="flex relative flex-col justify-center px-6 py-3 z-40">
                 <div className=" mx-auto flex-col px-20 justify-items-center mt-40 ">
-                    <p className="text-green-500 text-center font-bold text-6xl mx-40 ">
+                    <p className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-400 text-center font-bold text-6xl mx-40 ">
                         Common Environmental Practices
                     </p>
                     <p className="text-center py-4 text-2xl">
                         Here are some ways you can be clean + green at home!
                     </p>
-                    <div className="bg-white my-40 ml-5 shadow-lg flex flex-col max-w-xl p-5 rounded">
-                        <p className="text-green-500 text-left font-bold mb-1">
-                            1. Reducing Energy Usage
-                        </p>
-                        <div className="text-wrap">
-                            <Image src={'/nature.webp'} alt={"Nature"} height={500} width={100}
-                                   className="float-right"/>
-                            <p>
-                                When your out of the room turn off the lights. Using energy efficient bulbs, heating
-                                systems, or even air conditioning can all reduce your impact on the
-                                environment. I realized that I needed to type words. Spaces is the key iykyk.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="bg-white my-40 mr-5 shadow-lg flex flex-col max-w-xl ml-auto p-10 rounded">
-                        <div>
-                            <p className="text-green-500 text-left font-bold">
-                                2. Carpooling
-                            </p>
-                        </div>
-                        <p>
-                            Save some energy and fuel by carpooling. Or if you ive in a ccity why not try biking or just
-                            walking.
-                        </p>
-                    </div>
-                    <div className="bg-white my-40 ml-5 shadow-lg flex flex-col w-1/2 p-10 rounded">
-                        <div>
-                            <p className="text-green-500 text-left font-bold">
-                                3. Recycling
-                            </p>
-                        </div>
-                        <p>
-                            Please recycle
-                        </p>
-                    </div>
+                    <Card title={"1. Reducing Energy Usage"} text={"When your out of the room turn off the lights. Using energy efficient bulbs, heating\n" +
+                        "                                systems, or even air conditioning can all reduce your impact on the\n" +
+                        "                                environment. I realized that I needed to type words. Spaces is the key iykyk."}/>
+                    <Card title={"3. Recycling"} text={"Please recycle"}/>
+                    <Card title={"2. Carpooling"} text={"Save some energy and fuel by carpooling. Or if you live in a city why not try biking or just walking."}/>
                 </div>
             </div>
         </main>
