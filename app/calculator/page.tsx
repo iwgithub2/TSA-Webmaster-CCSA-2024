@@ -20,7 +20,7 @@ export default function Page() {
             </div>
             <div className="relative z-40">
                 <div className="flex flex-col mt-40">
-                    <p className="font-bold text-4xl text-green-400 max-w-4xl text-center">
+                    <p className="font-bold text-6xl text-green-400 max-w-4xl text-center">
                         Take Our Quiz to Find Out What Green Energy Solutions Work for You
                     </p>
                     <a href="#0"

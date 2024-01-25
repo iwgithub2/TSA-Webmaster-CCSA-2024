@@ -26,71 +26,76 @@ export default function Page() {
                 <div className="w-0.5 h-full bg-gray-100"></div>
                 <div className="w-0.5 h-full bg-gray-100"></div>
             </div>
-            <div className={"flex flex-col justify-center w-full mt-40 z-40"}>
-                <p className={`${newsreader.className} text-6xl md-text-xl text-center py-10 tracking-tighter z-40`}>
-                    Tell us where you are so we can<br/> find the information for you.
-                </p>
-                <p className="font-boldd text-center mb-5">
-                    Or Just Scroll Below to find Federal Information
-                </p>
-                <Search placeholder={'State...'}/>
-                <div className="mx-40 z-40">
-                    <ComposableMap width={1200} height={700} projection={"geoAlbersUsa"}>
-                        <Geographies geography="/states.json">
-                            {({geographies}) =>
-                                geographies.map((geo) => (
-                                    <Geography key={geo.rsmKey}
-                                               geography={geo}
-                                               style={{
-                                                   default: {
-                                                       fill: "#000",
-                                                       stroke: "#FFF",
-                                                       strokeWidth: 1.5,
-                                                       outline: "none",
-                                                   },
-                                                   hover: {
-                                                       fill: "#56784D",
-                                                       stroke: "#FFF",
-                                                       strokeWidth: 1.5,
-                                                       outline: "none",
-                                                   },
-                                                   pressed: {
-                                                       outline: "none",
-                                                   }
-                                               }}
-                                               onClick={() => redirect(geo.properties.NAME.toLowerCase())}/>
-                                ))
-                            }
-                        </Geographies>
-                    </ComposableMap>
-                    <div className="my-10 mb-10 max-w-2xl mx-auto flex-row flex space-x-2 ">
-                        <div className="p-10 rounded-3xl bg-gradient-to-r from-blue-500 to-green-300">
-                            <p className="font-bold text-2xl text-white">
-                                $2,500 for Fully Electric Vehicles
-                            </p>
-                            <Link href={'/car'} className="relative inline-block after:duration-1000 ease-out after:block after:h-0.5 after:w-full
+            <div className="relative z-40">
+                <div className={"flex flex-col justify-center w-full mt-40"}>
+                    <p className={`font-bold text-6xl md-text-xl text-center text-transparent bg-gradient-to-r from-pink-500 to-yellow-600 bg-clip-text`}>
+                        Tell us where you are so we can<br/> find the information for you.
+                    </p>
+                    <p className="font-bold text-center mb-5">
+                        Or Just Scroll Below to find Federal Information
+                    </p>
+                    {/* add search later for nats
+                                <Search placeholder={'State...'}/>
+                */}
+                    <div className="mx-40">
+                        <ComposableMap width={1000} height={900} projection={"geoAlbersUsa"}>
+                            <Geographies geography="/states.json">
+                                {({geographies}) =>
+                                    geographies.map((geo) => (
+                                        <Geography key={geo.rsmKey}
+                                                   geography={geo}
+                                                   style={{
+                                                       default: {
+                                                           fill: "#000",
+                                                           stroke: "#FFF",
+                                                           strokeWidth: 1.5,
+                                                           outline: "none",
+                                                       },
+                                                       hover: {
+                                                           fill: "#56784D",
+                                                           stroke: "#FFF",
+                                                           strokeWidth: 1.5,
+                                                           outline: "none",
+                                                       },
+                                                       pressed: {
+                                                           outline: "none",
+                                                       }
+                                                   }}
+                                                   onClick={() => redirect(geo.properties.NAME.toLowerCase())}/>
+                                    ))
+                                }
+                            </Geographies>
+                        </ComposableMap>
+                        <div className="my-10 mb-10 max-w-2xl mx-auto flex-row flex space-x-2 ">
+                            <div className="p-10 rounded-3xl bg-gradient-to-r from-blue-500 to-green-300">
+                                <p className="font-bold text-2xl text-white">
+                                    $2,500 for Fully Electric Vehicles
+                                </p>
+                                <Link href={'/car'} className="relative inline-block after:duration-1000 ease-out after:block after:h-0.5 after:w-full
                                  after:origin-bottom-right after:scale-x-0 after:bg-white after:transition-transform
                                  after:hover:origin-bottom-left after:hover:scale-x-100">
                                     <span className="mt-5 text-white">
                                         Check out the List
                                     </span>
-                            </Link>
-                        </div>
-                        <div className="p-10 rounded-3xl bg-gradient-to-r from-red-950 to-orange-800">
-                            <p className="font-bold text-white text-2xl">
-                                $1,500 for Hybrid Vehicles
-                            </p>
-                            <Link href={'/car'} className="relative inline-block after:duration-1000 ease-out after:block after:h-0.5 after:w-full
+                                </Link>
+                            </div>
+                            <div className="p-10 rounded-3xl bg-gradient-to-r from-red-950 to-orange-800">
+                                <p className="font-bold text-white text-2xl">
+                                    $1,500 for Hybrid Vehicles
+                                </p>
+                                <Link href={'/car'} className="relative inline-block after:duration-1000 ease-out after:block after:h-0.5 after:w-full
                                  after:origin-bottom-right after:scale-x-0 after:bg-white after:transition-transform
                                  after:hover:origin-bottom-left after:hover:scale-x-100 mr-auto">
                                     <span className="mt-5 text-white">
                                         Check out the List
                                     </span>
-                            </Link>
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </main>
     );
 }

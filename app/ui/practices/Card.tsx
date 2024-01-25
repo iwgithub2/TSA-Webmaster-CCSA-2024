@@ -1,18 +1,29 @@
 interface CardProps {
-    title : string;
-    text : string;
+    title: string;
+    description: string;
+    estimatedCost: string;
+    right: boolean;
 }
-export default function Card( {title, text} : CardProps) {
-    return(
-        <div className="bg-white my-40 mr-5 shadow-lg flex flex-col max-w-xl ml-auto p-10 rounded">
-            <div>
-                <p className="text-green-500 text-left font-bold">
+
+export default function Card({title, description, estimatedCost, right}: CardProps) {
+    return (
+        <div className={`bg-white mr-5 shadow-2xl flex flex-col max-w-xl ${right ? "ml-auto" : "ar-auto"} p-10 rounded`}>
+            <div className="mb-5">
+                <p className="text-green-500 text-left font-bold py-2">
                     {title}
                 </p>
+                <p className="text-left">
+                    {description}
+                </p>
             </div>
-            <p>
-                {text}
-            </p>
+            <div>
+                <p className="text-red-500 text-right font-bold py-2">
+                    Approximate Cost
+                </p>
+                <p className="text-right">
+                    {estimatedCost}
+                </p>
+            </div>
         </div>
     );
 }
