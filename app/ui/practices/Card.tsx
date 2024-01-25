@@ -7,7 +7,7 @@ interface CardProps {
 
 export default function Card({title, description, estimatedCost, right}: CardProps) {
     return (
-        <div className={`bg-white mr-5 shadow-2xl flex flex-col max-w-xl ${right ? "ml-auto" : "ar-auto"} p-10 rounded`}>
+        <div className={`bg-white mr-5 shadow-2xl flex flex-col lg:max-w-xl sm:max-w-2xl w-full ${right ? "ml-auto" : "ar-auto"} p-10 rounded`}>
             <div className="mb-5">
                 <p className="text-green-500 text-left font-bold py-2">
                     {title}
