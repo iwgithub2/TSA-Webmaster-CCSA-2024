@@ -32,12 +32,12 @@ export default function Question({question}: { question: QuestionProps }) {
             </p>
             {componentToRender}
             <div className="flex flex-row space-x-2 w-full mt-10">
-                <a href={question.backLink} className="bg-green-600 p-2 rounded w-1/2 text-center hover:animate-pulse">
+                <a href={question.backLink} className="border-white border-2 p-2 rounded w-1/2 text-center hover:animate-pulse">
                     <span className="text-white font-medium text-sm ">
                         Previous
                     </span>
                 </a>
-                <a href={question.forwardLink} className="bg-green-600 p-2 rounded w-1/2 text-center hover:animate-pulse">
+                <a href={question.forwardLink} className="border-white border-2 p-2 rounded w-1/2 text-center hover:animate-pulse">
                     <span className="text-white font-medium text-sm ">
                         Next
                     </span>

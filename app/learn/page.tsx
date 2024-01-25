@@ -3,13 +3,14 @@
 import {newsreader} from "@/app/ui/fonts";
 import Search from "@/app/ui/search";
 import {ComposableMap, Geographies, Geography} from "react-simple-maps";
-import { useRouter} from "next/navigation";
+import {useRouter} from "next/navigation";
 import Link from "next/link";
+import BubbleDiv from "@/app/ui/learn/BubbleDiv";
 
 export default function Page() {
     const router = useRouter();
 
-    const redirect = (name : string) => {
+    const redirect = (name: string) => {
         if (name.includes(' ')) {
             name = name.replace(' ', '_');
         }
@@ -26,72 +27,54 @@ export default function Page() {
                 <div className="w-0.5 h-full bg-gray-100"></div>
                 <div className="w-0.5 h-full bg-gray-100"></div>
             </div>
-            <div className="relative z-40">
+            <div className="relative z-40 mx-5">
                 <div className={"flex flex-col justify-center w-full mt-40"}>
-                    <p className={`font-bold text-6xl md-text-xl text-center text-transparent bg-gradient-to-r from-pink-500 to-yellow-600 bg-clip-text`}>
-                        Tell us where you are so we can<br/> find the information for you.
+                    <p className={`mx-5 sm:mx-10 md:mx-20 font-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl px-2 text-center text-transparent bg-gradient-to-r from-pink-500 to-yellow-600 bg-clip-text`}>
+                        Tell us where you are so we can find the information for you.
                     </p>
-                    <p className="font-bold text-center mb-5">
+                    <p className="font-bold text-center mb-5 lg:text-2xl md:text-xl sm:text-lg text-md my-5 mx-10 text-transparent bg-gradient-to-r from-pink-500 to-yellow-600 bg-clip-text">
                         Or Just Scroll Below to find Federal Information
                     </p>
                     {/* add search later for nats
                                 <Search placeholder={'State...'}/>
-                */}
-                    <div className="mx-40">
-                        <ComposableMap width={1000} height={900} projection={"geoAlbersUsa"}>
-                            <Geographies geography="/states.json">
-                                {({geographies}) =>
-                                    geographies.map((geo) => (
-                                        <Geography key={geo.rsmKey}
-                                                   geography={geo}
-                                                   style={{
-                                                       default: {
-                                                           fill: "#000",
-                                                           stroke: "#FFF",
-                                                           strokeWidth: 1.5,
-                                                           outline: "none",
-                                                       },
-                                                       hover: {
-                                                           fill: "#56784D",
-                                                           stroke: "#FFF",
-                                                           strokeWidth: 1.5,
-                                                           outline: "none",
-                                                       },
-                                                       pressed: {
-                                                           outline: "none",
-                                                       }
-                                                   }}
-                                                   onClick={() => redirect(geo.properties.NAME.toLowerCase())}/>
-                                    ))
-                                }
-                            </Geographies>
-                        </ComposableMap>
-                        <div className="my-10 mb-10 max-w-2xl mx-auto flex-row flex space-x-2 ">
-                            <div className="p-10 rounded-3xl bg-gradient-to-r from-blue-500 to-green-300">
-                                <p className="font-bold text-2xl text-white">
-                                    $2,500 for Fully Electric Vehicles
-                                </p>
-                                <Link href={'/car'} className="relative inline-block after:duration-1000 ease-out after:block after:h-0.5 after:w-full
-                                 after:origin-bottom-right after:scale-x-0 after:bg-white after:transition-transform
-                                 after:hover:origin-bottom-left after:hover:scale-x-100">
-                                    <span className="mt-5 text-white">
-                                        Check out the List
-                                    </span>
-                                </Link>
-                            </div>
-                            <div className="p-10 rounded-3xl bg-gradient-to-r from-red-950 to-orange-800">
-                                <p className="font-bold text-white text-2xl">
-                                    $1,500 for Hybrid Vehicles
-                                </p>
-                                <Link href={'/car'} className="relative inline-block after:duration-1000 ease-out after:block after:h-0.5 after:w-full
-                                 after:origin-bottom-right after:scale-x-0 after:bg-white after:transition-transform
-                                 after:hover:origin-bottom-left after:hover:scale-x-100 mr-auto">
-                                    <span className="mt-5 text-white">
-                                        Check out the List
-                                    </span>
-                                </Link>
-                            </div>
-                        </div>
+                */}<div className="pb-10">
+                    <ComposableMap width={800} height={500} projection={"geoAlbersUsa"}>
+                        <Geographies geography="/states.json">
+                            {({geographies}) =>
+                                geographies.map((geo) => (
+                                    <Geography key={geo.rsmKey}
+                                               geography={geo}
+                                               style={{
+                                                   default: {
+                                                       fill: "#000",
+                                                       stroke: "#FFF",
+                                                       strokeWidth: 1.5,
+                                                       outline: "none",
+                                                   },
+                                                   hover: {
+                                                       fill: "#56784D",
+                                                       stroke: "#FFF",
+                                                       strokeWidth: 1.5,
+                                                       outline: "none",
+                                                   },
+                                                   pressed: {
+                                                       outline: "none",
+                                                   }
+                                               }}
+                                               onClick={() => redirect(geo.properties.NAME.toLowerCase())}/>
+                                ))
+                            }
+                        </Geographies>
+                    </ComposableMap>
+                </div>
+                    <p className={`mx-5 sm:mx-10 md:mx-20 font-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl px-2 text-center text-transparent bg-gradient-to-r from-pink-500 to-yellow-600 bg-clip-text`}>
+                        Federal Information
+                    </p>
+                    <div className="my-10 max-w-2xl mx-auto flex-row flex space-x-2 ">
+                        <BubbleDiv header={"$2,500 for Fully Electric Vehicles"} link={'/car'}
+                                   linkText={"Check out the List"} gradient={"from-blue-500 to-green-300"}/>
+                        <BubbleDiv header={"$1,500 for Hybrid Vehicles"} link={'/car'} linkText={"Check out the List"}
+                                   gradient={"from-red-950 to-orange-800"}/>
                     </div>
                 </div>
             </div>

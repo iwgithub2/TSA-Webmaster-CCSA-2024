@@ -2,6 +2,7 @@ import Link from 'next/link';
 import {newsreader} from "@/app/ui/fonts";
 import ImageFrame from "@/app/ui/imageframe";
 import BigImageAndText from "@/app/ui/bigimageandtext";
+import Card from "@/app/ui/Card";
 
 export default function Page() {
     return (
@@ -15,11 +16,11 @@ export default function Page() {
                 <div className="w-0.5 h-full bg-gray-100"></div>
             </div>
             <div className="flex relative flex-col justify-center px-6 py-3 mt-40 z-40">
-                <p className={`${newsreader.className} text-6xl md-text-xl text-center py-10 tracking-tighter`}>
+                <p className={`font-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl text-center py-10 px-2 tracking-tighter bg-gradient-to-r from-green-500 to-blue-400 bg-clip-text text-transparent`}>
                     Where clean energy becomes <em>cheap</em> <br/>and <em>accessible</em>.
                 </p>
                 <Link href="/learn"
-                      className="flex items-center gap-5 self-start rounded-lg bg-darkgreen px-3 my-20 py-3 text-xs font-medium text-white transition-colors hover:bg-green-400  mx-auto">
+                      className="flex items-center gap-5 self-start rounded-lg bg-darkgreen px-3 my-10 md:my-20 py-3 text-xs font-medium text-white transition-colors hover:bg-green-400  mx-auto">
                     <span className="tracking-tighter">
                         Learn what we can do for you.
                     </span>
@@ -28,29 +29,11 @@ export default function Page() {
                      At Recycle Pro 2.0 We believe everyone should have access to clean energy. We have solutions for
                     everyone from everywhere
                 </p>
-                <div className=" w-full px-10 flex-col">
-                    <div className="bg-white my-40 mr-5 shadow-2xl flex flex-col max-w-xl ml-auto p-10 rounded">
-                        <div>
-                            <p className="text-red-500 text-left font-bold">
-                                50 States
-                            </p>
-                        </div>
-                        <p>
-                            We have pulled information across 50 states, making this site the hub for all renewable energy.
-                        </p>
-                    </div>
-                    <div className="bg-white my-40 ml-5 shadow-2xl flex flex-col max-w-xl p-10 rounded">
-                        <div>
-                            <p className="text-red-500 text-left font-bold">
-                                More Cool Stuff
-                            </p>
-                        </div>
-                        <p>
-                            Duis aute irure dolor in reprehenderit in
-                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-                    </div>
+                <div className=" w-full px-10 flex-col space-y-10 md:space-y-20 my-10">
+                    <Card title={["50 States"]} description={["We have pulled information across 50 states, making this site the hub for all renewable energy."]} right={false}/>
+                    <Card title={["More Cool Stuff"]} description={["Duis aute irure dolor in reprehenderit in\n" +
+                    "                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\n" +
+                    "                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."]} right={true}/>
                 </div>
 
             </div>

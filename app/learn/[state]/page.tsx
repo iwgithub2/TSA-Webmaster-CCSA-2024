@@ -4,6 +4,7 @@ import {usePathname} from "next/navigation";
 import stateInfo from "@/app/ui/learn/stateInfo";
 import Image from "next/image";
 import Link from "next/link";
+import BubbleDiv from "@/app/ui/learn/BubbleDiv";
 
 const data = [ ["alabama", "0"],
     ["alaska", 1000],
@@ -85,30 +86,8 @@ export default function Page() {
                         </p>
                     </div>
                     <div className="my-2 mb-10 max-w-2xl flex-row flex space-x-2 ">
-                        <div className="p-10 rounded-3xl bg-gradient-to-r from-blue-500 to-green-300">
-                            <p className="font-bold text-2xl text-white">
-                                $2500 for Fully Electric Vehicles
-                            </p>
-                            <Link href={'/car'} className="relative inline-block after:duration-1000 ease-out after:block after:h-0.5 after:w-full
-                                 after:origin-bottom-right after:scale-x-0 after:bg-white after:transition-transform
-                                 after:hover:origin-bottom-left after:hover:scale-x-100">
-                                    <span className="mt-5 text-white">
-                                        Check out the List
-                                    </span>
-                            </Link>
-                        </div>
-                        <div className="p-10 rounded-3xl bg-gradient-to-r from-red-950 to-orange-800">
-                            <p className="font-bold text-white text-2xl">
-                                $1,500 for Hybrid Vehicles
-                            </p>
-                            <Link href={'/car'} className="relative inline-block after:duration-1000 ease-out after:block after:h-0.5 after:w-full
-                                 after:origin-bottom-right after:scale-x-0 after:bg-white after:transition-transform
-                                 after:hover:origin-bottom-left after:hover:scale-x-100 mr-auto">
-                                    <span className="mt-5 text-white">
-                                        Check out the List
-                                    </span>
-                            </Link>
-                        </div>
+                        <BubbleDiv header={"$2,500 for Fully Electric Vehicles"} link={'/car'} linkText={"Check out the List"} gradient={"from-blue-500 to-green-300"}/>
+                        <BubbleDiv header={"$1,500 for Hybrid Vehicles"} link={'/car'} linkText={"Check out the List"} gradient={"from-red-950 to-orange-800"}/>
                     </div>
 
                 </div>
