@@ -4,9 +4,8 @@ import {newsreader} from "@/app/ui/fonts";
 import Search from "@/app/ui/search";
 import {ComposableMap, Geographies, Geography} from "react-simple-maps";
 import {useRouter} from "next/navigation";
-import Link from "next/link";
 import BubbleDiv from "@/app/ui/learn/BubbleDiv";
-
+import Lines from "@/app/ui/lines";
 export default function Page() {
     const router = useRouter();
 
@@ -20,13 +19,7 @@ export default function Page() {
 
     return (
         <main className="relative min-h-screen flex justify-center">
-            <div className="absolute top-0 h-full flex flex-row justify-evenly w-full max-w-7xl z-0">
-                <div className="w-0.5 h-full bg-gray-100"></div>
-                <div className="w-0.5 h-full bg-gray-100"></div>
-                <div className="w-0.5 h-full bg-gray-100"></div>
-                <div className="w-0.5 h-full bg-gray-100"></div>
-                <div className="w-0.5 h-full bg-gray-100"></div>
-            </div>
+            <Lines/>
             <div className="relative z-40 mx-5">
                 <div className={"flex flex-col justify-center w-full mt-40"}>
                     <p className={`mx-5 sm:mx-10 md:mx-20 font-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl px-2 text-center text-transparent bg-gradient-to-r from-pink-500 to-yellow-600 bg-clip-text`}>
