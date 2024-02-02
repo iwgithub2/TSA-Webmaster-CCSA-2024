@@ -47,7 +47,7 @@ export default function NavBar2() {
             >
                 <span
                     className={`${newsreader.className} text-green-900 text-md sm:text-lg md:text-xl lg:text-2xl`}>
-                    RECYCLE PRO 2.0
+                    HomeGrown
                 </span>
             </Link>
 

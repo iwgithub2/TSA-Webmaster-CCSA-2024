@@ -1,8 +1,7 @@
 import Link from 'next/link';
-import {newsreader} from "@/app/ui/fonts";
-import ImageFrame from "@/app/ui/imageframe";
 import Lines from "@/app/ui/lines";
 import Card from "@/app/ui/Card";
+import {dmSerif, inter} from "@/app/ui/fonts";
 
 export default function Page() {
     return (
@@ -10,7 +9,7 @@ export default function Page() {
         <main className="relative min-h-screen flex justify-center">
             <Lines/>
             <div className="flex relative flex-col justify-center px-6 py-3 mt-40 z-40">
-                <p className={`font-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl text-center py-10 px-2 tracking-tighter bg-gradient-to-r from-green-500 to-blue-400 bg-clip-text text-transparent`}>
+                <p className={`${dmSerif.className} font-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl text-center py-10 px-2 tracking-tight font-serif bg-gradient-to-r from-green-500 to-blue-400 bg-clip-text text-transparent`}>
                     Where clean energy becomes <em>cheap</em> <br/>and <em>accessible</em>.
                 </p>
                 <Link href="/learn"
@@ -19,15 +18,17 @@ export default function Page() {
                         Learn what we can do for you.
                     </span>
                 </Link>
-                <p className="text-center max-w-xl mx-auto my-20 text-2xl">
-                     At Recycle Pro 2.0 We believe everyone should have access to clean energy. We have solutions for
-                    everyone from everywhere *INSERT COOL GRAPHICS BELOW*
+                <p className={`${inter.className} font-light text-center max-w-xl mx-auto my-20 text-2xl`}>
+                    Welcome to HomeGrown: Where sustainability meets
+                    affordability. Explore a diverse list of clean energy
+                    solutions taylored for just you. Join us in the effort to
+                    reach a greener more economical future for all.
                 </p>
                 <div className=" w-full px-10 flex-col space-y-10 md:space-y-20 my-10">
-                    <Card title={["50 States"]} description={["We have pulled information across 50 states, making this site the hub for all renewable energy."]} right={false}/>
-                    <Card title={["More Cool Stuff"]} description={["Duis aute irure dolor in reprehenderit in\n" +
-                    "                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\n" +
-                    "                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."]} right={true}/>
+                    <Card title={["Explore State Specific Policies"]} description={["Learn more about the incentives offered in your state!"]} right={false}/>
+                    <Card title={["Calculate Your Cost and Impact"]} description={["Take our  quiz to find out the impact you can have for a price that you can afford:"]} right={true}/>
+                    <Card title={["Learn More About HomeGrown"]} description={["Who are we? Meet the team behind this website and discover who we are."]} right={false}/>
+                    <Card title={["What Can You Do At Your Home?"]} description={["Here are some ways to get started with clean energy form the comfort of your own home!"]} right={true}/>
                 </div>
 
             </div>

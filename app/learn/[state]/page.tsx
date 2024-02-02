@@ -2,11 +2,10 @@
 
 import {usePathname} from "next/navigation";
 import stateInfo from "@/app/ui/learn/stateInfo";
-import Image from "next/image";
-import BubbleDiv from "@/app/ui/learn/BubbleDiv";
 import {useEffect, useState} from "react";
 import {useDebounce} from "use-debounce";
 import Lines from "@/app/ui/lines";
+//import { Parallax, ParallaxLayer } from '@react-spring';
 
 export default function Page() {
     const pathname = usePathname();
@@ -39,39 +38,38 @@ export default function Page() {
                 </p>
                 <p className="text-center font-bold bg-gradient-to-r from-green-500 to-purple-400 bg-clip-text text-transparent text-md sm:text-lg md:text-xl lg:text-2xl">
                     Being clean and green is hard. So let us do the work for you
-
                 </p>
-                <div className="flex justify-center mt-10 sm:mt-20 md:mt-30 px-5 py-10">
-                    <div className="bg-red-400 mx-auto">
-                        <Image src={state.image} alt={"Picture"} width={300} height={400}/>
-                    </div>
-                    <div className="ml-1/2 overflow-y-auto w-1/2 max-h-screen bg-red-400">
-                        <div
-                            className="flex flex-col p-10 mt-20 max-w-2xl w-full rounded-3xl bg-gradient-to-r from-pink-500 to-blue-600">
-                            <p className="font-bold text-3xl text-white">
-                                Car Tax Rebates for Everyone
-                            </p>
-
-                        </div>
-                        <div className="my-2 mb-10 max-w-2xl flex-row flex space-x-2">
-                            <BubbleDiv header={`${state.eVRebate} for Fully Electric Vehicles`} link={'/car'} linkText={"Check out the List"} gradient={"from-blue-500 to-green-300"}/>
-                            <BubbleDiv header={`${state.hybridRebate} for Hybrid Vehicles`} link={'/car'} linkText={"Check out the List"} gradient={"from-red-950 to-orange-800"}/>
-                        </div>
-                        <div className="my-2 mb-10 max-w-2xl flex-row flex space-x-2">
-                            <BubbleDiv header={`${state.eVRebate} for Fully Electric Vehicles`} link={'/car'} linkText={"Check out the List"} gradient={"from-blue-500 to-green-300"}/>
-                            <BubbleDiv header={`${state.hybridRebate} for Hybrid Vehicles`} link={'/car'} linkText={"Check out the List"} gradient={"from-red-950 to-orange-800"}/>
-                        </div>
-                        <div className="my-2 mb-10 max-w-2xl flex-row flex space-x-2">
-                            <BubbleDiv header={`${state.eVRebate} for Fully Electric Vehicles`} link={'/car'} linkText={"Check out the List"} gradient={"from-blue-500 to-green-300"}/>
-                            <BubbleDiv header={`${state.hybridRebate} for Hybrid Vehicles`} link={'/car'} linkText={"Check out the List"} gradient={"from-red-950 to-orange-800"}/>
-                        </div>
-                        <div className="my-2 mb-10 max-w-2xl flex-row flex space-x-2">
-                            <BubbleDiv header={`${state.eVRebate} for Fully Electric Vehicles`} link={'/car'} linkText={"Check out the List"} gradient={"from-blue-500 to-green-300"}/>
-                            <BubbleDiv header={`${state.hybridRebate} for Hybrid Vehicles`} link={'/car'} linkText={"Check out the List"} gradient={"from-red-950 to-orange-800"}/>
-                        </div>
-                    </div>
-                </div>
             </div>
         </main>
     );
 }
+//<div className="flex justify-center mt-10 sm:mt-20 md:mt-30 px-5 py-10">
+//                     <div className="bg-red-400 mx-auto">
+//                         <Image src={state.image} alt={"Picture"} width={300} height={400}/>
+//                     </div>
+//                     <div className="ml-1/2 overflow-y-auto w-1/2 max-h-screen bg-red-400">
+//                         <div
+//                             className="flex flex-col p-10 mt-20 max-w-2xl w-full rounded-3xl bg-gradient-to-r from-pink-500 to-blue-600">
+//                             <p className="font-bold text-3xl text-white">
+//                                 Car Tax Rebates for Everyone
+//                             </p>
+//
+//                         </div>
+//                         <div className="my-2 mb-10 max-w-2xl flex-row flex space-x-2">
+//                             <BubbleDiv header={`${state.eVRebate} for Fully Electric Vehicles`} link={'/car'} linkText={"Check out the List"} gradient={"from-blue-500 to-green-300"}/>
+//                             <BubbleDiv header={`${state.hybridRebate} for Hybrid Vehicles`} link={'/car'} linkText={"Check out the List"} gradient={"from-red-950 to-orange-800"}/>
+//                         </div>
+//                         <div className="my-2 mb-10 max-w-2xl flex-row flex space-x-2">
+//                             <BubbleDiv header={`${state.eVRebate} for Fully Electric Vehicles`} link={'/car'} linkText={"Check out the List"} gradient={"from-blue-500 to-green-300"}/>
+//                             <BubbleDiv header={`${state.hybridRebate} for Hybrid Vehicles`} link={'/car'} linkText={"Check out the List"} gradient={"from-red-950 to-orange-800"}/>
+//                         </div>
+//                         <div className="my-2 mb-10 max-w-2xl flex-row flex space-x-2">
+//                             <BubbleDiv header={`${state.eVRebate} for Fully Electric Vehicles`} link={'/car'} linkText={"Check out the List"} gradient={"from-blue-500 to-green-300"}/>
+//                             <BubbleDiv header={`${state.hybridRebate} for Hybrid Vehicles`} link={'/car'} linkText={"Check out the List"} gradient={"from-red-950 to-orange-800"}/>
+//                         </div>
+//                         <div className="my-2 mb-10 max-w-2xl flex-row flex space-x-2">
+//                             <BubbleDiv header={`${state.eVRebate} for Fully Electric Vehicles`} link={'/car'} linkText={"Check out the List"} gradient={"from-blue-500 to-green-300"}/>
+//                             <BubbleDiv header={`${state.hybridRebate} for Hybrid Vehicles`} link={'/car'} linkText={"Check out the List"} gradient={"from-red-950 to-orange-800"}/>
+//                         </div>
+//                     </div>
+//                 </div>

@@ -5,8 +5,8 @@ export default function Page() {
             <Lines/>
             <div className="flex relative flex-col px-6 py-3 z-40">
                 <div className="flex flex-col mt-40 text-center">
-                    <p className="font-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-400 text-center mx-auto">
-                        About Us
+                    <p className="font-bold lg:text-6xl md:text-5xl p-2 sm:text-4xl text-3xl text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-blue-400 text-center mx-auto">
+                        Who are we at <em>HomeGrown</em>
                     </p>
                     <p className="py-5 lg:text-2xl md:text-xl sm:text-lg text-md text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-400 ">
                         We are Cab Calloway School of the Arts Technology Student Association. Hey maya... fix this

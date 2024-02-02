@@ -1,11 +1,12 @@
 'use client'
 
-import {newsreader} from "@/app/ui/fonts";
-import Search from "@/app/ui/search";
+import {inter, dmSerif} from "@/app/ui/fonts";
 import {ComposableMap, Geographies, Geography} from "react-simple-maps";
 import {useRouter} from "next/navigation";
 import BubbleDiv from "@/app/ui/learn/BubbleDiv";
 import Lines from "@/app/ui/lines";
+import Card from "@/app/ui/Card";
+
 export default function Page() {
     const router = useRouter();
 
@@ -21,53 +22,59 @@ export default function Page() {
         <main className="relative min-h-screen flex justify-center">
             <Lines/>
             <div className="relative z-40 mx-5">
-                <div className={"flex flex-col justify-center w-full mt-40"}>
-                    <p className={`mx-5 sm:mx-10 md:mx-20 font-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl px-2 text-center text-transparent bg-gradient-to-r from-pink-500 to-yellow-600 bg-clip-text`}>
-                        Tell us where you are so we can find the information for you.
+                <div className={"flex flex-col justify-center w-full mt-40 max-w-7xl"}>
+                    <p className={`${dmSerif.className} mx-5 sm:mx-10 md:mx-20 lg:text-6xl md:text-5xl sm:text-4xl text-3xl px-2 p-2 text-center tracking-tight text-transparent bg-gradient-to-r from-pink-500 to-yellow-600 bg-clip-text`}>
+                        Choose your state to find <em>region-specific</em> information
                     </p>
-                    <p className="font-bold text-center mb-5 lg:text-2xl md:text-xl sm:text-lg text-md my-5 mx-10 text-transparent bg-gradient-to-r from-pink-500 to-yellow-600 bg-clip-text">
+                    <p className={`${inter.className} font-medium text-center mb-5 lg:text-2xl md:text-xl sm:text-lg text-md my-5 mx-10 font-serif tracking-tight`}>
                         Or Just Scroll Below to find Federal Information
                     </p>
                     {/* add search later for nats
                                 <Search placeholder={'State...'}/>
-                */}<div className="pb-10">
-                    <ComposableMap width={800} height={500} projection={"geoAlbersUsa"}>
-                        <Geographies geography="/states.json">
-                            {({geographies}) =>
-                                geographies.map((geo) => (
-                                    <Geography key={geo.rsmKey}
-                                               geography={geo}
-                                               style={{
-                                                   default: {
-                                                       fill: "#000",
-                                                       stroke: "#FFF",
-                                                       strokeWidth: 1.5,
-                                                       outline: "none",
-                                                   },
-                                                   hover: {
-                                                       fill: "#56784D",
-                                                       stroke: "#FFF",
-                                                       strokeWidth: 1.5,
-                                                       outline: "none",
-                                                   },
-                                                   pressed: {
-                                                       outline: "none",
-                                                   }
-                                               }}
-                                               onClick={() => redirect(geo.properties.NAME.toLowerCase())}/>
-                                ))
-                            }
-                        </Geographies>
-                    </ComposableMap>
-                </div>
-                    <p className={`mx-5 sm:mx-10 md:mx-20 font-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl px-2 text-center text-transparent bg-gradient-to-r from-pink-500 to-yellow-600 bg-clip-text`}>
-                        Federal Information
+                */}
+                    <div className="pb-10">
+                        <ComposableMap width={800} height={500} projection={"geoAlbersUsa"}>
+                            <Geographies geography="/states.json">
+                                {({geographies}) =>
+                                    geographies.map((geo) => (
+                                        <Geography key={geo.rsmKey}
+                                                   geography={geo}
+                                                   style={{
+                                                       default: {
+                                                           fill: "#000",
+                                                           stroke: "#FFF",
+                                                           strokeWidth: 1.5,
+                                                           outline: "none",
+                                                       },
+                                                       hover: {
+                                                           fill: "#56784D",
+                                                           stroke: "#FFF",
+                                                           strokeWidth: 1.5,
+                                                           outline: "none",
+                                                       },
+                                                       pressed: {
+                                                           outline: "none",
+                                                       }
+                                                   }}
+                                                   onClick={() => redirect(geo.properties.NAME.toLowerCase())}/>
+                                    ))
+                                }
+                            </Geographies>
+                        </ComposableMap>
+                    </div>
+                    <p className={`${dmSerif.className}  sm:mx-10 md:mx-20 lg:text-6xl md:text-5xl sm:text-4xl text-3xl px-2 pt-20 text-center tracking-tight text-transparent bg-gradient-to-r from-pink-500 to-yellow-600 bg-clip-text`}>
+                        Federal Tax Rebate Information
                     </p>
-                    <div className="my-10 max-w-2xl mx-auto flex-row flex space-x-2 ">
-                        <BubbleDiv header={"$2,500 for Fully Electric Vehicles"} link={'/car'}
-                                   linkText={"Check out the List"} gradient={"from-blue-500 to-green-300"}/>
-                        <BubbleDiv header={"$1,500 for Hybrid Vehicles"} link={'/car'} linkText={"Check out the List"}
-                                   gradient={"from-red-950 to-orange-800"}/>
+                    <div className="flex flex-col md:flex-row md:space-x-4 md:space-y-0 space-y-4 p-10 m-10">
+                        <div className="grid grid-cols-2 gap-4 ">
+                            <div className="col-span-2">
+                                <Card title={["Car Tax Rebates"]} description={[]} right={false}/>
+                            </div>
+                            <Card title={["Electric Vehicles"]} description={["The U.S. Federal Government Offers up $7,500 in tax rebates for purchasing or leasing an electric vehicle"]} right={false}/>
+                            <Card title={["Hybrid Vehicles"]} description={["Some Hybrid Vehicles are eligible for Federal Tax Credits starting from $3,700"]} right={false}/>
+                        </div>
+                        <Card title={["Solar Panel Incentives"]} description={["Learn more about the incentives offered in your state!"]} right={false}/>
+
                     </div>
                 </div>
             </div>

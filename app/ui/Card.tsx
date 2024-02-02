@@ -1,3 +1,5 @@
+import {newsreader, inter} from "@/app/ui/fonts";
+
 interface CardProps {
     title: string[];
     description: string[];
@@ -11,10 +13,10 @@ export default function Card({title, description, right, color}: CardProps) {
             <div className="flex flex-col space-y-5">
                 {title.map((titles, index) => (
                     <div key={index}>
-                        <p className={`text-green-500 text-left font-bold py-2`}>
+                        <p className={`${newsreader.className} font-semibold text-md sm:text-lg md:text-xl lg:text-2xl text-green-500 text-left py-2`}>
                             {titles}
                         </p>
-                        <p className="text-left">
+                        <p className={`text-left ${inter.className} font-light`}>
                             {description[index]}
                         </p>
                     </div>
