@@ -7,19 +7,18 @@ import {useDebounce} from "use-debounce";
 import {usePathname} from "next/navigation";
 import clsx from "clsx";
 import Image from "next/image";
+import {useScroll} from "@react-spring/web";
 
 
 export default function NavBar2() {
     const [isMenuOpen, setMenuOpen] = useState(false);
-
+    const { scrollYProgress } = useScroll()
     const [isScrolled, setIsScrolled] = useState(false);
-    //this fucking debounce doesnt work but lets wait until site crashes to fix
     const [debouncedScroll] = useDebounce(handleScroll, 200);
     const pathname = usePathname();
 
     useEffect(() => {
         window.addEventListener('scroll', debouncedScroll);
-
         return () => {
             window.removeEventListener('scroll', debouncedScroll);
         };

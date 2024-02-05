@@ -2,6 +2,7 @@
 import Lines from "@/app/ui/lines";
 import React, { useState, useEffect } from 'react';
 import BubbleDiv from "@/app/ui/learn/BubbleDiv";
+import AnimatedLine from "@/app/ui/learn/animatedLine";
 
 
 const events = [
@@ -9,21 +10,20 @@ const events = [
 ];
 
 export default function Page() {
-    const [fillHeight, setFillHeight] = useState(0);
-
-    const handleScroll = () => {
-        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrolled = window.scrollY;
-        const percentage = (scrolled / scrollHeight) * 100;
-        setFillHeight(percentage);
-    };
+    const [scrollPosition, setScrollPosition] = useState(0);
 
     useEffect(() => {
+        const handleScroll = () => {
+            setScrollPosition(window.scrollY);
+        };
+
         window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+    const pivotPoints = [0, 300, 600, 900];
 
     return (
         <main className="relative min-h-screen flex justify-center">
@@ -40,9 +40,48 @@ export default function Page() {
                             Are you Ready to Change<br/> the World?
                         </p>
                     </div>
-                    <div className="bg-blue-400">
-
+                    <AnimatedLine scrollPosition={scrollPosition} pivotPoints={pivotPoints} />
+                    <div className="p-40">
+he
                     </div>
+                    <div className="p-40">
+                        he
+                    </div>
+                    <div className="p-40">
+                        he
+                    </div>
+                    <div className="p-40">
+                        he
+                    </div><div className="p-40">
+                    he
+                </div><div className="p-40">
+                    he
+                </div><div className="p-40">
+                    he
+                </div><div className="p-40">
+                    he
+                </div><div className="p-40">
+                    he
+                </div>
+                    <div className="p-40">
+                        he
+                    </div><div className="p-40">
+                    he
+                </div><div className="p-40">
+                    he
+                </div><div className="p-40">
+                    he
+                </div>
+
+
+
+
+
+
+
+
+
+
                 </div>
             </div>
         </main>

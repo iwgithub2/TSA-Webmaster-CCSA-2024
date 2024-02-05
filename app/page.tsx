@@ -18,7 +18,7 @@ export default function Page() {
                         Learn what we can do for you.
                     </span>
                 </Link>
-                <p className={`${inter.className} font-light text-center max-w-xl mx-auto my-20 text-2xl`}>
+                <p className={`${inter.className} font-light text-center md:max-w-xl mx-auto my-20 text-md sm:text-lg md:text-xl lg:text-2xl`}>
                     Welcome to HomeGrown: Where sustainability meets
                     affordability. Explore a diverse list of clean energy
                     solutions taylored for just you. Join us in the effort to
