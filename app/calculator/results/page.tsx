@@ -40,48 +40,6 @@ export default function Page() {
                             Are you Ready to Change<br/> the World?
                         </p>
                     </div>
-                    <AnimatedLine scrollPosition={scrollPosition} pivotPoints={pivotPoints} />
-                    <div className="p-40">
-he
-                    </div>
-                    <div className="p-40">
-                        he
-                    </div>
-                    <div className="p-40">
-                        he
-                    </div>
-                    <div className="p-40">
-                        he
-                    </div><div className="p-40">
-                    he
-                </div><div className="p-40">
-                    he
-                </div><div className="p-40">
-                    he
-                </div><div className="p-40">
-                    he
-                </div><div className="p-40">
-                    he
-                </div>
-                    <div className="p-40">
-                        he
-                    </div><div className="p-40">
-                    he
-                </div><div className="p-40">
-                    he
-                </div><div className="p-40">
-                    he
-                </div>
-
-
-
-
-
-
-
-
-
-
                 </div>
             </div>
         </main>
