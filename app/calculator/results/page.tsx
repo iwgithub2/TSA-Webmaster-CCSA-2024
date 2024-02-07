@@ -32,6 +32,7 @@ export default function Page() {
                     </a>
 
                     <div id="Results" className="my-40">
+                        <Image src={'/LogoNo_Background.svg'} alt="Percentage Fill Up" width={500} height={500}/>
                     </div>
                 </div>
             </div>

@@ -48,7 +48,7 @@ export default function NavBar2() {
                     className={`${newsreader.className} text-green-900 text-lg sm:text-xl md:text-2xl lg:text-3xl`}>
                     HomeGrown
                 </span>
-                <Image className="mx-2" src={'/LogoNo_Background.svg'} alt={"Logo"} height={30} width={30}/>
+                <Image className="mx-2 mb-2" src={'/LogoNo_Background.svg'} alt={"Logo"} height={30} width={30}/>
 
             </Link>
 

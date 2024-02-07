@@ -3,6 +3,7 @@ import Search from "@/app/ui/search";
 import Image from "next/image";
 import Card from "@/app/ui/Card";
 import Lines from "@/app/ui/lines";
+
 export default function Page() {
     return (
         <main className="relative min-h-screen flex justify-center">
@@ -19,18 +20,22 @@ export default function Page() {
                         <Card title={["1. Reducing Energy Usage", "Estimated Cost"]} right={false}
                               description={["A great way to start is by turning off the lights and other electronic devices when you're not using them, as well as switching to energy-efficient appliances.",
                                   "Not only is using less energy great for the environment, but it lowers your electricity bill, saving you money!"]}
+                              image={'/practice_images/practices_energyconserve.svg'}
                         />
                         <Card title={["2. Carpooling", "Estimated Cost"]} right={true}
                               description={["Shared car rides with friends and family can be a clean green way to spend time together. Carpooling or public transportation lowers gas consumption, as well as decreases air pollution!",
                                   "When carpooling, costs can be cut by splitting money for gas among the participants. The cost of public transportation will vary depending on the area."]}
+                              image={'/practice_images/practices_carpool.svg'}
                         />
                         <Card title={["3. Recycling", "Estimated Cost"]} right={false}
                               description={["REUSE, REDUCE, RECYCLE! Being conscious of your waste is easier than ever with the internet at your fingertips. Here are some helpful sources:",
                                   "Recycling is completely free and paid for by the government!"]}
+                              image={'/practice_images/practices_recycle.svg'}
                         />
                         <Card title={["4. Reducing water usage", "Estimated Cost"]} right={true}
                               description={["Wasting water is no joke, as a valuable resource it's important that you turn off the faucet and fix leaks in your house as quickly as possible. Another option is to install water efficient appliances.",
                                   "Although the initial investment for new appliances can be expensive, it is often evened out by long-term savings on the water bill."]}
+                              image={'/practice_images/practices_water.svg'}
                         />
                         <Card title={["5. Solar Panels", "Estimated Cost"]} right={false}
                               description={["Solar panels harness energy from the sun rather than relying on traditional carbon sources.",
@@ -51,14 +56,17 @@ export default function Page() {
                         <Card title={["9. Reusable containers", "Estimated Cost"]} right={false}
                               description={["Instead of purchasing and throwing away single use plastic containers, reusable solutions such as tupperwear limit waste.",
                                   "The initial cost of purchasing containers is small and gets rid of the need to purchase disposable alternatives."]}
+                              image={'/practice_images/practices_container.svg'}
                         />
                         <Card title={["10. Compost", "Estimated Cost"]} right={true}
                               description={["Through the process of decomposition, organic waste can be converted back to soil, rather than ending up in a toxic landfill.",
                                   "Composting is very cheap as the only purchase it requires is a bin to contain food waste."]}
+                              image={'/practice_images/practices_compost.svg'}
                         />
                         <Card title={["11. Electronic documents", "Estimated Cost"]} right={false}
                               description={["A simple way to stay clean and green is to convert your paper files to electronic documents. Opting to receive emails rather than paper saves trees, and reduces energy and resources used for printing.",
                                   "There should be no significant cost to going digital. Selecting an email receipt or  reports rather than mailed/printed are great ways to start."]}
+                              image={'/practice_images/practices_document.svg'}
                         />
                     </div>
 

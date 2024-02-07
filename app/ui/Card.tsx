@@ -1,4 +1,5 @@
 import {newsreader, inter} from "@/app/ui/fonts";
+import Image from "next/image";
 
 interface CardProps {
     title: string[];
@@ -6,9 +7,16 @@ interface CardProps {
     right: boolean;
     color?: string;
     maxWidth?: boolean;
+    image ?: string;
 }
 
-export default function Card({title, description, right, color, maxWidth}: CardProps) {
+export default function Card({title, description, right, color, maxWidth, image}: CardProps) {
+
+    let imageRender;
+
+    if (image != null) {
+        imageRender = <Image src={image} alt={"description"} height={50} width={50}/>
+    }
 
     return (
         <div className={`bg-white mr-5 shadow-2xl flex flex-col ${maxWidth ? "" : "lg:max-w-xl sm:max-w-2xl"}  w-full ${right ? "ml-auto" : "ar-auto"} p-10 rounded`}>
@@ -23,6 +31,7 @@ export default function Card({title, description, right, color, maxWidth}: CardP
                         </p>
                     </div>
             ))}
+                {imageRender}
             </div>
         </div>
     );

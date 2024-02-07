@@ -1,9 +1,6 @@
 'use client'
-
 import {usePathname} from "next/navigation";
 import {stateInfo} from "@/app/ui/learn/stateInfo";
-import {useEffect, useState} from "react";
-import {useDebounce} from "use-debounce";
 import Lines from "@/app/ui/lines";
 import Card from "@/app/ui/Card";
 import {dmSerif, inter, newsreader} from "@/app/ui/fonts";
@@ -46,24 +43,6 @@ export default function Page() {
     }
     if(taxString === "") {
         taxString = "Uh Oh, it looks like there are no tax exemptions for your state.";
-    }
-
-
-    const [scrollPercent, setScrollPercentage] = useState(0);
-    const [debouncedScroll] = useDebounce(handleScroll, 200);
-    useEffect(() => {
-        window.addEventListener('scroll', debouncedScroll);
-
-        return () => {
-            window.removeEventListener('scroll', debouncedScroll);
-        };
-    }, [debouncedScroll]);
-
-    function handleScroll() {
-        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrolled = window.scrollY;
-        const percentage = (scrolled / scrollHeight) * 100;
-        setScrollPercentage(percentage);
     }
 
     return (
