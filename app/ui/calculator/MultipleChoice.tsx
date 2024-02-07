@@ -5,7 +5,7 @@ interface MultipleChoiceProps {
 
 export default function MultipleChoice({options, idNum}: MultipleChoiceProps) {
     return (
-        <div className="space-y-2">
+        <div className="space-y-2 mr-auto px-10">
             {options.map((option) => (
                 <div className="flex items-center" key={option + "choice"} >
                     <input type="radio" id={option + "_" + idNum} name="size" value="small" />

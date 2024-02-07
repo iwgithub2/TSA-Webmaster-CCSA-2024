@@ -1,6 +1,7 @@
 import {useRouter} from "next/navigation";
 import MultipleChoice from "@/app/ui/calculator/MultipleChoice";
 import Checkbox from "@/app/ui/calculator/Checkbox";
+import DropDown from "@/app/ui/calculator/DropDown";
 
 export interface QuestionProps {
     id: number;
@@ -8,7 +9,7 @@ export interface QuestionProps {
     backLink: string;
     question: string;
     options: string[];
-    type: "multiple-choice" | "yes-no" | "check-box";
+    type: "multiple-choice" | "drop-down" | "check-box";
     onSelect: () => void;
 }
 
@@ -27,14 +28,14 @@ export default function Question({question}: { question: QuestionProps }) {
         case "multiple-choice":
             componentToRender = <MultipleChoice options={question.options} idNum={question.id}/>
             break;
-        case "yes-no":
-            componentToRender = <MultipleChoice options={question.options} idNum={question.id}/>
+        case "drop-down":
+            componentToRender = <DropDown options={question.options}/>
     }
 
     return (
         <div
             className="flex flex-col shadow-2xl bg-white rounded-2xl w-full  py-5 px-10 items-center">
-            <p className="font-bold text-3xl my-4">
+            <p className="font-bold text-center text-3xl my-4">
                 {question.question}
             </p>
             {componentToRender}

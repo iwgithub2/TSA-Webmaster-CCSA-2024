@@ -6,6 +6,7 @@ import {useState} from "react";
 import Lines from "@/app/ui/lines";
 import {dmSerif} from "@/app/ui/fonts";
 import Link from "next/link";
+import {statesArray} from "@/app/ui/learn/stateInfo";
 
 
 export default function Page() {
@@ -27,39 +28,47 @@ export default function Page() {
             id: 0,
             forwardLink: "#1",
             backLink: "#",
-            question: "This is multiple Choice",
-            options: ["yes", "no"],
-            type: "multiple-choice",
+            question: "What State do you live in?",
+            options: statesArray,
+            type: "drop-down",
             onSelect: handleSelection
         },
         {
             id: 1,
             forwardLink: "#2",
             backLink: "#0",
-            question: "Would you have a hybrid vehicle, electric vehicle, or solar panels?",
-            options: ["Electric Vehicle", "Hybrid Vehicle", "Solar Panels"],
-            type: "check-box",
+            question: "Does your State have Tax Rebates for EV?",
+            options: ["yes", "no"],
+            type: "multiple-choice",
             onSelect: handleSelection
         },
         {
             id: 2,
             forwardLink: "#3",
             backLink: "#1",
+            question: "Would you have a hybrid vehicle, electric vehicle, or solar panels?",
+            options: ["Electric Vehicle", "Hybrid Vehicle", "Solar Panels"],
+            type: "check-box",
+            onSelect: handleSelection
+        },
+        {
+            id: 3,
+            forwardLink: "#4",
+            backLink: "#2",
             question: "What practices do you do?",
             options: ["Reducing Energy Usage", "Carpooling", "Recycling", "Reducing Water Usage", "Home Garden", "Thrifting", "Reusable Containers", "Compost", "Electric Documents"],
             type: "check-box",
             onSelect: handleSelection
         },
         {
-            id: 3,
+            id: 4,
             forwardLink: "#End",
-            backLink: "#2",
+            backLink: "#3",
             question: "What practices would you do?",
             options: ["Reducing Energy Usage", "Carpooling", "Recycling", "Reducing Water Usage", "Home Garden", "Thrifting", "Reusable Containers", "Compost", "Electric Documents"],
             type: "check-box",
             onSelect: handleSelection
         },
-        //       {id: "2", forwardLink: "#End", backLink: "#1", question: "What else do we need?", options: ["yes","no"], type: "yes-no", onSelect: handleSelection  },
 
     ]
 
@@ -68,7 +77,7 @@ export default function Page() {
             <Lines/>
             <div className="relative z-40">
                 <div className="flex flex-col mt-40">
-                    <p className={`${dmSerif.className} max-w-5xl font-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl text-center py-10 px-2 tracking-tight bg-gradient-to-r from-green-500 to-yellow-400 bg-clip-text text-transparent`}>
+                    <p className={`${dmSerif.className} max-w-5xl lg:text-6xl md:text-5xl sm:text-4xl text-3xl text-center py-10 px-2 tracking-tight bg-gradient-to-r from-green-500 to-yellow-400 bg-clip-text text-transparent`}>
                         Take Our Quiz to Find Out What Green Energy Solutions Work for You
                     </p>
                     <a href="#Start"
@@ -81,7 +90,7 @@ export default function Page() {
                                    height={20}/>
                         </div>
                     </a>
-                    <div id="Start" className="flex flex-col items-center scroll-mt-40 mx-5 md:mx-auto space-y-20 my-40 max-w-3xl">
+                    <div id="Start" className="flex flex-col     scroll-mt-40 mx-5 md:mx-auto space-y-20 my-40 max-w-3xl">
                         {data.map((props, index) => (
                             <div id={`${index}`} key={index} className="scroll-mt-40">
                                 <Question question={props}/>

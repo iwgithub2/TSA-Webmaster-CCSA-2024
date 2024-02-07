@@ -1,20 +1,53 @@
 'use client'
 
 import {usePathname} from "next/navigation";
-import stateInfo from "@/app/ui/learn/stateInfo";
+import {stateInfo} from "@/app/ui/learn/stateInfo";
 import {useEffect, useState} from "react";
 import {useDebounce} from "use-debounce";
 import Lines from "@/app/ui/lines";
 import Card from "@/app/ui/Card";
-import {dmSerif} from "@/app/ui/fonts";
-import {Parallax, ParallaxLayer} from "@react-spring/parallax";
+import {dmSerif, inter, newsreader} from "@/app/ui/fonts";
 import Image from "next/image";
-import {useScroll, animated} from "@react-spring/web";
+
 
 export default function Page() {
     const pathname = usePathname();
-    const stateName = pathname.substring(pathname.lastIndexOf('/') + 1);
+    let stateName = pathname.substring(pathname.lastIndexOf('/') + 1);
     const state = stateInfo[stateName];
+    stateName = stateName.charAt(0).toUpperCase() + stateName.slice(1);
+    let eVString: string;
+    let hybridString: string;
+    let creditString: string = state.solarCredit;
+    let taxString: string = "";
+
+    if (creditString === "") {
+        creditString = "Sorry! Your state does not offer tax credits or rebates for solar power. Check out their other incentives!"
+    } else {
+        creditString = "The state of " + stateName + " has " + state.solarCredit + "."
+    }
+
+    if (state.eVRebate === 0) {
+        eVString = "Sorry! Your State doesn't offer Tax Credit for Electric Vehicles. Try buying a vehicle in another state.";
+    } else {
+        eVString = "The State of " + stateName + " offers up to $" + state.eVRebate + " in tax credits! Check out your state government's website more information on how to register.";
+    }
+
+    if (state.hybridRebate === 0) {
+        hybridString = "Sorry! Your State doesn't offer Tax Credit for Hybrid Vehicles. Try buying a vehicle in another state.";
+    } else {
+        hybridString = "The State of " + stateName + " offers up to $" + state.hybridRebate + " in tax credits! Check out your state government's website more information on how to register.";
+    }
+
+    if(state.propertyTaxExemption) {
+        taxString += "Good News! Your state gives you a property tax exemption. This means you don't have to pay property tax on the added values of solar panels to your property!";
+    }
+    if(state.salesTaxExemption) {
+        taxString += "Good News! Your state has voided all sales tax you have to pay to buy your solar panels!";
+    }
+    if(taxString === "") {
+        taxString = "Uh Oh, it looks like there are no tax exemptions for your state.";
+    }
+
 
     const [scrollPercent, setScrollPercentage] = useState(0);
     const [debouncedScroll] = useDebounce(handleScroll, 200);
@@ -34,50 +67,57 @@ export default function Page() {
     }
 
     return (
-        <main>
-            <div className="max-w-5xl">
-
-            <Parallax pages={2}>
-                <Lines/>
-                <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73' }} />
-                <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} />
-                <ParallaxLayer className="z-40" offset={0.2} speed={1}>
-                    <div>
-                        <p className={`${dmSerif.className}  lg:text-6xl md:text-5xl sm:text-4xl text-3xl text-center p-5 bg-gradient-to-r from-purple-500 to-red-600 bg-clip-text text-transparent`}>
-                            {stateName.charAt(0).toUpperCase() + stateName.slice(1)} Tax Rebate Information
-                        </p>
-                        <p className="text-center font-bold bg-gradient-to-r from-green-500 to-purple-400 bg-clip-text text-transparent text-md sm:text-lg md:text-xl lg:text-2xl">
-                            Being clean and green is hard. So let us do the work for you
-                        </p>
-                    </div>
-                </ParallaxLayer>
-                <div className="flex flex-row space-evenly">
-                    <ParallaxLayer offset={0.8} speed={2} factor={2}>
-                            <img src={state.image} alt={"state"} style={{marginLeft: '20%'}}/>
-                    </ParallaxLayer>
-                    <ParallaxLayer offset={1} speed={1}>
-                        <div style={{marginLeft: '30%'}}>
-                            <div className="flex flex-col space-y-4 p-10 m-10">
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div className="col-span-2">
-                                        <Card title={["Car Tax Rebates"]} description={[]} right={false}/>
-                                    </div>
-                                    <Card title={["Electric Vehicles"]} description={["The U.S. Federal Government Offers up $7,500 in tax rebates for purchasing or leasing an electric vehicle"]} right={false}/>
-                                    <Card title={["Hybrid Vehicles"]} description={["Some Hybrid Vehicles are eligible for Federal Tax Credits starting from $3,700"]} right={false}/>
-                                </div>
-                                <Card title={["Solar Panel Incentives"]} description={["Learn more about the incentives offered in your state!"]} right={false}/>
-
+        <main className="relative min-h-screen flex justify-center">
+            <Lines/>
+            <div className="flex relative flex-col justify-center px-6 py-3 z-40">
+                <div className=" mx-auto flex-col px-5 sm:px-10 md:px-10 justify-items-center mt-40 ">
+                    <p className={`${dmSerif.className} mx-auto text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-400 text-center lg:text-6xl md:text-5xl sm:text-4xl text-3xl py-5`}>
+                        {stateName} Tax Rebate Information
+                    </p>
+                    <div className="flex flex-col lg:grid lg:grid-cols-2 mt-40">
+                        <Image className="mx-auto" src={state.image} alt={"Picture"} width={300} height={400}/>
+                        <div className="flex flex-col space-y-4 p-10 m-10">
+                            <Card title={["Car Tax Rebates"]}
+                                  description={[]}
+                                  maxWidth={true}
+                                  right={false}/>
+                            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4">
+                                <Card title={["Electric Vehicles"]}
+                                      description={[eVString]}
+                                      right={false}/>
+                                <Card title={["Hybrid Vehicles"]}
+                                      description={[hybridString]}
+                                      right={false}/>
                             </div>
+                            <Card title={["Solar Panel Incentives"]}
+                                  description={[creditString]} right={false}
+                                  maxWidth={true}/>
+                            <Card title={["Tax Exemptions"]}
+                                  description={[taxString]}
+                                  right={false}
+                                  maxWidth={true}/>
                         </div>
-                    </ParallaxLayer>
-                </div>
-            </Parallax>
-            </div>
+                    </div>
 
+                </div>
+            </div>
         </main>
+
 
     );
 }
+
+//<div className="bg-green-400 items-center">
+//                                 <div
+//                                     className={`bg-white mr-5 shadow-2xl flex flex-col  w-full  p-10 rounded`}>
+//                                     <div className="flex flex-col space-y-5">
+//                                         <p className={`${newsreader.className} font-semibold text-green-500 text-md sm:text-lg md:text-xl lg:text-2xl text-left py-2`}>
+//                                             {["Car Tax Rebates"]}
+//                                         </p>
+//                                     </div>
+//                                 </div>
+//                             </div>
+
 //<div className="flex flex-col space-y-4 w-1/2 p-10 m-10 ml-auto">
 //                     <div className="grid grid-cols-2 gap-4">
 //                         <div className="col-span-2">
@@ -121,3 +161,43 @@ export default function Page() {
 //                         </div>
 //                     </div>
 //                 </div>
+
+
+//<div className="max-w-5xl">
+//
+//             <Parallax pages={2}>
+//                 <Lines/>
+//                 <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73' }} />
+//                 <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} />
+//                 <ParallaxLayer className="z-40" offset={0.2} speed={1}>
+//                     <div>
+//                         <p className={`${dmSerif.className}  lg:text-6xl md:text-5xl sm:text-4xl text-3xl text-center p-5 bg-gradient-to-r from-purple-500 to-red-600 bg-clip-text text-transparent`}>
+//                             {stateName.charAt(0).toUpperCase() + stateName.slice(1)} Tax Rebate Information
+//                         </p>
+//                         <p className="text-center font-bold bg-gradient-to-r from-green-500 to-purple-400 bg-clip-text text-transparent text-md sm:text-lg md:text-xl lg:text-2xl">
+//                             Being clean and green is hard. So let us do the work for you
+//                         </p>
+//                     </div>
+//                 </ParallaxLayer>
+//                 <div className="flex flex-row space-evenly">
+//                     <ParallaxLayer offset={0.8} speed={2} factor={2}>
+//                             <img src={state.image} alt={"state"} style={{marginLeft: '20%'}}/>
+//                     </ParallaxLayer>
+//                     <ParallaxLayer offset={1} speed={1}>
+//                         <div style={{marginLeft: '30%'}}>
+//                             <div className="flex flex-col space-y-4 p-10 m-10">
+//                                 <div className="grid grid-cols-2 gap-4">
+//                                     <div className="col-span-2">
+//                                         <Card title={["Car Tax Rebates"]} description={[]} right={false}/>
+//                                     </div>
+//                                     <Card title={["Electric Vehicles"]} description={["The U.S. Federal Government Offers up $7,500 in tax rebates for purchasing or leasing an electric vehicle"]} right={false}/>
+//                                     <Card title={["Hybrid Vehicles"]} description={["Some Hybrid Vehicles are eligible for Federal Tax Credits starting from $3,700"]} right={false}/>
+//                                 </div>
+//                                 <Card title={["Solar Panel Incentives"]} description={["Learn more about the incentives offered in your state!"]} right={false}/>
+//
+//                             </div>
+//                         </div>
+//                     </ParallaxLayer>
+//                 </div>
+//             </Parallax>
+//             </div>

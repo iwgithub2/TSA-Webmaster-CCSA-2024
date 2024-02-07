@@ -1,17 +1,20 @@
 import Link from 'next/link';
 import Lines from "@/app/ui/lines";
 import Card from "@/app/ui/Card";
-import {dmSerif, inter} from "@/app/ui/fonts";
+import {dmSerif, inter, newsreader} from "@/app/ui/fonts";
 
 export default function Page() {
     return (
 
         <main className="relative min-h-screen flex justify-center">
             <Lines/>
-            <div className="flex relative flex-col justify-center px-6 py-3 mt-40 z-40">
-                <p className={`${dmSerif.className} font-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl text-center py-10 px-2 tracking-tight font-serif bg-gradient-to-r from-green-500 to-blue-400 bg-clip-text text-transparent`}>
-                    Where clean energy becomes <em>cheap</em> <br/>and <em>accessible</em>.
-                </p>
+            <div className={`flex relative flex-col justify-center px-6 py-3 mt-40 z-40`}>
+                <div className={`${dmSerif.className}`}>
+                    <p className={` lg:text-6xl md:text-5xl sm:text-4xl text-3xl text-center py-10 px-2 tracking-tight bg-gradient-to-r from-green-500 to-blue-400 bg-clip-text text-transparent`}>
+                        Where clean energy becomes <em>cheap</em> <br/>and <em>accessible</em>.
+                    </p>
+                </div>
+
                 <Link href="/learn"
                       className="flex items-center gap-5 self-start rounded-lg bg-darkgreen px-3 my-10 md:my-20 py-3 text-xs font-medium text-white transition-colors hover:bg-green-400  mx-auto">
                     <span className="tracking-tighter">
@@ -25,10 +28,19 @@ export default function Page() {
                     reach a greener more economical future for all.
                 </p>
                 <div className=" w-full px-10 flex-col space-y-10 md:space-y-20 my-10">
-                    <Card title={["Explore State Specific Policies"]} description={["Learn more about the incentives offered in your state!"]} right={false}/>
-                    <Card title={["Calculate Your Cost and Impact"]} description={["Take our  quiz to find out the impact you can have for a price that you can afford:"]} right={true}/>
-                    <Card title={["Learn More About HomeGrown"]} description={["Who are we? Meet the team behind this website and discover who we are."]} right={false}/>
-                    <Card title={["What Can You Do At Your Home?"]} description={["Here are some ways to get started with clean energy form the comfort of your own home!"]} right={true}/>
+                    <Card title={["Explore State Specific Policies"]}
+                          description={["Learn more about the incentives offered in your state!"]} right={false}/>
+                    <Card title={["Calculate Your Cost and Impact"]}
+                          description={["Take our  quiz to find out the impact you can have for a price that you can afford:"]}
+                          right={true}
+                    color="blue-500"/>
+                    <Card title={["Learn More About HomeGrown"]}
+                          description={["Who are we? Meet the team behind this website and discover who we are."]}
+                          right={false}
+                    color="red-500"/>
+                    <Card title={["What Can You Do At Your Home?"]}
+                          description={["Here are some ways to get started with clean energy form the comfort of your own home!"]}
+                          right={true}/>
                 </div>
 
             </div>

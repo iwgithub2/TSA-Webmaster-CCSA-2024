@@ -1,47 +1,42 @@
-'use client'
 import Lines from "@/app/ui/lines";
-import React, { useState, useEffect } from 'react';
-import BubbleDiv from "@/app/ui/learn/BubbleDiv";
-import AnimatedLine from "@/app/ui/learn/animatedLine";
+import {dmSerif} from "@/app/ui/fonts";
+import Image from "next/image";
+import DropDown from "@/app/ui/calculator/DropDown";
 
-
-const events = [
-
-];
 
 export default function Page() {
-    const [scrollPosition, setScrollPosition] = useState(0);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrollPosition(window.scrollY);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
-    const pivotPoints = [0, 300, 600, 900];
 
     return (
         <main className="relative min-h-screen flex justify-center">
             <Lines/>
             <div className="relative z-40 w-full">
-                <div className="flex flex-col mt-40 justify-center">
-                    <div className="bg-red-400 mx-auto">
-                        <div className="my-3 border-black border-2 mx-auto px-1 rounded-full">
-                            <p className="text-center text-sm">
-                                Cost Calculator
-                            </p>
-                        </div>
-                        <p className="font-bold text-gray-900 text-4xl text-center">
-                            Are you Ready to Change<br/> the World?
+                <div className="flex flex-col mt-40 items-center">
+                    <div className="my-3 border-black border-2 mx-auto px-2 py-1 rounded-full">
+                        <p className="text-center text-sm">
+                            Cost Calculator
                         </p>
+                    </div>
+                    <p className={`${dmSerif.className} max-w-5xl font-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl text-center py-10 px-2 tracking-tight bg-gradient-to-r from-green-500 to-yellow-400 bg-clip-text text-transparent`}>
+                        Are you Ready to Change<br/> the World?
+                    </p>
+                    <a href="#Results"
+                       className="flex items-center scroll-smooth gap-5 self-start rounded-lg  px-3 my-20 py-3 text-xs font-medium mx-auto">
+                        <div className="flex flex-col items-center p-2">
+                            <span>
+                               See Your Results
+                            </span>
+                            <Image src={"/down.svg"} alt="Down arrow " className="animate-bounce" width={20}
+                                   height={20}/>
+                        </div>
+                    </a>
+
+                    <div id="Results" className="my-40">
                     </div>
                 </div>
             </div>
         </main>
     );
 }
+
+//                        <Image src={'/LogoNo_Background.svg'} alt="Percentage Fill Up" width={500} height={500}/>

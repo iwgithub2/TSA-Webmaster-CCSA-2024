@@ -65,15 +65,15 @@ export default function Page() {
                     <p className={`${dmSerif.className}  sm:mx-10 md:mx-20 lg:text-6xl md:text-5xl sm:text-4xl text-3xl px-2 pt-20 text-center tracking-tight text-transparent bg-gradient-to-r from-pink-500 to-yellow-600 bg-clip-text`}>
                         Federal Tax Rebate Information
                     </p>
-                    <div className="flex flex-col md:flex-row md:space-x-4 md:space-y-0 space-y-4 p-10 m-10">
-                        <div className="grid grid-cols-2 gap-4 ">
+                    <div className="flex flex-col md:flex-row md:space-x-4 md:space-y-0 space-y-4 md:p-10 m-10">
+                        <div className="flex flex-col md:grid md:grid-cols-2 gap-4 ">
                             <div className="col-span-2">
                                 <Card title={["Car Tax Rebates"]} description={[]} right={false}/>
                             </div>
                             <Card title={["Electric Vehicles"]} description={["The U.S. Federal Government Offers up $7,500 in tax rebates for purchasing or leasing an electric vehicle"]} right={false}/>
                             <Card title={["Hybrid Vehicles"]} description={["Some Hybrid Vehicles are eligible for Federal Tax Credits starting from $3,700"]} right={false}/>
                         </div>
-                        <Card title={["Solar Panel Incentives"]} description={["Learn more about the incentives offered in your state!"]} right={false}/>
+                        <Card title={["Solar Panel Incentives"]} description={["The Federal Tax Credit for Solar Panels can give homeowners up to 30% off the cost of installing their solar system"]} right={false}/>
 
                     </div>
                 </div>

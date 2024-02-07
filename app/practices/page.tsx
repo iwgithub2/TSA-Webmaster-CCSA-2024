@@ -1,4 +1,4 @@
-import {newsreader} from "@/app/ui/fonts";
+import {dmSerif, newsreader} from "@/app/ui/fonts";
 import Search from "@/app/ui/search";
 import Image from "next/image";
 import Card from "@/app/ui/Card";
@@ -9,7 +9,7 @@ export default function Page() {
             <Lines/>
             <div className="flex relative flex-col justify-center px-6 py-3 z-40">
                 <div className=" mx-auto flex-col px-5 sm:px-10 md:px-10 justify-items-center mt-40 ">
-                    <p className="mx-auto text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-400 text-center font-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl">
+                    <p className={`${dmSerif.className} mx-auto text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-400 text-center lg:text-6xl md:text-5xl sm:text-4xl text-3xl`}>
                         Common Environmental Practices
                     </p>
                     <p className="text-center py-4 font-extrabold text-transparent bg-clip-text w-full bg-gradient-to-r from-green-500 to-blue-400 lg:text-2xl md:text-xl sm:text-lg text-md">

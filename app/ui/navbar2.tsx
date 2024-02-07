@@ -1,7 +1,6 @@
 'use client'
 import Link from 'next/link';
-import NavLinks from "@/app/ui/nav-links";
-import {newsreader} from "@/app/ui/fonts";
+import {dmSerif, newsreader} from "@/app/ui/fonts";
 import React, {useState, useEffect} from "react";
 import {useDebounce} from "use-debounce";
 import {usePathname} from "next/navigation";
@@ -44,10 +43,13 @@ export default function NavBar2() {
                 className="flex items-end justify-start p-4 "
                 href="/"
             >
+
                 <span
-                    className={`${newsreader.className} text-green-900 text-md sm:text-lg md:text-xl lg:text-2xl`}>
+                    className={`${newsreader.className} text-green-900 text-lg sm:text-xl md:text-2xl lg:text-3xl`}>
                     HomeGrown
                 </span>
+                <Image className="mx-2" src={'/LogoNo_Background.svg'} alt={"Logo"} height={30} width={30}/>
+
             </Link>
 
             <ul className="hidden md:flex">
