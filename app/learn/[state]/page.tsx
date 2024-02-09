@@ -12,6 +12,15 @@ export default function Page() {
     let stateName = pathname.substring(pathname.lastIndexOf('/') + 1);
     const state = stateInfo[stateName];
     stateName = stateName.charAt(0).toUpperCase() + stateName.slice(1);
+
+    if (stateName.includes('_')) {
+        // Split the input string at underscores and capitalize each word
+        const words = stateName.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1));
+
+        // Join the capitalized words with a space
+        stateName = words.join(' ');
+    }
+
     let eVString: string;
     let hybridString: string;
     let creditString: string = state.solarCredit;
@@ -42,7 +51,7 @@ export default function Page() {
         taxString += "Good News! Your state has voided all sales tax you have to pay to buy your solar panels!";
     }
     if(taxString === "") {
-        taxString = "Uh Oh, it looks like there are no tax exemptions for your state.";
+        taxString = "Uh Oh, it looks like there are no tax exemptions for your state. Don't worry you can still use the federal tax credit to get money of your solar panel purchases!";
     }
 
     return (
@@ -53,9 +62,10 @@ export default function Page() {
                     <p className={`${dmSerif.className} mx-auto text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-400 text-center lg:text-6xl md:text-5xl sm:text-4xl text-3xl py-5`}>
                         {stateName} Tax Rebate Information
                     </p>
-                    <div className="flex flex-col lg:grid lg:grid-cols-2 mt-40">
-                        <Image className="mx-auto" src={state.image} alt={"Picture"} width={300} height={400}/>
-                        <div className="flex flex-col space-y-4 p-10 m-10">
+                    <Image className="mx-auto mt-20" src={state.image} alt={"Picture"} width={300} height={400}/>
+                    <div className="flex flex-col mt-40">
+                        {/* until ik wtf im doing lg:grid lg:grid-cols-2 */}
+                        <div className="flex flex-col space-y-4 p-10">
                             <Card title={["Car Tax Rebates"]}
                                   description={[]}
                                   maxWidth={true}

@@ -15,10 +15,10 @@ export default function Page() {
                     </p>
                 </div>
 
-                <Link href="/learn"
+                <Link href="/calculator"
                       className="flex items-center gap-5 self-start rounded-lg bg-darkgreen px-3 my-10 md:my-20 py-3 text-xs font-medium text-white transition-colors hover:bg-green-400  mx-auto">
                     <span className="tracking-tighter">
-                        Learn what we can do for you.
+                        Calculate Your Score
                     </span>
                 </Link>
                 <p className={`${inter.className} font-light text-center md:max-w-xl mx-auto my-20 text-md sm:text-lg md:text-xl lg:text-2xl`}>
@@ -28,19 +28,40 @@ export default function Page() {
                     reach a greener more economical future for all.
                 </p>
                 <div className=" w-full px-10 flex-col space-y-10 md:space-y-20 my-10">
-                    <Card title={["Explore State Specific Policies"]}
-                          description={["Learn more about the incentives offered in your state!"]} right={false}/>
-                    <Card title={["Calculate Your Cost and Impact"]}
-                          description={["Take our  quiz to find out the impact you can have for a price that you can afford:"]}
-                          right={true}
-                    color="blue-500"/>
-                    <Card title={["Learn More About HomeGrown"]}
-                          description={["Who are we? Meet the team behind this website and discover who we are."]}
-                          right={false}
-                    color="red-500"/>
-                    <Card title={["What Can You Do At Your Home?"]}
-                          description={["Here are some ways to get started with clean energy form the comfort of your own home!"]}
-                          right={true}/>
+                    <div>
+                    <Link href={'/learn'}>
+                        <Card title={["Explore State Specific Policies"]}
+                              description={["Learn more about the incentives offered in your state!"]} right={false}
+                              image={'/practice_images/home_states.svg'}/>
+                    </Link>
+                    </div>
+                    <div>
+                    <Link href={'/practices'}>
+                        <Card title={["What Can You Do At Your Home?"]}
+                              description={["Here are some ways to get started with clean energy form the comfort of your own home!"]}
+                              right={true}
+                              image={'/practice_images/home_practices.svg'}
+                        color="yellow-500"/>
+                    </Link>
+                    </div>
+                    <div>
+                    <Link href={'/calculator'}>
+                        <Card title={["Calculate Your Cost and Impact"]}
+                              description={["Take our  quiz to find out the impact you can have for a price that you can afford:"]}
+                              right={false}
+                              color="blue-500"
+                        />
+                    </Link>
+                    </div>
+                    <div>
+                    <Link href={'/about'}>
+                        <Card title={["Learn More About HomeGrown"]}
+                              description={["Who are we? Meet the team behind this website and discover who we are."]}
+                              right={true}
+                              color="red-500"/>
+                    </Link>
+                    </div>
+
                 </div>
 
             </div>

@@ -11,9 +11,9 @@ export default function Page() {
                     <p className={`${dmSerif.className}  lg:text-6xl md:text-5xl p-2 sm:text-4xl text-3xl text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-blue-400 text-center mx-auto`}>
                         Who are we at <em>HomeGrown</em>
                     </p>
-                    <div className={`flex flex-col lg:flex-row mt-20 mx-5 mx-auto`}>
-                        <Image className="mr-10" src={'/LogoNo_Background.svg'} alt={"Percentage Fill Up"} width={200} height={200}/>
-                        <p className="py-5 lg:text-2xl md:text-xl sm:text-lg text-md text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-400 max-w-2xl">
+                    <div className={`flex flex-col lg:flex-row mt-20 mx-5`}>
+                        <Image className="mx-auto" src={'/LogoNo_Background.svg'} alt={"Percentage Fill Up"} width={200} height={200}/>
+                        <p className="py-5 mx-2 lg:text-2xl md:text-xl sm:text-lg text-md text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-400 max-w-2xl ">
                             Our mission is to make clean green solutions available to everyone. We believe that saving th
                             environment does not have to be expensive. That is why we make cheaper alternatives easy and
                             accessible to homeowners across the country. A clean Earth starts with YOU. Thank you for your
@@ -30,14 +30,14 @@ export default function Page() {
                         “Solar Investment Tax Credit (ITC) | SEIA.” Solar Energy Industries Association, https://www.seia.org/initiatives/solar-investment-tax-credit-itc. Accessed 7 February 2024.<br/>
                         Wark, Ciaran. “40 Ways to Be More Eco Friendly in 2024.” GreenMatch, 27 November 2023, https://www.greenmatch.co.uk/blog/how-to-be-more-eco-friendly. Accessed 7 February 2024.
                     </p>
-                    <div className="flex flex-row mx-auto space-x-4 mt-20">
+                    <div className="flex flex-col space-x-0 space-y-10 md:flex-row mx-auto md:space-y-0 md:space-x-4 mt-20 ">
                         <a href="https://drive.google.com/file/d/10djhE0odOB-HVM_DKksp8ob0EmW2BUtu/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-                        <span className={`bg-green-100 p-4 rounded shadow-xl ${inter.className} text-black`}>
+                        <span className={`lg:text-2xl md:text-xl sm:text-lg text-md bg-green-100 p-4 rounded shadow-xl ${inter.className} text-black`}>
                               Student Copyright Checklist
                         </span>
                         </a>
                         <a href="https://drive.google.com/file/d/10PixtVZ32xAUd4pixh-F1eca9gbP7EsE/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-                        <span className={`bg-green-100 p-4 rounded shadow-xl ${inter.className} text-black`}>
+                        <span className={`lg:text-2xl md:text-xl sm:text-lg text-md bg-green-100 p-4 rounded shadow-xl ${inter.className} text-black`}>
                             Plan of Work Log
                         </span>
                         </a>
