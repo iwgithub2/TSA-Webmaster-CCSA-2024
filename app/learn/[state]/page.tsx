@@ -70,13 +70,20 @@ export default function Page() {
                                   description={[]}
                                   maxWidth={true}
                                   right={false}/>
-                            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4">
-                                <Card title={["Electric Vehicles"]}
-                                      description={[eVString]}
-                                      right={false}/>
-                                <Card title={["Hybrid Vehicles"]}
-                                      description={[hybridString]}
-                                      right={false}/>
+                            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 ">
+                                <div>
+                                    <Card title={["Electric Vehicles"]}
+                                          description={[eVString]}
+                                          right={true}/>
+                                </div>
+
+                                <div className="bg-red-400">
+                                    <Card title={["Hybrid Vehicles"]}
+                                          description={[hybridString]}
+                                          right={true}/>
+                                </div>
+
+
                             </div>
                             <Card title={["Solar Panel Incentives"]}
                                   description={[creditString]} right={false}
