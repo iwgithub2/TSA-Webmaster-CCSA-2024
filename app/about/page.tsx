@@ -1,5 +1,5 @@
 import Lines from "@/app/ui/lines";
-import {dmSerif} from "@/app/ui/fonts";
+import {dmSerif, inter} from "@/app/ui/fonts";
 import Image from "next/image";
 
 export default function Page() {
@@ -8,7 +8,7 @@ export default function Page() {
             <Lines/>
             <div className="flex relative flex-col px-6 py-3 z-40">
                 <div className="flex flex-col mt-40 text-center">
-                    <p className={`${dmSerif.className} font-bold lg:text-6xl md:text-5xl p-2 sm:text-4xl text-3xl text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-blue-400 text-center mx-auto`}>
+                    <p className={`${dmSerif.className}  lg:text-6xl md:text-5xl p-2 sm:text-4xl text-3xl text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-blue-400 text-center mx-auto`}>
                         Who are we at <em>HomeGrown</em>
                     </p>
                     <div className={`flex flex-col lg:flex-row mt-20 mx-5 mx-auto`}>
@@ -21,7 +21,7 @@ export default function Page() {
                         </p>
                     </div>
 
-                    <p className={`${dmSerif.className} my-20 font-bold lg:text-6xl md:text-5xl p-2 sm:text-4xl text-3xl text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-blue-400 text-center mx-auto`}>
+                    <p className={`${dmSerif.className} my-20 lg:text-6xl md:text-5xl p-2 sm:text-4xl text-3xl text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-blue-400 text-center mx-auto`}>
                         References and Works Cited
                     </p>
                     <p className="py-5 lg:text-2xl md:text-xl sm:text-lg text-md text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-400 max-w-4xl mx-auto ">
@@ -30,11 +30,20 @@ export default function Page() {
                         “Solar Investment Tax Credit (ITC) | SEIA.” Solar Energy Industries Association, https://www.seia.org/initiatives/solar-investment-tax-credit-itc. Accessed 7 February 2024.<br/>
                         Wark, Ciaran. “40 Ways to Be More Eco Friendly in 2024.” GreenMatch, 27 November 2023, https://www.greenmatch.co.uk/blog/how-to-be-more-eco-friendly. Accessed 7 February 2024.
                     </p>
-                    <p className={`${dmSerif.className} my-20 font-bold lg:text-6xl md:text-5xl p-2 sm:text-4xl text-3xl text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-blue-400 text-center mx-auto`}>
-                        Copyright Checklist: (unsigned)
-                        Plan of Work Log: (unsigned)
+                    <div className="flex flex-row mx-auto space-x-4 mt-20">
+                        <a href="https://drive.google.com/file/d/10djhE0odOB-HVM_DKksp8ob0EmW2BUtu/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                        <span className={`bg-green-100 p-4 rounded shadow-xl ${inter.className} text-black`}>
+                              Student Copyright Checklist
+                        </span>
+                        </a>
+                        <a href="https://drive.google.com/file/d/10PixtVZ32xAUd4pixh-F1eca9gbP7EsE/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                        <span className={`bg-green-100 p-4 rounded shadow-xl ${inter.className} text-black`}>
+                            Plan of Work Log
+                        </span>
+                        </a>
+                    </div>
+                    <p className={`${dmSerif.className} my-20 lg:text-6xl md:text-5xl p-2 sm:text-4xl text-3xl text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-blue-400 text-center mx-auto`}>
                         WEBHS-21457-1
-
                     </p>
                 </div>
             </div>

@@ -1,11 +1,21 @@
+'use client'
 import Lines from "@/app/ui/lines";
 import {dmSerif} from "@/app/ui/fonts";
 import Image from "next/image";
-import DropDown from "@/app/ui/calculator/DropDown";
-
+import {useSearchParams} from "next/navigation";
+import {Answers} from "@/app/calculator/page";
+import {stateInfo} from "@/app/ui/learn/stateInfo";
 
 export default function Page() {
 
+    const searchParams = useSearchParams();
+    const data : Answers = JSON.parse(searchParams.get('data')!);
+    let score : number = 0;
+    score += stateInfo[data.state].eVRebate + stateInfo[data.state].eVRebate;
+    if (data.rebates) {
+        score += 10;
+    }
+    score += 10 * (data.numConsiderPractices + data.numPractices + data.solarOrEV);
 
     return (
         <main className="relative min-h-screen flex justify-center">
@@ -32,7 +42,10 @@ export default function Page() {
                     </a>
 
                     <div id="Results" className="my-40">
-                        <Image src={'/LogoNo_Background.svg'} alt="Percentage Fill Up" width={500} height={500}/>
+                        <Image className="mx-auto" src={'/LogoNo_Background.svg'} alt="Percentage Fill Up" width={500} height={500}/>
+                        <p className={`${dmSerif.className} max-w-5xl font-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl text-center py-10 px-2 tracking-tight bg-gradient-to-r from-green-500 to-yellow-400 bg-clip-text text-transparent`}>
+                            Score: {score}!
+                        </p>
                     </div>
                 </div>
             </div>

@@ -4,13 +4,14 @@ import Checkbox from "@/app/ui/calculator/Checkbox";
 import DropDown from "@/app/ui/calculator/DropDown";
 
 export interface QuestionProps {
-    id: number;
+    id: string;
     forwardLink: string;
     backLink: string;
     question: string;
     options: string[];
     type: "multiple-choice" | "drop-down" | "check-box";
     onSelect: () => void;
+    onAnswer: (property : "state" | "rebates" | "solarOrEV" | "numPractices" | "numConsiderPractices", change : any) => void;
 }
 
 export default function Question({question}: { question: QuestionProps }) {
@@ -23,13 +24,13 @@ export default function Question({question}: { question: QuestionProps }) {
 
     switch (question.type) {
         case "check-box":
-            componentToRender = <Checkbox options={question.options} idNum={question.id}/>
+            componentToRender = <Checkbox options={question.options} idNum={question.id} onAnswer={question.onAnswer}/>
             break;
         case "multiple-choice":
-            componentToRender = <MultipleChoice options={question.options} idNum={question.id}/>
+            componentToRender = <MultipleChoice options={question.options} idNum={question.id} onAnswer={question.onAnswer}/>
             break;
         case "drop-down":
-            componentToRender = <DropDown options={question.options}/>
+            componentToRender = <DropDown options={question.options} onAnswer={question.onAnswer}/>
     }
 
     return (

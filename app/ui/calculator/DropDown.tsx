@@ -1,13 +1,14 @@
-'use client'
-import {useState} from "react";
+import {useState, useRef, useEffect} from "react";
 
 interface DropDownProps {
     options: string[];
+    onAnswer: (property : "state" | "rebates" | "solarOrEV" | "numPractices" | "numConsiderPractices", change : any) => void;
 }
 
-export default function DropDown({options}: DropDownProps) {
+export default function DropDown({options, onAnswer}: DropDownProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState("");
+    const dropdownRef = useRef<HTMLDivElement>(null);
 
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
@@ -15,11 +16,34 @@ export default function DropDown({options}: DropDownProps) {
 
     const handleOptionClick = (option : string) => {
         setSelectedOption(option);
+        if (option.includes(' ')) {
+            option = option.replace(' ', '_');
+        }
+        onAnswer("state", option.toLowerCase());
         setIsOpen(false);
     };
 
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (
+                dropdownRef.current &&
+                !dropdownRef.current.contains(event.target as Node)
+            ) {
+                setIsOpen(false);
+            }
+        }
+
+        // Bind the event listener
+        document.addEventListener("mousedown", handleClickOutside);
+
+        // Unbind the event listener on cleanup
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [dropdownRef]);
+
     return (
-        <div className="relative inline-block text-left w-1/2">
+        <div className="relative inline-block text-left w-1/2" ref={dropdownRef}>
             <div>
                 <button
                     type="button"
@@ -33,7 +57,7 @@ export default function DropDown({options}: DropDownProps) {
 
             {isOpen && (
                 <div className="origin-top-right absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <div className="py-1">
+                    <div className="py-1 overflow-y-auto max-h-40">
                         {options.map((option) => (
                             <button
                                 key={option}

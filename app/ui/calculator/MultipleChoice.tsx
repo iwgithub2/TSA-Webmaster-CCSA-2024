@@ -1,14 +1,19 @@
 interface MultipleChoiceProps {
-    idNum: number;
+    idNum: string;
     options: string[];
+    onAnswer: (property : "state" | "rebates" | "solarOrEV" | "numPractices" | "numConsiderPractices", change : any) => void;
 }
 
-export default function MultipleChoice({options, idNum}: MultipleChoiceProps) {
+export default function MultipleChoice({options, idNum, onAnswer}: MultipleChoiceProps) {
+    const handleOptionSelect = (option: string) => {
+        onAnswer("rebates", option === "yes");
+    };
+
     return (
         <div className="space-y-2 mr-auto px-10">
             {options.map((option) => (
-                <div className="flex items-center" key={option + "choice"} >
-                    <input type="radio" id={option + "_" + idNum} name="size" value="small" />
+                <div className="flex items-center" key={option + "choice"}>
+                    <input type="radio" id={option + "_" + idNum} name="size" value="small" onChange={() => handleOptionSelect(option)} />
                     <label htmlFor={option + "_" + idNum} className="cursor-pointer p-2">
                         {option}
                     </label>

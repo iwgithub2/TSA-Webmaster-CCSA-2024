@@ -40,18 +40,23 @@ export default function Page() {
                         <Card title={["5. Solar Panels", "Estimated Cost"]} right={false}
                               description={["Solar panels harness energy from the sun rather than relying on traditional carbon sources.",
                                   "The cost of installation may be a lot, but government incentives are offered many places. Find out more on your state's page!"]}
+                              image={'/practice_images/practices_solar.svg'}
                         />
                         <Card title={["6. Home garden", "Estimated Cost"]} right={true}
                               description={["A fun and creative way to stay clean and green is by starting a home garden or purchasing produce from local farmers, reducing the energy spent on packaging and transport.",
                                   "A home garden can greatly decrease the amount you spend on groceries at the super market."]}
+                              image={'/practice_images/practices_garden.svg'}
                         />
                         <Card title={["7. Electric car", "Estimated Cost"]} right={false}
                               description={["Electric cars are run on electricity rather than traditional fuels that contribute to greenhouse gas emissions.",
                                   "Electric cars are more expensive than most traditional cars however there are rebates and long term savings on fuel. Find our more on your state's page!"]}
+                              image={'/practice_images/practices_car.svg'}
+
                         />
                         <Card title={["8. Thrift/donate clothes", "Estimated Cost"]} right={true}
                               description={["Rather than buying fast fashion or throwing out old clothes, look into buying from thrift stores, and donating clothes you no longer fit.",
                                   "Thrifting is no only great for the environment, but it also saves you money when shopping for clothes."]}
+                              image={'/practice_images/practices_thrift.svg'}
                         />
                         <Card title={["9. Reusable containers", "Estimated Cost"]} right={false}
                               description={["Instead of purchasing and throwing away single use plastic containers, reusable solutions such as tupperwear limit waste.",
