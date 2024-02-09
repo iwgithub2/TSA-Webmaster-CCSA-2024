@@ -13,7 +13,7 @@ export default function Page() {
                     </p>
                     <div className={`flex flex-col lg:flex-row mt-20 mx-5`}>
                         <Image className="mx-auto" src={'/LogoNo_Background.svg'} alt={"Percentage Fill Up"} width={200} height={200}/>
-                        <p className="py-5 mx-2 lg:text-2xl md:text-xl sm:text-lg text-md text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-400 max-w-2xl ">
+                        <p className="py-5 ml-10 lg:text-2xl md:text-xl sm:text-lg text-md text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-400 max-w-2xl ">
                             Our mission is to make clean green solutions available to everyone. We believe that saving th
                             environment does not have to be expensive. That is why we make cheaper alternatives easy and
                             accessible to homeowners across the country. A clean Earth starts with YOU. Thank you for your
