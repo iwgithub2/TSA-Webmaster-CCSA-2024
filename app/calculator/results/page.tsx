@@ -11,8 +11,14 @@ export default function Page() {
     const searchParams = useSearchParams();
     const data : Answers = JSON.parse(searchParams.get('data')!);
     let score : number = 0;
-    score += stateInfo[data.state].eVRebate + stateInfo[data.state].eVRebate;
-    if (data.rebates) {
+    if (stateInfo[data.state]) {
+        if (stateInfo[data.state].eVRebate != null) {
+            score += stateInfo[data.state].eVRebate;
+        }
+        if (stateInfo[data.state].eVRebate != null) {
+            score += stateInfo[data.state].eVRebate;
+        }
+    }    if (data.rebates) {
         score += 10;
     }
     score += 10 * (data.numConsiderPractices + data.numPractices + data.solarOrEV);

@@ -47,7 +47,7 @@ export default function Page() {
                     <div>
                     <Link href={'/calculator'}>
                         <Card title={["Calculate Your Cost and Impact"]}
-                              description={["Take our  quiz to find out the impact you can have for a price that you can afford:"]}
+                              description={["Take our  quiz to find out the impact you can have."]}
                               right={false}
                               color="blue-500"
                         />

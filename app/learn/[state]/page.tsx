@@ -51,7 +51,7 @@ export default function Page() {
         taxString += "Good News! Your state has voided all sales tax you have to pay to buy your solar panels!";
     }
     if(taxString === "") {
-        taxString = "Uh Oh, it looks like there are no tax exemptions for your state. Don't worry you can still use the federal tax credit to get money of your solar panel purchases!";
+        taxString = "Uh Oh, it looks like there are no tax exemptions for your state. Don't worry you can still use the federal tax credit to receive up to 30% off of your solar panel investments!";
     }
 
     return (
@@ -70,14 +70,14 @@ export default function Page() {
                                   description={[]}
                                   maxWidth={true}
                                   right={false}/>
-                            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 ">
+                            <div className="flex flex-col lg:grid lg:grid-cols-2">
                                 <div>
                                     <Card title={["Electric Vehicles"]}
                                           description={[eVString]}
-                                          right={true}/>
+                                          right={false}/>
                                 </div>
 
-                                <div className="bg-red-400">
+                                <div className="">
                                     <Card title={["Hybrid Vehicles"]}
                                           description={[hybridString]}
                                           right={true}/>
