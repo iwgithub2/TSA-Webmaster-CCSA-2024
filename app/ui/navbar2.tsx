@@ -6,13 +6,12 @@ import {useDebounce} from "use-debounce";
 import {usePathname} from "next/navigation";
 import clsx from "clsx";
 import Image from "next/image";
-import {useScroll} from "@react-spring/web";
 
 
 export default function NavBar2() {
     const [isMenuOpen, setMenuOpen] = useState(false);
-    const { scrollYProgress } = useScroll()
     const [isScrolled, setIsScrolled] = useState(false);
+    const [scrollPercentage, setScrollPercentage] = useState(0);
     const [debouncedScroll] = useDebounce(handleScroll, 200);
     const pathname = usePathname();
 
@@ -25,6 +24,8 @@ export default function NavBar2() {
 
     function handleScroll() {
         const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight;
+        setScrollPercentage( scrollTop / docHeight);
         setIsScrolled(scrollTop > 0);
     }
 
@@ -32,13 +33,32 @@ export default function NavBar2() {
         {name: 'Learn', href: '/learn'},
         {name: 'Practices', href: '/practices'},
         {name: 'Cost Calculator', href: '/calculator'},
+        {name: 'Blog', href: '/blog'},
         {name: 'About Us', href: '/about'}
     ];
 
+    const gradientStartColor: string = '#e5d3c2'; // Start color of your gradient background
+    const gradientEndColor: string = '#4a7c47'; // End color of your gradient background
+
+    function calculateInterpolatedColor(startColor: number[], endColor: number[], percentage: number): string {
+        const r: number = Math.floor(startColor[0] + (endColor[0] - startColor[0]) * percentage);
+        const g: number = Math.floor(startColor[1] + (endColor[1] - startColor[1]) * percentage);
+        const b: number = Math.floor(startColor[2] + (endColor[2] - startColor[2]) * percentage);
+        return `rgb(${r},${g},${b})`;
+    }
+
+    const startColor: number[] = gradientStartColor.match(/\w\w/g)?.map(hex => parseInt(hex, 16)) || [0, 0, 0];
+    const endColor: number[] = gradientEndColor.match(/\w\w/g)?.map(hex => parseInt(hex, 16)) || [255, 255, 255];
+    const interpolatedColor: string = calculateInterpolatedColor(startColor, endColor, scrollPercentage);
+
+    //${isScrolled ? 'bg-cream' : 'bg-transparent'}
     return (
         <div className={`flex justify-between items-center w-full px-4 fixed 
-        transition-all duration-300 ${isScrolled ? 'border-b' : ''} ${isScrolled ? 'py-4' : 'pb-4 pt-8'}
-              border-gray-150 bg-${isScrolled ? 'white' : 'transparent'}`}>
+        transition-all duration-300  ${isScrolled ? 'py-4' : 'pb-4 pt-8'}
+              `}
+            style={{
+            backgroundColor: isScrolled ? interpolatedColor : 'transparent'
+        }}>
             <Link
                 className="flex items-end justify-start p-4 "
                 href="/"

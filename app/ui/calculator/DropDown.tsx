@@ -1,4 +1,5 @@
 import {useState, useRef, useEffect} from "react";
+import { motion } from "framer-motion";
 
 interface DropDownProps {
     options: string[];
@@ -9,6 +10,11 @@ export default function DropDown({options, onAnswer}: DropDownProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState("");
     const dropdownRef = useRef<HTMLDivElement>(null);
+
+    const variants = {
+        open : { opacity : 1, x : 0},
+        closed : { opacity : 0, x : "-100%"},
+    }
 
     const toggleDropdown = () => {
         setIsOpen(!isOpen);

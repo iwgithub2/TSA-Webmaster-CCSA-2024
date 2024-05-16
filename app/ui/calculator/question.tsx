@@ -35,12 +35,12 @@ export default function Question({question}: { question: QuestionProps }) {
 
     return (
         <div
-            className="flex flex-col shadow-2xl bg-white rounded-2xl w-full  py-5 px-10 items-center">
+            className="flex flex-col bg-opacity-70 bg-zinc-100 rounded-2xl w-full  py-5 px-10 items-center">
             <p className="font-bold text-center text-3xl my-4">
                 {question.question}
             </p>
             {componentToRender}
-            <div className="flex flex-row space-x-2 w-full mt-10">
+            <div className="flex flex-row justify-center w-1/2 mx-auto mt-10 space-x-5">
                 <a href={question.backLink}
                    className="border-gray-200 border-2 p-2 rounded w-1/2 text-center hover:animate-pulse">
                                      <span className="font-medium text-sm ">

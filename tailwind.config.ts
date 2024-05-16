@@ -15,6 +15,10 @@ const config: Config = {
       },
       colors: {
         darkgreen: "#56784D",
+        cream: "#e5d3c2",
+        darkcream: "#f5ebdc",
+        forestgreen: "#4a7c47",
+        darkbrown : "#362001"
       },
     },
   },

@@ -19,11 +19,10 @@ export default function Page() {
     };
 
     return (
-        <main className="relative min-h-screen flex justify-center">
-            <Lines/>
+        <main className="relative min-h-screen flex justify-center bg-gradient-to-t from-forestgreen to-cream bg-opacity-10">
             <div className="relative z-40 mx-5">
                 <div className={"flex flex-col justify-center w-full mt-40 max-w-7xl"}>
-                    <p className={`${dmSerif.className} mx-5 sm:mx-10 md:mx-20 lg:text-6xl md:text-5xl sm:text-4xl text-3xl px-2 p-2 text-center tracking-tight text-transparent bg-gradient-to-r from-pink-500 to-yellow-600 bg-clip-text`}>
+                    <p className={`${dmSerif.className} mx-5 sm:mx-10 md:mx-20 lg:text-6xl md:text-5xl sm:text-4xl text-3xl px-2 p-2 text-center tracking-tight text-green-900`}>
                         Choose your state to find <em>region-specific</em> information
                     </p>
                     <p className={`${inter.className} font-medium text-center mb-5 lg:text-2xl md:text-xl sm:text-lg text-md my-5 mx-10 font-serif tracking-tight`}>
@@ -62,7 +61,7 @@ export default function Page() {
                             </Geographies>
                         </ComposableMap>
                     </div>
-                    <p className={`${dmSerif.className}  sm:mx-10 md:mx-20 lg:text-6xl md:text-5xl sm:text-4xl text-3xl px-2 pt-20 text-center tracking-tight text-transparent bg-gradient-to-r from-pink-500 to-yellow-600 bg-clip-text`}>
+                    <p className={`${dmSerif.className}  sm:mx-10 md:mx-20 lg:text-6xl md:text-5xl sm:text-4xl text-3xl px-2 pt-20 text-center tracking-tight text-green-900`}>
                         Federal Tax Rebate Information
                     </p>
                     <div className="flex flex-col md:flex-row md:space-x-4 md:space-y-0 space-y-4 md:p-10 m-10">

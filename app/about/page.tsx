@@ -4,11 +4,10 @@ import Image from "next/image";
 
 export default function Page() {
     return (
-        <main className="relative min-h-screen flex justify-center">
-            <Lines/>
+        <main className="relative min-h-screen flex justify-center bg-gradient-to-t from-forestgreen to-cream bg-opacity-10">
             <div className="flex relative flex-col px-6 py-3 z-40">
                 <div className="flex flex-col mt-40 text-center">
-                    <p className={`${dmSerif.className}  lg:text-6xl md:text-5xl p-2 sm:text-4xl text-3xl text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-blue-400 text-center mx-auto`}>
+                    <p className={`${dmSerif.className}  lg:text-6xl md:text-5xl p-2 sm:text-4xl text-3xl text-green-900 text-center mx-auto`}>
                         Who are we at <em>HomeGrown</em>
                     </p>
                     <div className={`flex flex-col lg:flex-row mt-20 mx-5`}>
@@ -21,7 +20,7 @@ export default function Page() {
                         </p>
                     </div>
 
-                    <p className={`${dmSerif.className} my-20 lg:text-6xl md:text-5xl p-2 sm:text-4xl text-3xl text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-blue-400 text-center mx-auto`}>
+                    <p className={`${dmSerif.className} my-20 lg:text-6xl md:text-5xl p-2 sm:text-4xl text-3xl text-green-900 text-center mx-auto`}>
                         References and Works Cited
                     </p>
                     <p className="py-5 lg:text-2xl md:text-xl sm:text-lg text-md  max-w-4xl mx-auto ">

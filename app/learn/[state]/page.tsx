@@ -55,8 +55,7 @@ export default function Page() {
     }
 
     return (
-        <main className="relative min-h-screen flex justify-center">
-            <Lines/>
+        <main className="relative min-h-screen flex justify-center bg-gradient-to-t from-forestgreen to-cream bg-opacity-10">
             <div className="flex relative flex-col justify-center px-6 py-3 z-40">
                 <div className=" mx-auto flex-col px-5 sm:px-10 md:px-10 justify-items-center mt-40 ">
                     <p className={`${dmSerif.className} mx-auto text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-400 text-center lg:text-6xl md:text-5xl sm:text-4xl text-3xl py-5`}>
@@ -70,7 +69,7 @@ export default function Page() {
                                   description={[]}
                                   maxWidth={true}
                                   right={false}/>
-                            <div className="flex flex-col lg:grid lg:grid-cols-2">
+                            <div className="flex flex-col space-y-4 lg:space-y-0 lg:grid lg:grid-cols-2 lg:space-x-2">
                                 <div>
                                     <Card title={["Electric Vehicles"]}
                                           description={[eVString]}
