@@ -8,6 +8,7 @@ import {dmSerif} from "@/app/ui/fonts";
 import Link from "next/link";
 import {statesArray} from "@/app/ui/learn/stateInfo";
 import {searchParamsToUrlQuery} from "next/dist/shared/lib/router/utils/querystring";
+import SubmitGraphic from "@/app/ui/calculator/SubmitGraphic";
 
 export interface Answers {
     state: string;
@@ -20,7 +21,6 @@ export interface Answers {
 export default function Page() {
     const [questionIndex, setQuestionIndex] = useState(0);
     const navbarHeight = 50;
-    let params;
 
     const [answers, setAnswers] = useState<Answers>({
         state: "",
@@ -54,25 +54,20 @@ export default function Page() {
     }
 
 
-    const handleSelection = () => {
-        setQuestionIndex((prevIndex) => prevIndex + 1);
-
+    const handleSelection = (change : number) => {
+        if (change == -1 && questionIndex == 0) {
+            return;
+        }
+        setQuestionIndex((prevIndex) => prevIndex + change);
+        console.log(questionIndex);
+/*
         const nextQuestionElement = document.getElementById(`question-${questionIndex + 1}`);
         if (nextQuestionElement) {
             window.scrollBy(0, -navbarHeight);
             nextQuestionElement.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
-        }
+        }*/
     }
-//{
-//             id: "1",
-//             forwardLink: "#2",
-//             backLink: "#0",
-//             question: "Does your State have Tax Rebates for EV?",
-//             options: ["yes", "no"],
-//             type: "multiple-choice",
-//             onSelect: handleSelection,
-//             onAnswer: handleAnswers
-//         },
+
     const data: QuestionProps[] = [
         {
             id: "0",
@@ -117,6 +112,19 @@ export default function Page() {
 
     ]
 
+    const renderQuestion = () => {
+        switch (questionIndex) {
+            case 4:
+                return <SubmitGraphic answer={answers}/>;
+            default:
+                return <Question question={data[questionIndex]}/>;
+        }
+    };
+//{data.map((props, index) => (
+//                             <div id={`${index}`} key={index} className="scroll-mt-40">
+//                                 <Question question={props}/>
+//                             </div>
+//                         ))}
     return (
         <main className="relative min-h-screen flex justify-center bg-gradient-to-t from-forestgreen to-cream bg-opacity-10">
             <div className="relative z-40">
@@ -136,28 +144,7 @@ export default function Page() {
                     </a>
                     <div id="Start"
                          className="flex flex-col scroll-mt-40 mx-5 md:mx-auto space-y-20 my-40 max-w-3xl">
-                        {data.map((props, index) => (
-                            <div id={`${index}`} key={index} className="scroll-mt-40">
-                                <Question question={props}/>
-                            </div>
-                        ))}
-                    </div>
-                    <div id="End" className="flex flex-col py-40 my-20 items-center">
-                        <Image src={'/LogoNo_Background.svg'} alt={"Our logo"} height={100} width={100}/>
-                        <p className={`${dmSerif.className} max-w-5xl font-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl text-center py-10 px-2 tracking-tight bg-gradient-to-r from-green-500 to-yellow-400 bg-clip-text text-transparent`}>
-                            All done! Ready to see your Results?
-                        </p>
-                        <Link href={{
-                            pathname: "/calculator/results",
-                            query: {
-                                data: JSON.stringify(answers)
-                            }
-                        }}
-                              className="flex items-center gap-5 self-start rounded-lg bg-darkgreen px-3 my-2 md:my-5 py-3 text-xs font-medium text-white transition-colors hover:bg-green-400  mx-auto">
-                            <span className="tracking-tighter">
-                            See Results
-                            </span>
-                        </Link>
+                        {renderQuestion()}
                     </div>
                 </div>
 

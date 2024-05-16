@@ -23,7 +23,7 @@ export default function Checkbox({options, idNum, onAnswer}: MultipleChoiceProps
         <div className="space-y-2 mr-auto px-10">
             {options.map((option) => (
                 <div className="flex items-center" key={option}>
-                    <input type="checkbox" id={option + "_" + idNum} name="size" value="small" onChange={(event) => handleCheckboxChange(option, event)}/>
+                    <input type="checkbox" id={option + "_" + idNum} name="size" onChange={(event) => handleCheckboxChange(option, event)}/>
                     <label htmlFor={option + "_" + idNum} className="cursor-pointer p-2">
                         <p className={`${inter.className} text-sm sm:text-md md:text-lg lg:text-xl`}>
                             {option}

@@ -1,9 +1,9 @@
 import {useState, useRef, useEffect} from "react";
-import { motion } from "framer-motion";
+import {motion} from "framer-motion";
 
 interface DropDownProps {
     options: string[];
-    onAnswer: (property : "state" | "rebates" | "solarOrEV" | "numPractices" | "numConsiderPractices", change : any) => void;
+    onAnswer: (property: "state" | "rebates" | "solarOrEV" | "numPractices" | "numConsiderPractices", change: any) => void;
 }
 
 export default function DropDown({options, onAnswer}: DropDownProps) {
@@ -12,15 +12,19 @@ export default function DropDown({options, onAnswer}: DropDownProps) {
     const dropdownRef = useRef<HTMLDivElement>(null);
 
     const variants = {
-        open : { opacity : 1, x : 0},
-        closed : { opacity : 0, x : "-100%"},
+        open: {
+            opacity: 1,
+            y: 0,
+            transition: {type: "spring", stiffness: 300, damping: 24}
+        },
+        closed: {opacity: 0, y: 20, transition: {duration: 0.2}},
     }
 
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
     };
 
-    const handleOptionClick = (option : string) => {
+    const handleOptionClick = (option: string) => {
         setSelectedOption(option);
         if (option.includes(' ')) {
             option = option.replace(' ', '_');
@@ -49,33 +53,87 @@ export default function DropDown({options, onAnswer}: DropDownProps) {
     }, [dropdownRef]);
 
     return (
-        <div className="relative inline-block text-left w-1/2" ref={dropdownRef}>
-            <div>
-                <button
-                    type="button"
-                    className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium border-gray-700 border-2 rounded-md focus:outline-none focus-visible:ring focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-gray-800"
-                    id="options-menu"
-                    onClick={toggleDropdown}
-                >
-                    {selectedOption || 'Select an option'}
-                </button>
-            </div>
+        <motion.nav
+            initial={false}
+            animate={isOpen ? 'open' : 'closed'}
+            className="w-full max-h-8 ">
+            <motion.button
+                whileTap={{scale: 0.97}}
+                onClick={() => setIsOpen(!isOpen)}
+                className="bg-yellow-950 w-full px-10 py-2 flex flex-row justify-between rounded text-darkcream">
+                {selectedOption || 'Select an option'}
 
-            {isOpen && (
-                <div className="origin-top-right absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <div className="py-1 overflow-y-auto max-h-40">
-                        {options.map((option) => (
-                            <button
-                                key={option}
-                                onClick={() => handleOptionClick(option)}
-                                className="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                            >
-                                {option}
-                            </button>
-                        ))}
-                    </div>
-                </div>
-            )}
-        </div>
+                <motion.div
+                    variants={{
+                        open: {rotate: 180},
+                        closed: {rotate: 0}
+                    }}
+                    transition={{duration: 0.2}}
+                    style={{originY: 0.55}}
+                    className="my-auto"
+                >
+                    <svg width="15" height="15" viewBox="0 0 20 20" className="fill-cream">
+                        <path d="M0 7 L 20 7 L 10 16"/>
+                    </svg>
+                </motion.div>
+            </motion.button>
+            <motion.ul
+                variants={{
+                    open: {
+                        clipPath: "inset(0% 0% 0% 0% round 10px)",
+                        transition: {
+                            type: "spring",
+                            bounce: 0,
+                            duration: 0.7,
+                            delayChildren: 0.3,
+                            staggerChildren: 0.05
+                        }
+                    }
+                }}
+            className={`overflow-y-auto max-h-40 ${isOpen ? "visible" : "collapse"}`}>
+                {options.map((option) => (
+                    <motion.li variants={variants} key={option} >
+                        <button
+                            key={option}
+                            onClick={() => handleOptionClick(option)}
+                            className="block w-full px-4 py-2 text-sm text-darkcream bg-yellow-950 hover:bg-gray-100 hover:text-gray-900"
+                        >
+                            {option}
+                        </button>
+                    </motion.li>
+                ))}
+
+            </motion.ul>
+        </motion.nav>
     );
 }
+
+//<div className="relative inline-block text-left w-1/2" ref={dropdownRef}>
+//             <div>
+//                 <button
+//                     type="button"
+//                     className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium border-gray-700 border-2 rounded-md focus:outline-none focus-visible:ring focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-gray-800"
+//                     id="options-menu"
+//                     onClick={toggleDropdown}
+//                 >
+//                     {selectedOption || 'Select an option'}
+//                 </button>
+//             </div>
+//
+//             {isOpen && (
+//                 <div
+//                     className="origin-top-right absolute right-0 mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+//                     <div className="py-1 overflow-y-auto max-h-40">
+//                         {options.map((option) => (
+//                             <button
+//                                 key={option}
+//                                 onClick={() => handleOptionClick(option)}
+//                                 className="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+//                             >
+//                                 {option}
+//                             </button>
+//                         ))}
+//                     </div>
+//                 </div>
+//             )}
+//         </div>

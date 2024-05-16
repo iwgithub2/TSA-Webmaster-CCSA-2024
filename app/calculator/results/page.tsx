@@ -24,8 +24,7 @@ export default function Page() {
     score += 10 * (data.numConsiderPractices + data.numPractices + data.solarOrEV);
 
     return (
-        <main className="relative min-h-screen flex justify-center">
-            <Lines/>
+        <main className="relative min-h-screen flex justify-center bg-gradient-to-t from-forestgreen to-cream bg-opacity-10">
             <div className="relative z-40 w-full">
                 <div className="flex flex-col mt-40 items-center">
                     <div className="my-3 border-black border-2 mx-auto px-2 py-1 rounded-full">
@@ -33,7 +32,7 @@ export default function Page() {
                             Cost Calculator
                         </p>
                     </div>
-                    <p className={`${dmSerif.className} max-w-5xl font-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl text-center py-10 px-2 tracking-tight bg-gradient-to-r from-green-500 to-yellow-400 bg-clip-text text-transparent`}>
+                    <p className={`${dmSerif.className} max-w-5xl font-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl text-center py-10 px-2 tracking-tight text-green-900   `}>
                         Are you Ready to Change<br/> the World?
                     </p>
                     <a href="#Results"
@@ -48,7 +47,7 @@ export default function Page() {
                     </a>
 
                     <div id="Results" className="my-40">
-                        <Image className="mx-auto" src={'/LogoNo_Background.svg'} alt="Percentage Fill Up" width={500} height={500}/>
+                        <Image className="mx-auto" src={'/LogoNo_Background.svg'} alt="Percentage Fill Up" width={300} height={300}/>
                         <p className={`${dmSerif.className} max-w-5xl font-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl text-center py-10 px-2 tracking-tight bg-gradient-to-r from-green-500 to-yellow-400 bg-clip-text text-transparent`}>
                             Score: {score}!
                         </p>
