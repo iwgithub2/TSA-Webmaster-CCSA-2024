@@ -85,8 +85,8 @@ export default function DropDown({options, onAnswer}: DropDownProps) {
                             type: "spring",
                             bounce: 0,
                             duration: 0.7,
-                            delayChildren: 0.3,
-                            staggerChildren: 0.05
+                            delayChildren: 0.1,
+                            staggerChildren: 0.01
                         }
                     }
                 }}
