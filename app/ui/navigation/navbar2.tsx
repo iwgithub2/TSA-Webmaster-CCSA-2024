@@ -6,14 +6,14 @@ import {useDebounce} from "use-debounce";
 import {usePathname} from "next/navigation";
 import clsx from "clsx";
 import Image from "next/image";
-import {stagger, useAnimate} from "framer-motion";
+import {Segment, stagger, useAnimate} from "framer-motion";
 import {MenuToggle} from "@/app/ui/navigation/MenuToggle";
 
 function useMenuAnimation(isOpen: boolean) {
     const [scope, animate] = useAnimate()
 
     useEffect(() => {
-        const menuAnimations = isOpen
+        const menuAnimations : Segment[] = isOpen
             ? [
                 [
                     "nav",
