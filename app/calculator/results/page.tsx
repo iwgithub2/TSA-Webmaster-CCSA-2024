@@ -32,7 +32,7 @@ export default function Page() {
                             Cost Calculator
                         </p>
                     </div>
-                    <p className={`${dmSerif.className} max-w-5xl font-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl text-center py-10 px-2 tracking-tight text-green-900   `}>
+                    <p className={`${dmSerif.className} max-w-5xl font-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl text-center py-10 px-2 tracking-tight text-green-900       `}>
                         Are you Ready to Change<br/> the World?
                     </p>
                     <a href="#Results"

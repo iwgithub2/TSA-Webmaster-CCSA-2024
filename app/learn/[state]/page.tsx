@@ -5,6 +5,8 @@ import Lines from "@/app/ui/lines";
 import Card from "@/app/ui/Card";
 import {dmSerif, inter, newsreader} from "@/app/ui/fonts";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+import {ComponentType} from "react";
 
 
 export default function Page() {
@@ -25,44 +27,74 @@ export default function Page() {
     let hybridString: string;
     let creditString: string = state.solarCredit;
     let taxString: string = "";
+    let score: number = 0;
 
     if (creditString === "") {
-        creditString = "Sorry! Your state does not offer tax credits or rebates for solar power. Check out their other incentives!"
+        creditString = "Sorry! Your state does not offer tax credits or rebates for solar power. Check out their other incentives!";
     } else {
-        creditString = "The state of " + stateName + " has " + state.solarCredit + "."
+        creditString = "The state of " + stateName + " has " + state.solarCredit + ".";
+        score += 1;
     }
 
     if (state.eVRebate === 0) {
         eVString = "Sorry! Your State doesn't offer Tax Credit for Electric Vehicles. Try buying a vehicle in another state.";
     } else {
         eVString = "The State of " + stateName + " offers up to $" + state.eVRebate + " in tax credits! Check out your state government's website more information on how to register.";
+        score += 1;
     }
 
     if (state.hybridRebate === 0) {
         hybridString = "Sorry! Your State doesn't offer Tax Credit for Hybrid Vehicles. Try buying a vehicle in another state.";
     } else {
         hybridString = "The State of " + stateName + " offers up to $" + state.hybridRebate + " in tax credits! Check out your state government's website more information on how to register.";
+        score += 1;
     }
 
-    if(state.propertyTaxExemption) {
+    if (state.propertyTaxExemption) {
         taxString += "Good News! Your state gives you a property tax exemption. This means you don't have to pay property tax on the added values of solar panels to your property!";
+        score += 1;
     }
-    if(state.salesTaxExemption) {
+    if (state.salesTaxExemption) {
         taxString += "Good News! Your state has voided all sales tax you have to pay to buy your solar panels!";
+        score += 1;
     }
-    if(taxString === "") {
+    if (taxString === "") {
         taxString = "Uh Oh, it looks like there are no tax exemptions for your state. Don't worry you can still use the federal tax credit to receive up to 30% off of your solar panel investments!";
     }
 
+    let stateColor: string;
+    switch (score) {
+        case 0:
+            stateColor = "bg-badscore";
+            break;
+        case 1:
+            stateColor = "bg-mehscore";
+            break;
+        case 2:
+            stateColor = "bg-alrightscore";
+            break;
+        case 3:
+            stateColor = "bg-goodscore";
+            break;
+        case 4:
+            stateColor = "bg-greatscore";
+            break;
+        case 5:
+            stateColor = "bg-greatscore";
+            break;
+    }
+
     return (
-        <main className="relative min-h-screen flex justify-center bg-gradient-to-t from-forestgreen to-cream bg-opacity-10">
+        <main
+            className="relative min-h-screen flex justify-center bg-gradient-to-t from-forestgreen to-cream bg-opacity-10">
             <div className="flex relative flex-col justify-center px-6 py-3 z-40">
                 <div className=" mx-auto flex-col px-5 sm:px-10 md:px-10 justify-items-center mt-40 ">
-                    <p className={`${dmSerif.className} mx-auto text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-400 text-center lg:text-6xl md:text-5xl sm:text-4xl text-3xl py-5`}>
+                    <p className={`${dmSerif.className} mx-auto text-green-900 text-center lg:text-6xl md:text-5xl sm:text-4xl text-3xl py-5`}>
                         {stateName} Tax Rebate Information
                     </p>
-                    <Image className="mx-auto mt-20" src={state.image} alt={"Picture"} width={300} height={400}/>
-                    <div className="flex flex-col mt-40">
+                    <Image className="mx-auto mt-20 text-red-500" src={state.image} alt={"Picture"} width={300}
+                           height={400}/>
+                    <div className="flex flex-col mt-40 max-w-5xl mx-auto">
                         {/* until ik wtf im doing lg:grid lg:grid-cols-2 */}
                         <div className="flex flex-col space-y-4 p-10">
                             <Card title={["Car Tax Rebates"]}
@@ -75,14 +107,11 @@ export default function Page() {
                                           description={[eVString]}
                                           right={false}/>
                                 </div>
-
                                 <div className="">
                                     <Card title={["Hybrid Vehicles"]}
                                           description={[hybridString]}
                                           right={true}/>
                                 </div>
-
-
                             </div>
                             <Card title={["Solar Panel Incentives"]}
                                   description={[creditString]} right={false}
@@ -96,15 +125,21 @@ export default function Page() {
                     <p className={`${dmSerif.className}  sm:mx-10 md:mx-20 lg:text-6xl md:text-5xl sm:text-4xl text-3xl px-2 pt-20 text-center tracking-tight text-green-900`}>
                         Federal Tax Rebate Information
                     </p>
-                    <div className="flex flex-col md:flex-row md:space-x-4 md:space-y-0 space-y-4 md:p-10 m-10">
+                    <div className="flex flex-col md:flex-row md:space-x-4 md:space-y-0 space-y-4 md:p-10 m-10 max-w-5xl">
                         <div className="flex flex-col md:grid md:grid-cols-2 gap-4 ">
                             <div className="col-span-2">
                                 <Card title={["Car Tax Rebates"]} description={[]} right={false}/>
                             </div>
-                            <Card title={["Electric Vehicles"]} description={["The U.S. Federal Government Offers up $7,500 in tax rebates for purchasing or leasing an electric vehicle"]} right={false}/>
-                            <Card title={["Hybrid Vehicles"]} description={["Some Hybrid Vehicles are eligible for Federal Tax Credits starting from $3,700"]} right={false}/>
+                            <Card title={["Electric Vehicles"]}
+                                  description={["The U.S. Federal Government Offers up $7,500 in tax rebates for purchasing or leasing an electric vehicle"]}
+                                  right={false}/>
+                            <Card title={["Hybrid Vehicles"]}
+                                  description={["Some Hybrid Vehicles are eligible for Federal Tax Credits starting from $3,700"]}
+                                  right={false}/>
                         </div>
-                        <Card title={["Solar Panel Incentives"]} description={["The Federal Tax Credit for Solar Panels can give homeowners up to 30% off the cost of installing their solar system"]} right={false}/>
+                        <Card title={["Solar Panel Incentives"]}
+                              description={["The Federal Tax Credit for Solar Panels can give homeowners up to 30% off the cost of installing their solar system"]}
+                              right={false}/>
 
                     </div>
                 </div>

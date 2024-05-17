@@ -18,7 +18,12 @@ const config: Config = {
         cream: "#e5d3c2",
         darkcream: "#f5ebdc",
         forestgreen: "#4a7c47",
-        darkbrown : "#362001"
+        darkbrown : "#362001",
+        badscore: "#e3eee2",
+        mehscore: "#b0d1ae",
+        alrightscore: "#7eb37a",
+        goodscore: "#538c50",
+        greatscore: "#345832"
       },
     },
   },
