@@ -3,7 +3,7 @@ import {inter} from "@/app/ui/fonts";
 interface MultipleChoiceProps {
     idNum : string;
     options: string[];
-    onAnswer: (property : "state" | "rebates" | "solarOrEV" | "numPractices" | "numConsiderPractices", change : any) => void;
+    onAnswer: (property : "state" | "rebates" | "solarOrEV" | "numPractices" | "energyConsumption", change : any) => void;
 }
 
 export default function Checkbox({options, idNum, onAnswer}: MultipleChoiceProps) {

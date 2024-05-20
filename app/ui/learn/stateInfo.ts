@@ -7,6 +7,8 @@ interface StateInfo {
     homeValueIncrease: boolean;
     solarCredit: string;
     netMetering: boolean;
+    naturalGasPrice2022: number;
+    electricityPrice2024: number;
 }
 
 const stateInfo: Record<string, StateInfo> = {
@@ -18,7 +20,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 13.52,
+        electricityPrice2024 :12.41
     },
     "alaska": {
         image: '/States/alaska.svg',
@@ -28,7 +32,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 10.13,
+        electricityPrice2024 : 22.54
     },
     "arizona": {
         image: '/States/arizona.svg',
@@ -38,7 +44,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: true,
         homeValueIncrease: true,
         solarCredit: "up to $1000 or 25% of purchase price",
-        netMetering: true
+        netMetering: true,
+        naturalGasPrice2022 : 10.81,
+        electricityPrice2024 : 13.61
     },
     "arkansas": {
         image: '/States/arkansas.svg',
@@ -48,7 +56,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: true,
         solarCredit: "",
-        netMetering: true
+        netMetering: true,
+        naturalGasPrice2022 : 12.80,
+        electricityPrice2024 : 9.99
     },
     "california": {
         image: '/States/california.svg',
@@ -58,7 +68,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: true,
         homeValueIncrease: false,
         solarCredit: "the SGIP and DAC-SASH program offers rebates and credits for people of all incomes",
-        netMetering: true
+        netMetering: true,
+        naturalGasPrice2022 : 16.13,
+        electricityPrice2024 : 19.90
     },
     "colorado": {
         image: '/States/colorado.svg',
@@ -68,7 +80,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: true,
         homeValueIncrease: false,
         solarCredit: "there are possible solar tax rebates from your power company",
-        netMetering: true
+        netMetering: true,
+        naturalGasPrice2022 : 11.38,
+        electricityPrice2024 : 12.28
     },
     "connecticut": {
         image: '/States/connecticut.svg',
@@ -78,7 +92,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 12.85,
+        electricityPrice2024 : 21.62
     },
     "delaware": {
         image: '/States/delaware.svg',
@@ -88,7 +104,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 12.37,
+        electricityPrice2024 : 12.05
     },
     "florida": {
         image: '/States/florida.svg',
@@ -98,7 +116,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: true,
         homeValueIncrease: false,
         solarCredit: "there are tax credits from $2,000 to $4,000 depending on where you live",
-        netMetering: true
+        netMetering: true,
+        naturalGasPrice2022 : 14.18,
+        electricityPrice2024 : 11.37
     },
     "georgia": {
         image: '/States/georgia.svg',
@@ -108,7 +128,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: true
+        netMetering: true,
+        naturalGasPrice2022 : 11.39,
+        electricityPrice2024 : 12.26
     },
     "hawaii": {
         image: '/States/hawaii.svg',
@@ -118,7 +140,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 44.12,
+        electricityPrice2024 : 32.76
     },
     "idaho": {
         image: '/States/idaho.svg',
@@ -128,7 +152,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 7.10,
+        electricityPrice2024 : 10.58
     },
     "illinois": {
         image: '/States/illinois.svg',
@@ -137,7 +163,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: true
+        netMetering: true,
+        naturalGasPrice2022 : 12.20,
+        electricityPrice2024 : 12.56
     },
     "indiana": {
         image: '/States/indiana.svg',
@@ -147,7 +175,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 9.50,
+        electricityPrice2024 : 12.02
     },
     "iowa": {
         image: '/States/iowa.svg',
@@ -157,7 +187,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: true,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: true
+        netMetering: true,
+        naturalGasPrice2022 : 11.09,
+        electricityPrice2024 : 13.81
     },
     "kansas": {
         image: '/States/kansas.svg',
@@ -167,7 +199,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: true,
         homeValueIncrease: true,
         solarCredit: "",
-        netMetering: true
+        netMetering: true,
+        naturalGasPrice2022 : 12.33,
+        electricityPrice2024 : 11.56
     },
     "kentucky": {
         image: '/States/kentucky.svg',
@@ -177,7 +211,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 12.17,
+        electricityPrice2024 : 10.56
     },
     "louisiana": {
         image: '/States/louisiana.svg',
@@ -187,7 +223,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: true,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 13.02,
+        electricityPrice2024 : 9.37
     },
     "maine": {
         image: '/States/maine.svg',
@@ -197,7 +235,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 16.57,
+        electricityPrice2024 : 16.16
     },
     "maryland": {
         image: '/States/maryland.svg',
@@ -207,7 +247,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: true,
         homeValueIncrease: false,
         solarCredit: "$1000 for a solar rebate, 30% or up to $5000 for a backup battery, certificate programs, and a clean energy grant for $1000",
-        netMetering: true
+        netMetering: true,
+        naturalGasPrice2022 : 14.12,
+        electricityPrice2024 : 13.92
     },
     "massachusetts": {
         image: '/States/massachusetts.svg',
@@ -217,7 +259,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 15.56,
+        electricityPrice2024 : 21.11
     },
     "michigan": {
         image: '/States/michigan.svg',
@@ -227,7 +271,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 10.00,
+        electricityPrice2024 : 16.07
     },
     "minnesota": {
         image: '/States/minnesota.svg',
@@ -237,7 +283,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 10.59,
+        electricityPrice2024 : 14.09
     },
     "mississippi": {
         image: '/States/mississippi.svg',
@@ -247,7 +295,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: true
+        netMetering: true,
+        naturalGasPrice2022 : 12.20,
+        electricityPrice2024 : 11.55
     },
     "missouri": {
         image: '/States/missouri.svg',
@@ -257,7 +307,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 11.25,
+        electricityPrice2024 :13.23
     },
     "montana": {
         image: '/States/montana.svg',
@@ -267,7 +319,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 10.22,
+        electricityPrice2024 : 11.85
     },
     "nebraska": {
         image: '/States/nebraska.svg',
@@ -277,7 +331,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: true
+        netMetering: true,
+        naturalGasPrice2022 : 10.31,
+        electricityPrice2024 : 11.31
     },
     "nevada": {
         image: '/States/nevada.svg',
@@ -287,7 +343,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: true
+        netMetering: true,
+        naturalGasPrice2022 : 9.39,
+        electricityPrice2024 : 11.67
     },
     "new_hampshire": {
         image: '/States/new_hampshire.svg',
@@ -297,7 +355,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 16.24,
+        electricityPrice2024 : 19.63
     },
     "new_jersey": {
         image: '/States/new_jersey.svg',
@@ -307,7 +367,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 13.08,
+        electricityPrice2024 : 15.64
     },
     "new_mexico": {
         image: '/States/new_mexico.svg',
@@ -317,7 +379,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "10% of cost up to $6000",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 10.34,
+        electricityPrice2024 : 13.37
     },
     "new_york": {
         image: '/States/new_york.svg',
@@ -327,7 +391,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 10.31,
+        electricityPrice2024 : 19.30
     },
     "north_carolina": {
         image: '/States/north_carolina.svg',
@@ -337,7 +403,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: true,
         homeValueIncrease: false,
         solarCredit: "up to $6000 from generating electricity and low interest loans available",
-        netMetering: true
+        netMetering: true,
+        naturalGasPrice2022 : 12.35,
+        electricityPrice2024 : 11.24
     },
     "north_dakota": {
         image: '/States/north_dakota.svg',
@@ -347,7 +415,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 9.62,
+        electricityPrice2024 : 12.07
     },
     "ohio": {
         image: '/States/ohio.svg',
@@ -357,7 +427,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 8.39,
+        electricityPrice2024 : 12.64
     },
     "oklahoma": {
         image: '/States/oklahoma.svg',
@@ -367,7 +439,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: true
+        netMetering: true,
+        naturalGasPrice2022 : 11.66,
+        electricityPrice2024 : 10.72
     },
     "oregon": {
         image: '/States/oregon.svg',
@@ -377,7 +451,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 10.33,
+        electricityPrice2024 : 11.02
     },
     "pennsylvania": {
         image: '/States/pennsylvania.svg',
@@ -387,7 +463,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 12.27,
+        electricityPrice2024 :14.38
     },
     "rhode_island": {
         image: '/States/rhode_island.svg',
@@ -397,7 +475,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 15.29,
+        electricityPrice2024 : 18.64
     },
     "south_carolina": {
         image: '/States/south_carolina.svg',
@@ -407,7 +487,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: true,
         homeValueIncrease: false,
         solarCredit: "there is a 25% state tax credit along with additional rebates for specific power companies",
-        netMetering: true
+        netMetering: true,
+        naturalGasPrice2022 : 12.15,
+        electricityPrice2024 :12.91
     },
     "south_dakota": {
         image: '/States/south_dakota.svg',
@@ -417,7 +499,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 9.25,
+        electricityPrice2024 :12.39
     },
     "tennessee": {
         image: '/States/tennessee.svg',
@@ -427,7 +511,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: true,
         solarCredit: "$20 of value added to your home for every $1 saved",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 11.53,
+        electricityPrice2024 :10.79
     },
     "texas": {
         image: '/States/texas.svg',
@@ -437,7 +523,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: true,
         homeValueIncrease: false,
         solarCredit: "there are local rebates, check out your local government's website",
-        netMetering: true
+        netMetering: true,
+        naturalGasPrice2022 : 11.56,
+        electricityPrice2024 :11.36
     },
     "utah": {
         image: '/States/utah.svg',
@@ -447,7 +535,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 8.92,
+        electricityPrice2024 :10.63
     },
     "vermont": {
         image: '/States/vermont.svg',
@@ -457,7 +547,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 8.73,
+        electricityPrice2024 :18.50
     },
     "virginia": {
         image: '/States/virginia.svg',
@@ -467,7 +559,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: true,
         homeValueIncrease: false,
         solarCredit: "certificate programs",
-        netMetering: true
+        netMetering: true,
+        naturalGasPrice2022 : 11.54,
+        electricityPrice2024 :12.40
     },
     "washington": {
         image: '/States/washington.svg',
@@ -477,7 +571,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 10.63,
+        electricityPrice2024 :9.79
     },
     "west_virginia": {
         image: '/States/west_virginia.svg',
@@ -487,7 +583,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 9.69,
+        electricityPrice2024 : 11.57
     },
     "wisconsin": {
         image: '/States/wisconsin.svg',
@@ -497,7 +595,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 9.55,
+        electricityPrice2024 :14.28
     },
     "wyoming": {
         image: '/States/wyoming.svg',
@@ -507,7 +607,9 @@ const stateInfo: Record<string, StateInfo> = {
         propertyTaxExemption: false,
         homeValueIncrease: false,
         solarCredit: "",
-        netMetering: false
+        netMetering: false,
+        naturalGasPrice2022 : 11.07,
+        electricityPrice2024 :12.30
     },
 };
 

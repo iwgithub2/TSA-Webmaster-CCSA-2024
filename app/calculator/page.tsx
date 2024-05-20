@@ -15,7 +15,8 @@ export interface Answers {
     rebates: boolean;
     solarOrEV: number;
     numPractices: number;
-    numConsiderPractices: number;
+    energy: number;
+    primarySource : string;
 }
 
 export default function Page() {
@@ -23,14 +24,15 @@ export default function Page() {
     const navbarHeight = 50;
 
     const [answers, setAnswers] = useState<Answers>({
-        state: "",
+        state: "Florida",
         rebates: true,
         solarOrEV: 0,
         numPractices: 0,
-        numConsiderPractices: 0
+        energy: 0,
+        primarySource: ""
     })
 
-    const handleAnswers = (property: "state" | "rebates" | "solarOrEV" | "numPractices" | "numConsiderPractices", change: any) => {
+    const handleAnswers = (property: "state" | "rebates" | "solarOrEV" | "numPractices" | "energyConsumption" | "primarySource", change: any) => {
         let temp = {...answers};
 
         switch (property) {
@@ -46,8 +48,12 @@ export default function Page() {
             case "numPractices":
                 temp.numPractices += change;
                 break;
-            case "numConsiderPractices":
-                temp.numConsiderPractices += change;
+            case "energyConsumption":
+                temp.energy += change;
+                break;
+            case "primarySource":
+                temp.primarySource = change;
+                console.log(temp.primarySource);
                 break;
         }
         setAnswers(temp);
@@ -60,12 +66,7 @@ export default function Page() {
         }
         setQuestionIndex((prevIndex) => prevIndex + change);
         console.log(questionIndex);
-/*
-        const nextQuestionElement = document.getElementById(`question-${questionIndex + 1}`);
-        if (nextQuestionElement) {
-            window.scrollBy(0, -navbarHeight);
-            nextQuestionElement.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
-        }*/
+
     }
 
     const data: QuestionProps[] = [
@@ -79,13 +80,24 @@ export default function Page() {
             onSelect: handleSelection,
             onAnswer: handleAnswers
         },
+
         {
-            id: "1-solarOrEV",
-            forwardLink: "#2",
-            backLink: "#0",
-            question: "Would you have a hybrid vehicle, electric vehicle, or solar panels?",
-            options: ["Electric Vehicle", "Hybrid Vehicle", "Solar Panels"],
-            type: "check-box",
+            id:"4-primaryEnergy",
+            forwardLink:"#End",
+            backLink:"#3",
+            question:"What is your home's primary source of energy?",
+            options: ["Natural gas", "Electricity", "Renewable"],
+            type: "multiple-choice",
+            onSelect: handleSelection,
+            onAnswer: handleAnswers
+        },
+        {
+            id: "3-numConsiderPractices",
+            forwardLink: "#4",
+            backLink: "#2",
+            question: "Per month what is your estimated electricity bill?",
+            options: [],
+            type: "type_number",
             onSelect: handleSelection,
             onAnswer: handleAnswers
         },
@@ -100,31 +112,29 @@ export default function Page() {
             onAnswer: handleAnswers
         },
         {
-            id: "3-numConsiderPractices",
-            forwardLink: "#End",
-            backLink: "#2",
-            question: "What practices would you do?",
-            options: ["Reducing Energy Usage", "Carpooling", "Recycling", "Reducing Water Usage", "Home Garden", "Thrifting", "Reusable Containers", "Compost", "Electric Documents"],
+            id: "1-solarOrEV",
+            forwardLink: "#2",
+            backLink: "#0",
+            question: "Are you considering a hybrid vehicle, electric vehicle, or solar panels?",
+            options: ["Electric Vehicle", "Hybrid Vehicle", "Solar Panels"],
             type: "check-box",
             onSelect: handleSelection,
             onAnswer: handleAnswers
         },
 
+
+
     ]
 
     const renderQuestion = () => {
         switch (questionIndex) {
-            case 4:
+            case 5:
                 return <SubmitGraphic answer={answers}/>;
             default:
                 return <Question question={data[questionIndex]}/>;
         }
     };
-//{data.map((props, index) => (
-//                             <div id={`${index}`} key={index} className="scroll-mt-40">
-//                                 <Question question={props}/>
-//                             </div>
-//                         ))}
+
     return (
         <main className="relative min-h-screen flex justify-center bg-gradient-to-t from-forestgreen to-cream bg-opacity-10">
             <div className="relative z-40">

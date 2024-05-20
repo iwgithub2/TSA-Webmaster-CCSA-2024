@@ -14,7 +14,7 @@ export default function Page() {
         <main className="relative min-h-screen flex justify-center bg-gradient-to-t from-forestgreen to-cream bg-opacity-10 ">
             <div className="flex flex-col w-full ">
                 <HeroParallax/>
-                <div className={` flex relative flex-col justify-center bg-darkgreen  px-6 py-3 z-40`}>
+                <div className={`flex relative flex-col justify-center bg-darkgreen px-6 py-3 z-40`}>
                     <Link href="/calculator"
                           className="flex items-center gap-5 self-start rounded-lg bg-yellow-950 px-6 my-10 md:my-20 py-3 text-xs font-medium text-white transition-colors hover:bg-yellow-900  mx-auto">
                     <span className="tracking-tighter text-lg text-cream">
@@ -27,7 +27,7 @@ export default function Page() {
                         solutions tailored for just you. Join us in the effort to
                         reach a greener more economical future for all.
                     </p>
-                    <div className=" w-full px-10 flex-col space-y-10 md:space-y-20 my-10">
+                    <div className="mx-40 px-10 flex-col space-y-10 md:space-y-20 my-10">
                         <div>
                             <Link href={'/learn'}>
                                 <Card title={["Explore State Specific Policies"]}

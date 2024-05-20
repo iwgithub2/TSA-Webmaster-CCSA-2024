@@ -3,6 +3,7 @@ import MultipleChoice from "@/app/ui/calculator/MultipleChoice";
 import Checkbox from "@/app/ui/calculator/Checkbox";
 import DropDown from "@/app/ui/calculator/DropDown";
 import {motion} from "framer-motion";
+import TypeNum from "@/app/ui/calculator/TypeNum";
 
 export interface QuestionProps {
     id: string;
@@ -10,16 +11,12 @@ export interface QuestionProps {
     backLink: string;
     question: string;
     options: string[];
-    type: "multiple-choice" | "drop-down" | "check-box";
+    type: "multiple-choice" | "drop-down" | "check-box" | "type_number";
     onSelect: (change : number) => void;
-    onAnswer: (property: "state" | "rebates" | "solarOrEV" | "numPractices" | "numConsiderPractices", change: any) => void;
+    onAnswer: (property: "state" | "rebates" | "solarOrEV" | "numPractices" | "energyConsumption" | "primarySource", change: any) => void;
 }
 
 export default function Question({question}: { question: QuestionProps }) {
-    const router = useRouter();
-    const onSelect = () => {
-        router.push(question.forwardLink)
-    };
 
     let componentToRender;
 
@@ -33,6 +30,10 @@ export default function Question({question}: { question: QuestionProps }) {
             break;
         case "drop-down":
             componentToRender = <DropDown options={question.options} onAnswer={question.onAnswer}/>
+            break;
+        case "type_number":
+            componentToRender = <TypeNum onAnswer={question.onAnswer}/>
+            break;
     }
 
     return (

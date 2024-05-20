@@ -10,7 +10,24 @@ export default function Page() {
 
     const searchParams = useSearchParams();
     const data : Answers = JSON.parse(searchParams.get('data')!);
+    const stateData = stateInfo;
+    const avgSolarElectricityGenerationPerMonth = 886;
+    let baseCost : number = 0;
     let score : number = 0;
+
+    switch(data.primarySource) {
+        case "Natural gas":
+            baseCost = data.energy / (stateData[data.state].naturalGasPrice2022 * 1000 / 3412);
+            break;
+        case "Electricity":
+            baseCost = data.energy / stateData[data.state].electricityPrice2024;
+            break;
+        case "Renewable":
+            baseCost = 0;
+            break;
+    }
+
+
     if (stateInfo[data.state]) {
         if (stateInfo[data.state].eVRebate != null) {
             score += stateInfo[data.state].eVRebate;
@@ -21,7 +38,7 @@ export default function Page() {
     }    if (data.rebates) {
         score += 10;
     }
-    score += 10 * (data.numConsiderPractices + data.numPractices + data.solarOrEV);
+    score += 10 * (data.energy + data.numPractices + data.solarOrEV);
 
     return (
         <main className="relative min-h-screen flex justify-center bg-gradient-to-t from-forestgreen to-cream bg-opacity-10">

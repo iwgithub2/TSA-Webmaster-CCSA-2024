@@ -3,7 +3,7 @@ import {motion} from "framer-motion";
 
 interface DropDownProps {
     options: string[];
-    onAnswer: (property: "state" | "rebates" | "solarOrEV" | "numPractices" | "numConsiderPractices", change: any) => void;
+    onAnswer: (property: "state" | "rebates" | "solarOrEV" | "numPractices" | "energyConsumption", change: any) => void;
 }
 
 export default function DropDown({options, onAnswer}: DropDownProps) {
@@ -19,10 +19,6 @@ export default function DropDown({options, onAnswer}: DropDownProps) {
         },
         closed: {opacity: 0, y: 20, transition: {duration: 0.2}},
     }
-
-    const toggleDropdown = () => {
-        setIsOpen(!isOpen);
-    };
 
     const handleOptionClick = (option: string) => {
         setSelectedOption(option);

@@ -112,10 +112,7 @@ export default function NavBar2() {
                 className="flex items-end justify-start p-4 "
                 href="/"
             >
-                <span
-                    className={`${newsreader.className} text-green-900 text-lg sm:text-xl md:text-2xl lg:text-3xl`}>
-                    HomeGrown
-                </span>
+                <Image src={'/Asset 2.svg'} alt="logo" width={300} height={100}/>
             </Link>
 
             <ul className="hidden md:flex">

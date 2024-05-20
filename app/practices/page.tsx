@@ -19,15 +19,12 @@ export default function Page() {
                         Here are some ways you can be clean + green at home!
                     </p>
                     <div className="flex flex-col space-y-10 lg:mt-40 md:mt-25 sm:mb-10 mt-20">
-                        <motion.div
-                            whileInView={{scale: 1}}
-                            initial={{scale: 0}}>
-                            <Card title={["1. Reducing Energy Usage", "Estimated Cost"]} right={false}
-                                  description={["A great way to start is by turning off the lights and other electronic devices when you're not using them, as well as switching to energy-efficient appliances.",
-                                      "Not only is using less energy great for the environment, but it lowers your electricity bill, saving you money!"]}
-                                  image={'/practice_images/practices_energyconserve.svg'}
-                            />
-                        </motion.div>
+
+                        <Card title={["1. Reducing Energy Usage", "Estimated Cost"]} right={false}
+                              description={["A great way to start is by turning off the lights and other electronic devices when you're not using them, as well as switching to energy-efficient appliances.",
+                                  "Not only is using less energy great for the environment, but it lowers your electricity bill, saving you money!"]}
+                              image={'/practice_images/practices_energyconserve.svg'}
+                        />
                         <motion.div
                             whileInView={{scale: 1}}
                             initial={{scale: 0}}>

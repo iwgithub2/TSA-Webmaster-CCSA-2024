@@ -1,12 +1,12 @@
 interface MultipleChoiceProps {
     idNum: string;
     options: string[];
-    onAnswer: (property : "state" | "rebates" | "solarOrEV" | "numPractices" | "numConsiderPractices", change : any) => void;
+    onAnswer: (property : "state" | "rebates" | "solarOrEV" | "numPractices" | "energyConsumption" | "primarySource", change : any) => void;
 }
 
 export default function MultipleChoice({options, idNum, onAnswer}: MultipleChoiceProps) {
     const handleOptionSelect = (option: string) => {
-        onAnswer("rebates", option === "yes");
+        onAnswer("primarySource", option);
     };
 
     return (

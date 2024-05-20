@@ -45,7 +45,7 @@ export default function HeroParallax() {
             <motion.div style={{y : range3}} className="absolute inset-0 z-0 ">
                 <Image alt="tree" src='/HeroPage/Mountain-Ridge3.png' fill={true} objectFit="cover"/>
             </motion.div>
-            <motion.div style={{y : tree1}} className="absolute top-1.5 z-0 ">
+            <motion.div style={{y : tree1}} className="absolute top-1.5 z-10 ">
                 <div className={`${dmSerif.className}`}>
                     <p className={` lg:text-6xl md:text-5xl sm:text-4xl text-3xl text-center mt-40 py-10 px-2 tracking-tight text-green-900`}>
                         Where clean energy becomes <em>cheap</em> <br/>and <em>accessible</em>.
