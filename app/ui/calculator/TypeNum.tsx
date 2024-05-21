@@ -24,7 +24,7 @@ export default function TypeNum({onAnswer}: TypeNumProps) {
     return (
         <form className="w-full">
             <label htmlFor="number-input" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                Amount of Energy in kWh:
+                Amount of Energy in kWh (Kilo Watt Hours):
             </label>
             <input type="number"
                    id="number-input"

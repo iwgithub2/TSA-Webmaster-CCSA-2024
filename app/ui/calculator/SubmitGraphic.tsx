@@ -15,8 +15,8 @@ export default function SubmitGraphic({answer}: SubmitGraphicProps) {
             initial={{scale: 0}}
             >
             <div id="End" className="flex flex-col py-40 my-20 items-center">
-                <Image src={'/LogoNo_Background.svg'} alt={"Our logo"} height={100} width={100}/>
-                <p className={`${dmSerif.className} max-w-5xl font-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl text-center py-10 px-2 tracking-tight bg-gradient-to-r from-green-500 to-yellow-400 bg-clip-text text-transparent`}>
+                <Image src={'/Asset 3.svg'} alt={"Our logo"} height={100} width={500}/>
+                <p className={`${dmSerif.className} max-w-5xl font-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl text-center py-10 px-2 tracking-tight text-green-900`}>
                     All done! Ready to see your Results?
                 </p>
                 <Link href={{

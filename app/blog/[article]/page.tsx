@@ -1,7 +1,7 @@
 'use client'
 import {BlogData} from "@/app/ui/blog/blogInfo";
 import {useSearchParams} from "next/navigation";
-import {dmSerif, inter} from "@/app/ui/fonts";
+import {dmSans, dmSerif, inter} from "@/app/ui/fonts";
 import Image from "next/image";
 
 export default function Page() {
@@ -15,10 +15,10 @@ export default function Page() {
                     {data.title}
                 </p>
                 <Image src={data.image} alt={"rizzler"} height={1000} width={1000}/>
-                <p className={`${inter.className} font-medium text-left w-full mb-5 lg:text-2xl md:text-xl sm:text-lg text-md mt-4 mx-5 font-serif tracking-tight`}>
+                <p className={`${dmSans.className} font-medium text-left w-full mb-5 text-darkbrown lg:text-2xl md:text-xl sm:text-lg text-md mt-4 mx-5 font-serif tracking-tight`}>
                     {data.author} • {data.date}
                 </p>
-                <p className="pb-20">
+                <p className="pb-20 text-darkbrown">
                     {data.blog}
                 </p>
             </div>

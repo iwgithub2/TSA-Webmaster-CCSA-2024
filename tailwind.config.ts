@@ -23,7 +23,8 @@ const config: Config = {
         mehscore: "#b0d1ae",
         alrightscore: "#7eb37a",
         goodscore: "#538c50",
-        greatscore: "#345832"
+        greatscore: "#345832",
+        logogreen: "#72BF44"
       },
     },
   },

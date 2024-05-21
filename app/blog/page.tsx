@@ -19,8 +19,8 @@ export default function Blog() {
                 <div className="border-2 border-darkcream w-full"/>
                 <div className="flex flex-col">
                     <BlogCard blog={BlogData[0]}/>
-                    <BlogCard blog={BlogData[0]}/>
-                    <BlogCard blog={BlogData[0]}/>
+                    <BlogCard blog={BlogData[1]}/>
+                    <BlogCard blog={BlogData[2]}/>
                     <BlogCard blog={BlogData[0]}/>
                     <BlogCard blog={BlogData[0]}/>
                 </div>

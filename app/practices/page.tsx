@@ -1,5 +1,5 @@
 'use client'
-import {dmSerif, newsreader} from "@/app/ui/fonts";
+import {dmSans, dmSerif, newsreader} from "@/app/ui/fonts";
 import Search from "@/app/ui/search";
 import Image from "next/image";
 import Card from "@/app/ui/Card";
@@ -15,7 +15,7 @@ export default function Page() {
                     <p className={`${dmSerif.className} mx-auto text-green-900 text-center lg:text-6xl md:text-5xl sm:text-4xl text-3xl`}>
                         Common Environmental Practices
                     </p>
-                    <p className="text-center py-4 font-extrabold text-green-900 lg:text-2xl md:text-xl sm:text-lg text-md">
+                    <p className={`${dmSans.className} text-center py-4 font-extrabold text-darkbrown lg:text-2xl md:text-xl sm:text-lg text-md`}>
                         Here are some ways you can be clean + green at home!
                     </p>
                     <div className="flex flex-col space-y-10 lg:mt-40 md:mt-25 sm:mb-10 mt-20">

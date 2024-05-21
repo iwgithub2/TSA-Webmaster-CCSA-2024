@@ -119,9 +119,9 @@ export default function NavBar2() {
                 {links.map(({name, href}) => (
                     <li
                         key={name}
-                        className="nav-links px-4 cursor-pointer font-medium text-black hover:scale-105 hover:text-green-500 duration-200"
+                        className="nav-links px-4 cursor-pointer font-medium text-darkbrown hover:scale-105 hover:text-logogreen duration-200"
                     >
-                        <Link href={href} className={clsx({'text-green-600': pathname === href,})
+                        <Link href={href} className={clsx({'text-logogreen': pathname === href,})
 
                         }>{name}</Link>
                     </li>

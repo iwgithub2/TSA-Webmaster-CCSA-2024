@@ -94,7 +94,7 @@ export default function Page() {
                     </p>
                     <Image className="mx-auto mt-20 text-red-500" src={state.image} alt={"Picture"} width={300}
                            height={400}/>
-                    <div className="flex flex-col mt-40 max-w-5xl mx-auto">
+                    <div className="flex flex-col mt-20 max-w-5xl mx-auto">
                         {/* until ik wtf im doing lg:grid lg:grid-cols-2 */}
                         <div className="flex flex-col space-y-4 p-10">
                             <Card title={["Car Tax Rebates"]}

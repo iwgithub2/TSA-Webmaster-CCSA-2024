@@ -25,7 +25,7 @@ export default function Page() {
                     <p className={`${dmSerif.className} mx-5 sm:mx-10 md:mx-20 lg:text-6xl md:text-5xl sm:text-4xl text-3xl px-2 p-2 text-center tracking-tight text-green-900`}>
                         Choose your state to find <em>region-specific</em> information
                     </p>
-                    <p className={`${inter.className} font-medium text-center mb-5 lg:text-2xl md:text-xl sm:text-lg text-md my-5 mx-10 font-serif tracking-tight`}>
+                    <p className={`${dmSerif.className} font-medium text-center text-darkbrown mb-5 lg:text-2xl md:text-xl sm:text-lg text-md my-5 mx-10 font-serif tracking-tight`}>
                         Or Just Scroll Below to find Federal Information
                     </p>
                     {/* add search later for nats
@@ -67,12 +67,12 @@ export default function Page() {
                     <div className="flex flex-col md:flex-row md:space-x-4 md:space-y-0 space-y-4 md:p-10 m-10">
                         <div className="flex flex-col md:grid md:grid-cols-2 gap-4 ">
                             <div className="col-span-2">
-                                <Card title={["Car Tax Rebates"]} description={[]} right={false}/>
+                                <Card className="text-center" title={["Car Tax Rebates"]} description={[]} right={false} color="green-900"/>
                             </div>
-                            <Card title={["Electric Vehicles"]} description={["The U.S. Federal Government Offers up $7,500 in tax rebates for purchasing or leasing an electric vehicle"]} right={false}/>
-                            <Card title={["Hybrid Vehicles"]} description={["Some Hybrid Vehicles are eligible for Federal Tax Credits starting from $3,700"]} right={false}/>
+                            <Card title={["Electric Vehicles"]} description={["The U.S. Federal Government Offers up $7,500 in tax rebates for purchasing or leasing an electric vehicle"]} right={false} color="green-900"/>
+                            <Card title={["Hybrid Vehicles"]} description={["Some Hybrid Vehicles are eligible for Federal Tax Credits starting from $3,700"]} right={false} color="green-900"/>
                         </div>
-                        <Card title={["Solar Panel Incentives"]} description={["The Federal Tax Credit for Solar Panels can give homeowners up to 30% off the cost of installing their solar system"]} right={false}/>
+                        <Card className="h-full" title={["Solar Panel Incentives"]} description={["The Federal Tax Credit for Solar Panels can give homeowners up to 30% off the cost of installing their solar system"]} right={false} color="green-900"/>
 
                     </div>
                 </div>

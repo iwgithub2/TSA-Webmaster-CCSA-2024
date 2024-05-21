@@ -11,10 +11,11 @@ export default function Page() {
 
 
     return (
-        <main className="relative min-h-screen flex justify-center bg-gradient-to-t from-forestgreen to-cream bg-opacity-10 ">
+        <main
+            className="relative min-h-screen flex justify-center bg-gradient-to-t from-forestgreen to-cream bg-opacity-10 ">
             <div className="flex flex-col w-full ">
                 <HeroParallax/>
-                <div className={`flex relative flex-col justify-center bg-darkgreen px-6 py-3 z-40`}>
+                <div className={`flex relative flex-col justify-center px-6 py-3 z-40`}>
                     <Link href="/calculator"
                           className="flex items-center gap-5 self-start rounded-lg bg-yellow-950 px-6 my-10 md:my-20 py-3 text-xs font-medium text-white transition-colors hover:bg-yellow-900  mx-auto">
                     <span className="tracking-tighter text-lg text-cream">
@@ -31,8 +32,10 @@ export default function Page() {
                         <div>
                             <Link href={'/learn'}>
                                 <Card title={["Explore State Specific Policies"]}
-                                      description={["Learn more about the incentives offered in your state!"]} right={false}
-                                      image={'/practice_images/home_states.svg'}/>
+                                      description={["Learn more about the incentives offered in your state!"]}
+                                      right={false}
+                                      image={'/practice_images/home_states.svg'}
+                                      color="green-900"/>
                             </Link>
                         </div>
                         <div>
@@ -41,7 +44,7 @@ export default function Page() {
                                       description={["Here are some ways to get started with clean energy form the comfort of your own home!"]}
                                       right={true}
                                       image={'/practice_images/home_practices.svg'}
-                                      color="yellow-500"/>
+                                      color="green-900"/>
                             </Link>
                         </div>
                         <div>
@@ -49,7 +52,8 @@ export default function Page() {
                                 <Card title={["Calculate Your Cost and Impact"]}
                                       description={["Take our  quiz to find out the impact you can have."]}
                                       right={false}
-                                      color="blue-500"
+
+                                      color="green-900"
                                 />
                             </Link>
                         </div>
@@ -58,7 +62,8 @@ export default function Page() {
                                 <Card title={["Learn More About HomeGrown"]}
                                       description={["Who are we? Meet the team behind this website and discover who we are."]}
                                       right={true}
-                                      color="red-500"/>
+                                      image={'/Asset 3.svg'}
+                                      color="green-900"/>
                             </Link>
                         </div>
 
@@ -66,8 +71,6 @@ export default function Page() {
 
                 </div>
             </div>
-
-
 
 
         </main>
