@@ -1,10 +1,11 @@
 'use client'
 import Lines from "@/app/ui/lines";
-import {dmSerif} from "@/app/ui/fonts";
+import {dmSans, dmSerif} from "@/app/ui/fonts";
 import Image from "next/image";
 import {useSearchParams} from "next/navigation";
 import {Answers} from "@/app/calculator/page";
 import {stateInfo} from "@/app/ui/learn/stateInfo";
+import Link from "next/link";
 
 export default function Page() {
 
@@ -14,6 +15,29 @@ export default function Page() {
     const avgSolarElectricityGenerationPerMonth = 886;
     let baseCost: number = 0;
     let score: number = 0;
+    const creditString: string = stateInfo[data.state.toLowerCase()].solarCredit;
+    let renderSavings;
+    let alreadySavings;
+
+    if (creditString === "") {
+        renderSavings = <p className="text-sm sm:text-md md:text-lg lg:text-xl text-center w-1/4">
+            Sorry! Your state does not offer tax credits or rebates for solar power.</p>;
+    } else {
+        renderSavings = <Link href={`/learn/${data.state.toLowerCase()}`}  className="text-sm sm:text-md md:text-lg lg:text-xl text-center w-1/4">
+            Your State has possible savings! Click here to find out more
+        </Link>;
+        score += 1;
+    }
+
+    if(data.solarOrEV != 0) {
+        alreadySavings = <Link href={`/learn/${data.state.toLowerCase()}`}  className="text-sm sm:text-md md:text-lg lg:text-xl text-center w-1/4">
+            <p> Seems like your already have solar panels or an EV. Did you use your state benefits? Click to see</p>
+        </Link>;
+    } else {
+        alreadySavings = <p  className="text-sm sm:text-md md:text-lg lg:text-xl text-center w-1/4">
+            If you can afford it, why not look into going green?
+        </p>
+    }
 
     if (data.numPractices == 0) {
         score = 0;
@@ -28,18 +52,21 @@ export default function Page() {
     let badge;
     switch (score) {
         case 0:
-            badge = <p id="Results" className="mx-auto text-4xl text-white text-center">
-                Womp Womp u suck!
+            badge = <p id="Results" className={`${dmSans.className} mx-auto text-4xl text-white text-center`}>
+                Aww, maybe try implementing more practices?
             </p>
             break;
         case 1:
-            badge = <Image id="Results"  className="mx-auto scroll-mt-40" src={'/OneStar.svg'} alt="stars and stripes" height={200} width={500}/>
+            badge = <Image id="Results" className="mx-auto scroll-mt-40" src={'/OneStar.svg'} alt="stars and stripes"
+                           height={200} width={500}/>
             break;
         case 2:
-            badge = <Image id="Results"  className="mx-auto scroll-mt-40" src={'/TwoStars.svg'} alt="stars and stripes" height={200} width={500}/>
+            badge = <Image id="Results" className="mx-auto scroll-mt-40" src={'/TwoStars.svg'} alt="stars and stripes"
+                           height={200} width={500}/>
             break;
         case 3:
-            badge = <Image id="Results"  className="mx-auto scroll-mt-40" src={'/ThreeStars.svg'} alt="stars and stripes" height={200} width={500}/>
+            badge = <Image id="Results" className="mx-auto scroll-mt-40" src={'/ThreeStars.svg'} alt="stars and stripes"
+                           height={200} width={500}/>
             break;
     }
 
@@ -74,7 +101,7 @@ export default function Page() {
         <main
             className="relative min-h-screen flex justify-center bg-gradient-to-t from-forestgreen to-cream bg-opacity-10">
             <div className="relative z-40 w-full">
-                <div className="flex flex-col mt-40 items-center">
+                <div className="flex flex-col mt-40 items-center px-5 sm:px-10 md:px-10">
                     <div className="my-3 border-black border-2 mx-auto px-2 py-1 rounded-full">
                         <p className="text-center text-sm">
                             Cost Calculator
@@ -94,7 +121,7 @@ export default function Page() {
                         </div>
                     </a>
 
-                    <div className="my-40">
+                    <div className="my-40 ">
                         {badge}
                         <p className={`${dmSerif.className} max-w-5xl font-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl text-center py-10 px-2 tracking-tight bg-gradient-to-r from-green-500 to-yellow-400 bg-clip-text text-transparent`}>
                             Score: {score}!
@@ -102,34 +129,29 @@ export default function Page() {
                         <p className={`${dmSerif.className} max-w-5xl font-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl text-center py-10 px-2 tracking-tight text-white border-b-2 border-white`}>
                             Breakdown and Tips for Improvement
                         </p>
-                        <div className={`${dmSerif.className} flex flex-row justify-between text-white text-3xl py-5`}>
+                        <div className={`${dmSerif.className}  max-w-5xl flex flex-row justify-between text-white text-3xl py-5`}>
                             <p>
                                 Annual Estimated Energy Cost:
                             </p>
-                            ${baseCost}
+                            ${Math.round((baseCost + Number.EPSILON) * 100) / 100}
                         </div>
-                        <div className={`${dmSerif.className} flex flex-row justify-between text-white text-3xl py-5`}>
+                        <div className={`${dmSerif.className}  max-w-5xl flex flex-row justify-between text-white text-3xl py-5`}>
                             <p>
                                 Possible State Savings:
                             </p>
-                            ${baseCost}
+
+                            {renderSavings}
                         </div>
-                        <div className={`${dmSerif.className} flex flex-row justify-between text-white text-3xl py-5`}>
+                        <div className={`${dmSerif.className}  max-w-5xl flex flex-row justify-between text-white text-3xl py-5`}>
                             <p>
                                 Possible Already Saving:
                             </p>
-                            ${baseCost}
+                            {alreadySavings}
                         </div>
                         <p className={`${dmSerif.className} max-w-5xl font-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl text-center py-10 px-2 tracking-tight text-white border-b-2 border-white`}>
                             Possible Savings
                         </p>
-                        <div className={`${dmSerif.className} flex flex-row justify-between text-white text-3xl py-5`}>
-                            <p>
-                                Electric Vehicle Rebates:
-                            </p>
-                            ${baseCost}
-                        </div>
-                        <div className={`${dmSerif.className} flex flex-row justify-between text-white text-3xl py-5`}>
+                        <div className={`${dmSerif.className}  max-w-5xl flex flex-row justify-between text-white text-3xl py-5`}>
                             <p>
                                 Average Solar Panel Savings:
                             </p>

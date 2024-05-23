@@ -12,4 +12,4 @@ export const inter = Inter({
 
 export const dmSerif = DM_Serif_Text({weight: ['400'], subsets: ['latin']});
 
-export const dmSans = DM_Sans({weight: ['400', '500', '700'], subsets: ['latin']});
+export const dmSans = DM_Sans({weight: ['400', '500', '600', '700'], subsets: ['latin']});

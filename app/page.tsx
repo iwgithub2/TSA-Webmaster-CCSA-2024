@@ -22,7 +22,7 @@ export default function Page() {
                         solutions tailored for just you. Join us in the effort to
                         reach a greener more economical future for all.
                     </p>
-                    <div className="mx-40 px-10 flex-col space-y-10 md:space-y-20 my-10">
+                    <div className="mx-40 px-10 flex-col space-y-10 md:space-y-20 my-10 max-w-5xl mx-auto">
                         <div>
                             <Link href={'/learn'}>
                                 <Card title={["Explore State Specific Policies"]}
