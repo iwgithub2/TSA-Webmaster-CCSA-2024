@@ -24,7 +24,8 @@ const config: Config = {
         alrightscore: "#7eb37a",
         goodscore: "#538c50",
         greatscore: "#345832",
-        logogreen: "#72BF44"
+        logogreen: "#72BF44",
+        greenBlackTrees: "#011b09"
       },
     },
   },

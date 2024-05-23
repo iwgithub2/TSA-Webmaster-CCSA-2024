@@ -4,7 +4,7 @@ import {QuestionProps} from "@/app/ui/calculator/question";
 import Image from "next/image";
 import {useState} from "react";
 import Lines from "@/app/ui/lines";
-import {dmSerif} from "@/app/ui/fonts";
+import {dmSans, dmSerif} from "@/app/ui/fonts";
 import Link from "next/link";
 import {statesArray} from "@/app/ui/learn/stateInfo";
 import {searchParamsToUrlQuery} from "next/dist/shared/lib/router/utils/querystring";
@@ -144,7 +144,7 @@ export default function Page() {
                     </p>
                     <a href="#Start"
                        className="flex items-center scroll-smooth gap-5 self-start rounded-lg  px-3 my-20 py-3 text-xs font-medium mx-auto">
-                        <div className="flex flex-col items-center p-2">
+                        <div className={`${dmSans.className} flex flex-col items-center p-2 text-yellow-950`}>
                             <span>
                                Take the Quiz
                             </span>

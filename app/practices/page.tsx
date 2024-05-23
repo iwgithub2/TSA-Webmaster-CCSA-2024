@@ -18,7 +18,7 @@ export default function Page() {
                     <p className={`${dmSans.className} text-center py-4 font-extrabold text-darkbrown lg:text-2xl md:text-xl sm:text-lg text-md`}>
                         Here are some ways you can be clean + green at home!
                     </p>
-                    <div className="flex flex-col space-y-10 lg:mt-40 md:mt-25 sm:mb-10 mt-20">
+                    <div className="flex flex-col space-y-10 lg:mt-40 md:mt-25 sm:mb-10 mt-20 max-w-3xl mx-auto">
 
                         <Card title={["1. Reducing Energy Usage", "Estimated Cost"]} right={false}
                               description={["A great way to start is by turning off the lights and other electronic devices when you're not using them, as well as switching to energy-efficient appliances.",

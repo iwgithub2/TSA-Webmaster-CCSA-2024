@@ -14,7 +14,7 @@ export default function HeroParallax() {
         target: ref,
         offset: ["start start", "end start"],
     });
-    const tree1 = useTransform(scrollYProgress, [0,2], ["0%", "0%"]);
+    const tree1 = useTransform(scrollYProgress, [0,2], ["1%", "0%"]);
     const tree2 = useTransform(scrollYProgress, [0,2], ["0%", "25%"]);
     const tree3 = useTransform(scrollYProgress, [0,2], ["0%", "50%"]);
     const tree4 = useTransform(scrollYProgress, [0,2], ["0%", "75%"]);

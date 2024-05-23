@@ -1,6 +1,6 @@
 'use client'
 
-import {inter, dmSerif} from "@/app/ui/fonts";
+import {inter, dmSerif, dmSans} from "@/app/ui/fonts";
 import {ComposableMap, Geographies, Geography} from "react-simple-maps";
 import {useRouter} from "next/navigation";
 import BubbleDiv from "@/app/ui/learn/BubbleDiv";
@@ -25,7 +25,7 @@ export default function Page() {
                     <p className={`${dmSerif.className} mx-5 sm:mx-10 md:mx-20 lg:text-6xl md:text-5xl sm:text-4xl text-3xl px-2 p-2 text-center tracking-tight text-green-900`}>
                         Choose your state to find <em>region-specific</em> information
                     </p>
-                    <p className={`${dmSerif.className} font-medium text-center text-darkbrown mb-5 lg:text-2xl md:text-xl sm:text-lg text-md my-5 mx-10 font-serif tracking-tight`}>
+                    <p className={`${dmSans.className} font-medium text-center text-darkbrown mb-5 lg:text-2xl md:text-xl sm:text-lg text-md my-5 mx-10 font-serif tracking-tight`}>
                         Or Just Scroll Below to find Federal Information
                     </p>
                     {/* add search later for nats
@@ -72,8 +72,11 @@ export default function Page() {
                             <Card title={["Electric Vehicles"]} description={["The U.S. Federal Government Offers up $7,500 in tax rebates for purchasing or leasing an electric vehicle"]} right={false} color="green-900"/>
                             <Card title={["Hybrid Vehicles"]} description={["Some Hybrid Vehicles are eligible for Federal Tax Credits starting from $3,700"]} right={false} color="green-900"/>
                         </div>
-                        <Card className="h-full" title={["Solar Panel Incentives"]} description={["The Federal Tax Credit for Solar Panels can give homeowners up to 30% off the cost of installing their solar system"]} right={false} color="green-900"/>
-
+                        <div className="">
+                            <Card title={["Solar Panel Incentives"]}
+                                  description={["The Federal Tax Credit for Solar Panels can give homeowners up to 30% off the cost of installing their solar system"]}
+                                  right={false}/>
+                        </div>
                     </div>
                 </div>
             </div>

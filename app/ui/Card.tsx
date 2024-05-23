@@ -24,7 +24,7 @@ export default function Card({title, description, right, color, maxWidth, image,
     }
 
     return (
-            <div className={`${className} bg-darkcream shadow-2xl flex flex-col ${maxWidth ? "" : "lg:max-w-xl sm:max-w-2xl"} h-full  w-full ${right ? "ml-auto" : "ar-auto"} pt-10 px-10 rounded`}>
+            <div className={`${className} bg-darkcream shadow-2xl flex flex-col h-full w-full ${right ? "ml-auto" : "ar-auto"} pt-10 px-10 rounded`}>
                 <div className="flex flex-col space-y-5">
                     {title.map((titles, index) => (
                         <div key={index}>

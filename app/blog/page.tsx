@@ -25,15 +25,7 @@ export default function Blog() {
                     <BlogCard blog={BlogData[0]}/>
                 </div>
                 <div className="min-h-1/2 flex flex-col py-20">
-                    <p className="font-bold text-3xl mt-20 text-center p-10">
-                        Got an Intersting Story? Environmental Ideas you want us to share?
-                        Send us an email or sign up for our newsletters.
-                    </p>
-                    <Link className="mt-10 mx-auto" href='/'>
-                <span className="bg-slate-800 text-slate-200 p-4 rounded-full">
-                    fakenamemailsomeonecreateoneplease@gmail.com
-                </span>
-                    </Link>
+
                 </div>
             </div>
         </main>

@@ -125,9 +125,10 @@ export default function Page() {
                     <p className={`${dmSerif.className}  sm:mx-10 md:mx-20 lg:text-6xl md:text-5xl sm:text-4xl text-3xl px-2 pt-20 text-center tracking-tight text-green-900`}>
                         Federal Tax Rebate Information
                     </p>
-                    <div className="flex flex-col md:flex-row md:space-x-4 md:space-y-0 space-y-4 md:p-10 m-10 max-w-5xl">
-                        <div className="flex flex-col md:grid md:grid-cols-2 gap-4 ">
-                            <div className="col-span-2">
+                    <div
+                        className="flex flex-col md:flex-row md:space-x-4 md:space-y-0 space-y-4 md:p-10 m-10 max-w-5xl md:items-stretch">
+                        <div className="flex flex-col md:grid md:grid-cols-2 gap-4">
+                            <div className="col-span-2 w-full">
                                 <Card title={["Car Tax Rebates"]} description={[]} right={false}/>
                             </div>
                             <Card title={["Electric Vehicles"]}
@@ -137,10 +138,11 @@ export default function Page() {
                                   description={["Some Hybrid Vehicles are eligible for Federal Tax Credits starting from $3,700"]}
                                   right={false}/>
                         </div>
-                        <Card title={["Solar Panel Incentives"]}
-                              description={["The Federal Tax Credit for Solar Panels can give homeowners up to 30% off the cost of installing their solar system"]}
-                              right={false}/>
-
+                        <div className="">
+                            <Card title={["Solar Panel Incentives"]}
+                                  description={["The Federal Tax Credit for Solar Panels can give homeowners up to 30% off the cost of installing their solar system"]}
+                                  right={false}/>
+                        </div>
                     </div>
                 </div>
             </div>
